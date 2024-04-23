@@ -61,7 +61,7 @@ export default function LandingPageVTwoPage() {
             <div className="flex flex-col gap-[54px] sm:gap-[27px]">
               <div className="flex flex-col gap-[43px] p-[22px] sm:p-5 bg-white-A700">
                 <div className="w-full mt-[5px] mx-auto max-w-[1302px]">
-                  <div style={{display:"flex",backgroundColor:"red",flexWrap:"wrap",justifyContent:"space-between",alignItems:"center"}} >
+                  <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-between",alignItems:"center"}} >
                     <Button
                       size="md"
                       variant="outline"

@@ -26,3 +26,17 @@
   font-family: "Roboto";
   font-weight: 400;
 }
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/AudiowideRegular.ttf");
+  font-family: "Audiowide";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/InterRegular.ttf");
+  font-family: "Inter";
+  font-weight: 400;
+}

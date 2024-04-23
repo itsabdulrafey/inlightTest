@@ -35,3 +35,16 @@ ul {
   background: #6b6b6b;
   border-radius: 10px;
 }
+input {
+  background-color: transparent;
+  width: 100%;
+}
+input:focus {
+  outline: none;
+}
+.black_900_7f_black_900_00_border {
+  border-image: radial-gradient(180deg, #0000007f, #00000000) 1;
+}
+table {
+  table-layout: fixed;
+}
