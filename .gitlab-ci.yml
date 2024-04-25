@@ -19,7 +19,7 @@ build:
   script:
     - echo "Installing dependencies..."
     - npm -v && node -v
-    - npm install --legacy-peer-deps # or any other command to install dependencies
+    - npm install --force # or any other command to install dependencies
     - ls
     - echo "Building production version..."
     - npm run build  # or any other command to build the production version
