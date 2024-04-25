@@ -48,7 +48,7 @@ deploy:
     - ls
     - pwd
     - scp -r /builds/Codistan/efx-landing-page/frontend/build $user@$hostname:/home/ubuntu
-    - scp -r /builds/Codistan/efx-landing-page/frontend/build $user@$hostname:/home/ubuntu
+    - scp -r /builds/Codistan/efx-landing-page/frontend/.env $user@$hostname:/home/ubuntu
     - ssh -o StrictHostKeyChecking=no $user@$hostname
     - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo rm -rf frontend || true"
     - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo git clone https://gitlab+deploy-token-4199507:gldt-yWDW3kA_7ny9zSywf-jr@gitlab.com/Codistan/efx-landing-page/frontend.git frontend"
