@@ -1,0 +1,58 @@
+stages:
+  - build
+  - deploy
+
+build:
+  only:
+      - staging
+      - master
+  stage: build
+  image: node:18
+  before_script:
+    - apt update
+    # - touch .env
+    - mkdir ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$private_key" | tr -d '\r' | ssh-add -
+    - chmod 700 /root/.ssh
+    - ssh-keyscan -H "$hostname" >> ~/.ssh/known_hosts
+  script:
+    - echo "Installing dependencies..."
+    - npm -v && node -v
+    - npm install --legacy-peer-deps # or any other command to install dependencies
+    - ls
+    - echo "Building production version..."
+    - npm run build  # or any other command to build the production version
+    # - scp -r /builds/Codistan/uptrend-social/admin-panel/node_modules $user@$hostname:/home/ubuntu
+    - ls
+  artifacts:
+    paths:
+      - build/  # adjust the path to the build artifacts
+
+deploy:
+  stage: deploy
+  only:
+    - staging  # adjust the branch name where you want to trigger the deployment
+    - master
+  before_script:
+    - apt update
+    # - touch .env
+    - mkdir ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$private_key" | tr -d '\r' | ssh-add -
+    - chmod 700 /root/.ssh
+    - ssh-keyscan -H "$hostname" >> ~/.ssh/known_hosts
+    # - echo "$ENV_FILE" > .env
+
+  script:
+    - ls
+    - pwd
+    - scp -r /builds/Codistan/efx-landing-page/frontend/build $user@$hostname:/home/ubuntu
+    - scp -r /builds/Codistan/efx-landing-page/frontend/build $user@$hostname:/home/ubuntu
+    - ssh -o StrictHostKeyChecking=no $user@$hostname
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo rm -rf frontend || true"
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo git clone https://gitlab+deploy-token-4199507:gldt-yWDW3kA_7ny9zSywf-jr@gitlab.com/Codistan/efx-landing-page/frontend.git frontend"
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "cd /home/ubuntu/frontend && sudo git checkout staging"
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo mv /home/ubuntu/.env /home/ubuntu/frontend"
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "sudo mv /home/ubuntu/build/ /home/ubuntu/frontend"
+    - ssh -o StrictHostKeyChecking=no $user@$hostname "pm2 restart frontend"
