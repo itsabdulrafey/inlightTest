@@ -36,13 +36,13 @@ deploy:
     - master
   before_script:
     - apt update
-    # - touch .env
+    - touch .env
     - mkdir ~/.ssh
     - eval $(ssh-agent -s)
     - echo "$private_key" | tr -d '\r' | ssh-add -
     - chmod 700 /root/.ssh
     - ssh-keyscan -H "$hostname" >> ~/.ssh/known_hosts
-    # - echo "$ENV_FILE" > .env
+    - echo "$ENV_FILE" > .env
 
   script:
     - ls
