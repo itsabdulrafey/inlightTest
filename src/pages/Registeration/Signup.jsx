@@ -1,7 +1,7 @@
 import React from 'react'
 import {AuthInput,AuthTextArea,AuthText, Button, CheckBox, Input, AuthHeading, Img, Text,Header,button } from "../../components";
 
-const Signup = () => {
+const Signup = ({setstep,step}) => {
   return (
      <div style={{marginTop:50}}>
      <div  className="flex w-[72%] items-center gap-3 md:w-full">
@@ -15,7 +15,7 @@ const Signup = () => {
              as="h4"
              className="flex h-[30px] w-[30px] items-center justify-center rounded-[15px] border border-solid border-white-A700 bg-indigo-A200 text-center tracking-[0.36px]"
            >
-             1
+             {step}
            </AuthHeading>
            <AuthHeading as="h5" className="tracking-[0.40px]">
              Account Creation
@@ -91,6 +91,10 @@ const Signup = () => {
        variant="fill"
        shape="round"
        className="min-w-[320px] border border-white-A700_19 tracking-[0.96px] sm:px-5"
+       onClick={()=>{
+
+          setstep(step-1)
+           }}
      >
        CANCEL
      </button.AuthButton>
@@ -99,6 +103,10 @@ const Signup = () => {
        variant="fill"
        shape="round"
        className="min-w-[320px] border border-white-A700_19 tracking-[0.96px] !text-black-900 sm:px-5"
+       onClick={()=>{
+
+      setstep(step+1)
+       }}
      >
        SUBMIT
      </button.AuthButton>
