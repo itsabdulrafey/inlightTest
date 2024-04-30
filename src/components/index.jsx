@@ -2,10 +2,13 @@ import { Img } from "./Img";
 import { Text } from "./Text";
 import { Heading } from "./Heading";
 import { Input } from "./Input";
-
+import { CheckBox } from "./CheckBox";
 import Header from "./Header";
-
+import button from "./Button/imports";
 import { Button, } from "./Button";
 import {ButtonSecound} from "./Button/ButtonSecound";
-
-export { Img, Text, Heading, Button,Header,Input,ButtonSecound };
+import { AuthHeading } from "./Heading/AuthHeading";
+import { AuthInput } from "./Input/AuthInput";
+import { AuthText } from "./Text/AuthText";
+import { AuthTextArea } from "./Input/AuthTextArea";
+export { Img, Text, Heading,CheckBox, Button,Header,Input,ButtonSecound,button ,AuthHeading,AuthInput,AuthText,AuthTextArea };
