@@ -3,7 +3,7 @@ import { Heading,AuthHeading, Img } from "./..";
 
 export default function AuthHeader({ ...props }) {
   return (
-    <header {...props} className="container-xs">
+    <header style={{display:"flex",alignItems:"center",justifyContent:"space-between"}} {...props} className="container-xs">
       <Img src="images/img_image_19.png" alt="imagenineteen" className="h-[98px] w-[98px] object-cover md:w-full" />
       <ul className="flex flex-wrap gap-[60px] md:gap-5">
         <li>
