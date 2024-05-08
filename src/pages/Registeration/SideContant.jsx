@@ -8,7 +8,7 @@ const SideContant = ({step=0}) => {
 
 
           
-  {step==0?  <div className="mt-[343px] flex w-[25%] flex-col gap-4 md:w-full">
+  {step==1?  <div className="mt-[343px] flex w-[25%] flex-col gap-4 md:w-full">
               <div className="flex flex-col items-start gap-[7px]">
                 <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
                   eFXplus
@@ -18,7 +18,8 @@ const SideContant = ({step=0}) => {
                 </AuthText>
               </div>
               <div className="ml-36 flex h-[9px] w-[39px] md:ml-0" />
-            </div>:step==1?
+            </div>
+            :step==2?
           <div>
            <div style={{padding:40}} className="absolute left-[0.00px] top-[20%] m-auto flex w-[50%] flex-col gap-[78px] md:gap-[58px] sm:gap-[39px]">
             <div className="flex flex-col gap-[33px]">
@@ -131,7 +132,7 @@ const SideContant = ({step=0}) => {
               </AuthHeading>
             </div>
           </div>
-          </div>:step==2?
+          </div>:step==3?
 <div className="mt-[196px] flex w-[25%] flex-col gap-20 md:w-full md:gap-[60px] sm:gap-10">
               <div className="flex flex-col gap-[22px]">
                 <div className="flex flex-col items-start gap-1">
@@ -161,7 +162,19 @@ const SideContant = ({step=0}) => {
                   (trade ideas and forecasts) are published.
                 </AuthText>
               </div>
-            </div>:""}
+            </div>:step==4?<>
+            <div className="mt-[343px] flex w-[25%] flex-col gap-4 md:w-full">
+              <div className="flex flex-col items-start gap-[7px]">
+                <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
+                  eFXplus
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                  Price-based FX data derived from Sell-Side Research & Refinitiv IFR Markets
+                </AuthText>
+              </div>
+              <div className="ml-36 flex h-[9px] w-[39px] md:ml-0" />
+            </div>
+            </>:""}
 
 
 

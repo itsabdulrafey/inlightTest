@@ -9,7 +9,7 @@ import Signup from "./Signup";
 import SideContant from "./SideContant";
 
 export default function DesktopEighteenPage() {
-  const [step,setstep]=useState(0)
+  const [step,setstep]=useState(1)
   return (
     <>
       <Helmet>

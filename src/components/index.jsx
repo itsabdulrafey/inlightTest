@@ -11,4 +11,5 @@ import { AuthHeading } from "./Heading/AuthHeading";
 import { AuthInput } from "./Input/AuthInput";
 import { AuthText } from "./Text/AuthText";
 import { AuthTextArea } from "./Input/AuthTextArea";
-export { Img, Text, Heading,CheckBox, Button,Header,Input,ButtonSecound,button ,AuthHeading,AuthInput,AuthText,AuthTextArea };
+import { Radio } from "./Radio";
+export { Img, Text, Heading,CheckBox, Button,Header,Input,ButtonSecound,button ,AuthHeading,AuthInput,AuthText,AuthTextArea,Radio };
