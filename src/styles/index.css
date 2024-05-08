@@ -11,6 +11,7 @@ body {
 }
 a {
   display: block;
+  text-decoration: none;
 }
 ul {
   margin: 0;
@@ -42,8 +43,21 @@ input {
 input:focus {
   outline: none;
 }
+.tab-panel--selected {
+  animation-name: tabPanel;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
 .black_900_7f_black_900_00_border {
   border-image: radial-gradient(180deg, #0000007f, #00000000) 1;
+}
+@keyframes tabPanel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 table {
   table-layout: fixed;
