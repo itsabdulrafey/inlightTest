@@ -9,7 +9,7 @@ import Signup from "pages/Registeration/Signup";
 import Payment from "pages/Registeration/StaoTabs/PaymentTab";
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "/", element: <Home /> },
+    { path: "/", element: <LandingPageVTwo /> },
     { path: "*", element: <NotFound /> },
     {
       path: "landingpagevtwo",
