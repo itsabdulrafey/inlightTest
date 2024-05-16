@@ -10,6 +10,7 @@ import {ButtonSecound} from "./Button/ButtonSecound";
 import { AuthHeading } from "./Heading/AuthHeading";
 import { AuthInput } from "./Input/AuthInput";
 import { AuthText } from "./Text/AuthText";
+import { AuthSelect as DropDown } from "./Input/DropDown";
 import { AuthTextArea } from "./Input/AuthTextArea";
 import { Radio } from "./Radio";
-export { Img, Text, Heading,CheckBox, Button,Header,Input,ButtonSecound,button ,AuthHeading,AuthInput,AuthText,AuthTextArea,Radio };
+export { Img, Text, Heading,CheckBox, Button,Header,Input,ButtonSecound,button ,AuthHeading,AuthInput,AuthText,AuthTextArea,Radio,DropDown };
