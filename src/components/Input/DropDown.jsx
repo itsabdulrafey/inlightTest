@@ -70,15 +70,15 @@ const AuthSelect = React.forwardRef(
       backgroundColor: "#ffffff33",
       color: "gray",
       width: "100%",
-      paddingBottom: 19,
-      paddingTop: 19
+      paddingBottom: 17,
+      paddingTop: 17
     };
 
     return (
       <>
         <div
           className={`${className} flex items-center justify-center tracking-[0.40px] text-xl border-solid  ${(shape && shapes[shape]) || ""} ${variants[variant]?.[color] || variants[variant] || ""} ${sizes[size] || ""}`}
-          style={{ width: "100%", backgroundColor: 'transparent',paddingBottom:40 }}
+          style={{ width: "100%", backgroundColor: 'transparent' }}
         >
           {/* {!!label && <label className="mr-2 text-white" style={{ flex: 'none' }}>{label}</label>}
           {!!prefix && <span className="mr-2">{prefix}</span>} */}

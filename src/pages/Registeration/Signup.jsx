@@ -20,6 +20,7 @@ import "../../assets/TableStyle.css"
 import "../../assets/SubscriptionPlans.css"
 import ApiCall from "utils/Api";
 import moment from 'moment-timezone';
+import { toast } from "react-toastify";
 
 const Signup = ({ setstep, step }) => {
   const [selectedPlan, setSelectedPlan] = useState('Basic');
@@ -57,7 +58,7 @@ const Signup = ({ setstep, step }) => {
 
     // Map each question to an object with value and label
     return questions.map((question, index) => ({
-        value: `question${index + 1}`, // Simple unique identifier for the value
+        value: question, // Simple unique identifier for the value
         label: question // The question itself as the label
     }));
 };
@@ -95,8 +96,9 @@ const Signup = ({ setstep, step }) => {
     "timeZone":"",
     "role": "" // Sample ObjectId, replace with an actual ObjectId from your database
 });
-const handleChange = (event) => {
-  const { name, value } = event.target;
+const handleChange = (value,name) => {
+  console.log("🚀 ~ handleChange ~ name:", name)
+  console.log("🚀 ~ handleChange ~ value:", value)
   setSignUp(prevState => ({
     ...prevState,
     [name]: value
@@ -126,7 +128,8 @@ const handleButtonClick = () => {
     { name: "Data Preview", instant: false, daily: false, time: "5:15 PM", none: true }
 ];
 const onsubmit =async()=>{
-  
+  console.log("🚀 ~ onsubmit ~ SignUp:", SignUp)
+
 
   try {
     // console.log("🚀 ~ onsubmit ~ async:",email,password)
@@ -141,11 +144,28 @@ const onsubmit =async()=>{
       "brokerBank": SignUp.brokerBank,
       "role": "6279b0f19b0f1b7a27d7acbb" // Sample ObjectId, replace with an actual ObjectId from your database
   })
+  setSignUp({
+    "firstname": "",
+    "lastname": "",
+    "email": "",
+    "password": "",
+    "securityQuestion": "",
+    "confirmPassword":"",
+    "brokerBank": "",
+    "timeZone":"",
+    "role": "" // Sample ObjectId, replace with an actual ObjectId from your database
+})
   toast.success(data.data.message)
+  handleButtonClick();
+
     console.log("🚀 ~ onsubmit ~ data:", data)
   } catch (error) {
     console.log("🚀 ~ onsubmit ~ error.response.data.message:", error)
-
+    if (error?.response?.data?.message) {
+      toast.error(error.response.data.message);
+    } else {
+      toast.error(error.message);
+    }
     // toast.error(error.response.data.message)
     console.log("🚀 ~ onsubmit ~ error:", error)
     
@@ -310,7 +330,7 @@ const onsubmit =async()=>{
                   value={SignUp.firstname}
                   placeholder={`First Name`}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"firstname")}
                 />
                 <Input
                   shape="round"
@@ -319,7 +339,7 @@ const onsubmit =async()=>{
                   value={SignUp.email}
                   placeholder={`Email`}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"email")}
 
                 />
                 {/* <Input
@@ -337,7 +357,7 @@ const onsubmit =async()=>{
         value={SignUp.securityQuestion}
         options={questions}
         onChange={(e)=>{
-          handleChange(e)
+          handleChange(e,"securityQuestion")
 
         }}
       
@@ -350,7 +370,11 @@ const onsubmit =async()=>{
 <DropDown
         name="timeZone"
         options={timeZones}
-        onChange={handleTimeZoneChange}
+        value={SignUp.timeZone}
+        onChange={(e)=>{
+          handleChange(e,"timeZone")
+
+        }}
       
         size="md"
         variant="fill"
@@ -362,11 +386,11 @@ const onsubmit =async()=>{
                 <Input
                   shape="round"
                   type="text"
-                  name="lastName"
+                  name="lastname"
                   placeholder={`Last Name`}
                   value={SignUp.lastname}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"lastname")}
 
                 />
                 <Input
@@ -376,7 +400,7 @@ const onsubmit =async()=>{
                   value={SignUp.password}
                   placeholder={`Password`}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"password")}
 
                 />
                 <Input
@@ -386,7 +410,7 @@ const onsubmit =async()=>{
                   value={SignUp.confirmPassword}
                   placeholder={`Confirm Password`}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"confirmPassword")}
 
                 />
                 <Input
@@ -395,7 +419,7 @@ const onsubmit =async()=>{
                   value={SignUp.brokerBank}
                   placeholder={`Your FX Broker/Bank`}
                   className="border border-white-A700_19 tracking-[0.40px] sm:pr-5"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e,"brokerBank")}
 
                 />
               </div>
@@ -498,7 +522,6 @@ const onsubmit =async()=>{
           className="min-w-[320px] border border-white-A700_19 tracking-[0.96px] !text-black-900 sm:px-5"
           onClick={() => {
             console.log("YESSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-            // handleButtonClick();
             onsubmit()
             // Navigate("/PaymentTab")
             if(step!==4){
