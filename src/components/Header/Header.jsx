@@ -18,7 +18,6 @@ const StyledImage = styled(Box)({
     objectFit: 'cover',
   },
 });
-
 const Header = () => {
   return (
   <>
@@ -26,12 +25,23 @@ const Header = () => {
           <div className="flex sm:flex-col justify-between items-center gap-5">
             <Img src="images/img_image_19.png" alt="imagenineteen" className="w-[98px] sm:w-full object-cover" />
             <div className="flex justify-between items-center w-[23%] sm:w-full gap-5">
-              <Link to="Registeration">
+              <Link 
+               to="Registeration"
+              onClick={()=>{
+                window.open("https://plus.efxdata.com/login")
+
+              }}
+              >
                 <Heading size="lg" as="h6" className="!text-gray-900 tracking-[3.20px] uppercase">
                   Sign up
                 </Heading>
               </Link>
-              <Button size="sm" shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[150px]">
+              <Button 
+                  onClick={()=>{
+                    window.open("https://plus.efxdata.com/login")
+    
+                  }}
+              size="sm" shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[150px]">
                 Log in
               </Button>
             </div>

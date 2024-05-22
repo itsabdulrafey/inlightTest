@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Heading, Img, Button, Text } from "../../components";
 import Header from "../../components/Header/Header";
@@ -6,6 +6,20 @@ import Footer from "components/Footer/Footer";
 import CardContainer from "testAnimation";
 
 export default function LandingPageVTwoPage() {
+  const [cardState,setcardState]=useState(0)
+  const animateDivRef = useRef(null);
+  const handelDiv = () => {
+    if(animateDivRef.current){
+      animateDivRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+  useEffect(() => {
+    const container = document.getElementById("cardContainer");
+    container.addEventListener("wheel", handelDiv);
+
+    // Clean up the event listener when the component unmounts
+    return () => container.removeEventListener("wheel", handelDiv);
+  }, []);
   return (
     <>
       <Helmet>
@@ -66,16 +80,26 @@ export default function LandingPageVTwoPage() {
                       size="md"
                       variant="outline"
                       className="sm:px-5 !text-white-A700 tracking-[4.00px] bg-gradient min-w-[173px] rounded-md"
+                      onClick={()=>{
+                        window.open("https://plus.efxdata.com/login")
+                      }}
                     >
                       eFX Plus
                     </Button>
-                    <Button size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[220px] rounded-md">
+                    <Button onClick={()=>{
+                      handelDiv()
+                      setcardState(0)}
+                      } size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[220px] rounded-md">
                       eFX Plus HD
                     </Button>
-                    <Button size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[180px] rounded-md">
+                    <Button onClick={()=>{
+                      handelDiv()
+                      setcardState(1)}} size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[180px] rounded-md">
                       eFX Edge
                     </Button>
-                    <div className="flex justify-center w-[15%]">
+                    <div onClick={()=>{
+                      handelDiv()
+                      setcardState(2)}} className="flex justify-center w-[15%]">
                       <div className="flex flex-col items-end w-full">
                         <div className="flex justify-center w-[37%] md:w-full mr-[5px] md:mr-0 z-[1] border-blue_gray-600 border border-solid bg-gray-900_01 rounded">
                           <Heading size="xs" as="h3" className="w-[67%] tracking-[1.00px] text-center leading-3">
@@ -96,7 +120,9 @@ export default function LandingPageVTwoPage() {
                         </a>
                       </div>
                     </div>
-                    <Button size="xl" variant="outline" sty className="sm:px-5 tracking-[4.00px] min-w-[100px] rounded-md">
+                    <Button onClick={()=>{
+                      handelDiv()
+                      setcardState(3)}} size="xl" variant="outline" sty className="sm:px-5 tracking-[4.00px] min-w-[100px] rounded-md">
                       eFX Apex
                     </Button>
                   </div>
@@ -499,7 +525,7 @@ export default function LandingPageVTwoPage() {
                 <Text  size="xl" as="p" className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]">
                   eFX carries the most comprehensive Big-Data streams in FX consisting of:
                 </Text>
-                <div  className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
+                <div  ref={animateDivRef} className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
                
 
 
@@ -507,7 +533,7 @@ export default function LandingPageVTwoPage() {
 
 
 
-      <CardContainer/>
+      <CardContainer setcardState={setcardState} cardState={cardState}/>
 
 
 
