@@ -99,11 +99,7 @@ const cardContainerStyle = {
 const CardContainer = ({ setcardState, cardState }) => {
   const animateDivRef = useRef(null);
 
-  const handelDiv = () => {
-    if(animateDivRef.current){
-      animateDivRef.current.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+
   useEffect(() => {}, []);
   console.log("🚀 ~ CardContainer ~ cardState:", cardState);
   const [activeCards, setActiveCards] = useState(cardsData);
@@ -200,8 +196,6 @@ const CardContainer = ({ setcardState, cardState }) => {
   return (
     <>
       <div
-      ref={animateDivRef}
-      onClick={handelDiv}
         style={{
           width: "100%",
           display: "flex",
