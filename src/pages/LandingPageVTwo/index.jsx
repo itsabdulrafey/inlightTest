@@ -520,12 +520,12 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
               </div>
-              <div  className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
+              <div ref={animateDivRef} className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
                 
                 <Text  size="xl" as="p" className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]">
                   eFX carries the most comprehensive Big-Data streams in FX consisting of:
                 </Text>
-                <div  ref={animateDivRef} className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
+                <div   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
                
 
 
