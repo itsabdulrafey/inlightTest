@@ -44,7 +44,7 @@ export default function LandingPageVTwoPage() {
             </div>
           </div>
         </header> */}
-       <Header/>
+       <Header handelDiv={handelDiv} cardState={cardState} setcardState={setcardState} />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
@@ -75,7 +75,7 @@ export default function LandingPageVTwoPage() {
               </div>
             </div>
             <div className="flex flex-col gap-[54px] sm:gap-[27px]">
-              <div className="flex flex-col gap-[43px] p-[22px] sm:p-5 bg-white-A700">
+              {/* <div className="flex flex-col gap-[43px] p-[22px] sm:p-5 bg-white-A700">
                 <div className="w-full mt-[5px] mx-auto max-w-[1302px]">
                   <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-between",alignItems:"center"}} >
                     <Button
@@ -90,7 +90,8 @@ export default function LandingPageVTwoPage() {
                     </Button>
                     <Button onClick={()=>{
                       handelDiv()
-                      setcardState(0)}
+                      setcardState(0)
+                    }
                       } size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[220px] rounded-md">
                       eFX Plus HD
                     </Button>
@@ -521,7 +522,7 @@ export default function LandingPageVTwoPage() {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div ref={animateDivRef} className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
                 
                 <Text  size="xl" as="p" className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]">

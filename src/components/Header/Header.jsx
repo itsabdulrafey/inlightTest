@@ -18,35 +18,57 @@ const StyledImage = styled(Box)({
     objectFit: 'cover',
   },
 });
-const Header = () => {
+const Header = ({cardState,setcardState,handelDiv}) => {
   return (
-  <>
-     <header className="w-[88%] md:w-full md:p-5">
-          <div className="flex sm:flex-col justify-between items-center gap-5">
-            <Img src="images/img_image_19.png" alt="imagenineteen" className="w-[98px] sm:w-full object-cover" />
-            <div className="flex justify-between items-center w-[23%] sm:w-full gap-5">
-              <Link 
-               to="Registeration"
-              onClick={()=>{
-                window.open("https://plus.efxdata.com/login")
-
-              }}
-              >
-                <Heading size="lg" as="h6" className="!text-gray-900 tracking-[3.20px] uppercase">
-                  Sign up
-                </Heading>
-              </Link>
-              <Button 
-                  onClick={()=>{
-                    window.open("https://plus.efxdata.com/login")
-    
-                  }}
-              size="sm" shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[150px]">
-                Log in
-              </Button>
-            </div>
-          </div>
-        </header>
+    <>
+    <header style={{ display: "flex", justifyContent: "space-between" }} className="w-[88%] md:w-full md:p-5 mx-auto">
+      <div style={{ color: "orange" }} className="flex sm:flex-col justify-between items-center gap-5">
+        <Img src="images/img_image_19.png" alt="imagenineteen" className="w-[98px] sm:w-full object-cover" />
+      </div>
+      <nav style={{ marginLeft: "200px" }} className="flex justify-center items-center">
+        <ul className="flex gap-10">
+          <li><Link   onClick={()=>{
+                        window.open("https://plus.efxdata.com/login")
+                      }} to="/home"><Text size="md" style={{ fontWeight: "bold", color: "orange" }} className="tracking-[2px]">eFX Plus</Text></Link></li>
+          <li><Link onClick={()=>{
+                      handelDiv()
+                      setcardState(0)
+                    }} to=""><Text size="md" style={{ fontWeight: "bold" }} className="tracking-[2px]">eFX Plus HD</Text></Link></li>
+          <li><Link onClick={()=>{
+                      handelDiv()
+                      setcardState(1)
+                    }} to=""><Text size="md" style={{ fontWeight: "bold" }} className="tracking-[2px]">eFX Edge</Text></Link></li>
+          <li><Link onClick={()=>{
+                      handelDiv()
+                      setcardState(2)
+                    }} to=""><Text size="md" style={{ fontWeight: "bold" }} className="tracking-[2px]">eFX Alpha</Text></Link></li>
+          <li><Link onClick={()=>{
+                      handelDiv()
+                      setcardState(3)
+                    }} to=""><Text size="md" style={{ fontWeight: "bold" }} className="tracking-[2px]">eFX Apex</Text></Link></li>
+        </ul>
+      </nav>
+      <div className="flex justify-between items-center w-[20%] sm:w-full gap-5">
+        <Link 
+          to="Registeration"
+          onClick={() => {
+            window.open("https://plus.efxdata.com/login")
+          }}
+        >
+          <Heading size="lg" as="h6" className="!text-gray-900 tracking-[3.20px] uppercase">
+            Sign up
+          </Heading>
+        </Link>
+        <Button 
+          onClick={() => {
+            window.open("https://plus.efxdata.com/login")
+          }}
+          size="sm" shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[150px]"
+        >
+          Log in
+        </Button>
+      </div>
+    </header>
   </>
   );
 };
