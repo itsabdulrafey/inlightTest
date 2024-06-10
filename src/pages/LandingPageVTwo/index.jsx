@@ -18,7 +18,9 @@ export default function LandingPageVTwoPage() {
     container.addEventListener("wheel", handelDiv);
 
     // Clean up the event listener when the component unmounts
-    return () => container.removeEventListener("wheel", handelDiv);
+    return () => {
+      container.removeEventListener("wheel", handelDiv);
+    };
   }, []);
   return (
     <>
@@ -527,11 +529,6 @@ export default function LandingPageVTwoPage() {
                 </Text>
                 <div   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
                
-
-
-
-
-
 
       <CardContainer setcardState={setcardState} cardState={cardState}/>
 

@@ -159,13 +159,13 @@ const CardContainer = ({ setcardState, cardState }) => {
     }
   };
 
-  useEffect(() => {
-    const container = document.getElementById("cardContainer");
-    container.addEventListener("wheel", handleScroll);
+  // useEffect(() => {
+  //   const container = document.getElementById("cardContainer");
+  //   container.addEventListener("wheel", handleScroll);
 
-    // Clean up the event listener when the component unmounts
-    return () => container.removeEventListener("wheel", handleScroll);
-  }, []);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => container.removeEventListener("wheel", handleScroll);
+  // }, []);
 
   const cardStyle = (index, length, color, text) => ({
     position: "absolute",
@@ -266,7 +266,7 @@ const CardContainer = ({ setcardState, cardState }) => {
                       as="p"
                       className="!text-blue_gray-400 tracking-[3.20px]"
                     >
-                      The Standard eFX Trades
+                       {cardsData[cardState]?.data?.heading4}
                     </Text>
                     <Text
                       size="s"
@@ -281,7 +281,7 @@ const CardContainer = ({ setcardState, cardState }) => {
                     as="p"
                     className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
                   >
-                    {card?.data?.paragraphs?.map((data) => {
+                    { cardsData[cardState]?.data?.paragraphs?.map((data) => {
                       return (
                         <>
                           {data}
