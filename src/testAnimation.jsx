@@ -26,7 +26,7 @@ const cardsData = [
   },
   {
     id: 1,
-    color: "black",
+    color: "white",
     text: "salmon",
     image: images2,
     data: {
@@ -44,7 +44,7 @@ const cardsData = [
   },
   {
     id: 2,
-    color: "#444444",
+    color: "white",
     text: "lightgreen",
     image: images3,
     data: {
@@ -64,7 +64,7 @@ const cardsData = [
   },
   {
     id: 3,
-    color: "#4F805D",
+    color: "white",
     text: "khaki",
     image: images4,
     data: {
@@ -175,7 +175,7 @@ const CardContainer = ({ setcardState, cardState }) => {
     // borderRadius: 3,
     display: "flex",
     //  width: '100px',
-    rotate: `${index * (12 + 10)}deg`,
+    // rotate: `${index * (12 + 10)}deg`,
     zIndex: length - index,
     justifyContent: "center",
     alignItems: "center",

@@ -29,7 +29,7 @@ const Header = ({cardState,setcardState,handelDiv}) => {
         <ul className="flex gap-10">
           <li><Link   onClick={()=>{
                         window.open("https://plus.efxdata.com/login")
-                      }} to="/home"><Text size="md" style={{ fontWeight: "bold", color: "orange" }} className="tracking-[2px]">eFX Plus</Text></Link></li>
+                      }} to=""><Text size="md" style={{ fontWeight: "bold", color: "orange" }} className="tracking-[2px]">eFX Plus</Text></Link></li>
           <li><Link onClick={()=>{
                       handelDiv()
                       setcardState(0)
