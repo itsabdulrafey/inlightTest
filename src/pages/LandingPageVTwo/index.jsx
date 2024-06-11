@@ -597,14 +597,16 @@ export default function LandingPageVTwoPage() {
                 <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
                   <Img src="images/img_image_5.png" alt="imagefive_one" className="w-[11%] md:w-full object-cover" />
                   <Img src="images/img_image_6.png" alt="imagesix_one" className="w-[11%] md:w-full object-cover" />
-                  <Button
+                  <Img src="images/cuneus logo word (transparent).png" alt="imagesix_one" className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[30px]" />
+
+                  {/* <Button
                     color="indigo_A700"
                     size="2xl"
-                    leftIcon={<Img src="images/img_image_8.png" alt="image 8" className="w-[42px] h-[40px]" />}
+                    leftIcon={<Img src="images/cuneus logo word (transparent).png" alt="image 8" className="w-[42px] h-[40px]" />}
                     className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[60px]"
                   >
                     Cuneus
-                  </Button>
+                  </Button> */}
                   <Img src="images/img_image_7.png" alt="imageseven_one" className="w-[11%] md:w-full object-cover" />
                   <Img src="images/img_image_4.png" alt="imagefour_one" className="w-[11%] md:w-full object-cover" />
                 </div>
