@@ -60,7 +60,7 @@ export default function LandingPageVTwoPage() {
                       Secure Your One-Time Purchase Today{" "}
                     </Text>
                     <Heading size="6xl" as="h1">
-                      Explore Premium Market Insights with eFXData
+                      Explore Premium Market Insights with eFX Data
                     </Heading>
                   </div>
                 </div>
