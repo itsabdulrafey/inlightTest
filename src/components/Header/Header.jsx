@@ -50,7 +50,7 @@ const Header = ({cardState,setcardState,handelDiv}) => {
       </nav>
       <div className="flex justify-between items-center w-[20%] sm:w-full gap-5">
         <Link 
-          to="Registeration"
+          to=""
           onClick={() => {
             window.open("https://plus.efxdata.com/login")
           }}

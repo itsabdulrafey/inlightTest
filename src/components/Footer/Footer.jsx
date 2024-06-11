@@ -24,11 +24,11 @@ const Footer = () => {
     <footer className="flex justify-center items-center pt-11 md:pt-5 bg-black-900">
             <div className="flex justify-center w-[97%] md:w-full mt-4 md:p-5">
               <div className="flex flex-col w-full gap-[72px] md:gap-[54px] sm:gap-9">
-                <div className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1260px]">
+                <div  className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1260px]">
                   <Heading size="5xl" as="h1" className="tracking-[8.00px]">
-                    eFX PLUS
+                    eFX Plus
                   </Heading>
-                  <Button shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[183px]">
+                  <Button shape="round" style={{backgroundColor:"white",color:"black"}}  className="sm:px-5 tracking-[3.20px] uppercase min-w-[183px]">
                     Contact us
                   </Button>
                 </div>

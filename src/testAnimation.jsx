@@ -249,7 +249,7 @@ const CardContainer = ({ setcardState, cardState }) => {
                           <Text
                             size="xl"
                             as="p"
-                            className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px] uppercase"
+                            className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
                           >
                             <span className="text-black-900">
                               {cardsData[cardState]?.data?.heading1}
