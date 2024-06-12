@@ -13,13 +13,15 @@ export default function LandingPageVTwoPage() {
       animateDivRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
-  useEffect(() => {
-    const container = document.getElementById("cardContainer");
-    container.addEventListener("wheel", handelDiv);
+  // useEffect(() => {
+  //   const container = document.getElementById("cardContainer");
+  //   container.addEventListener("wheel", handelDiv);
 
-    // Clean up the event listener when the component unmounts
-    return () => container.removeEventListener("wheel", handelDiv);
-  }, []);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     container.removeEventListener("wheel", handelDiv);
+  //   };
+  // }, []);
   return (
     <>
       <Helmet>
@@ -42,7 +44,7 @@ export default function LandingPageVTwoPage() {
             </div>
           </div>
         </header> */}
-       <Header/>
+       <Header handelDiv={handelDiv} cardState={cardState} setcardState={setcardState} />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
@@ -58,7 +60,7 @@ export default function LandingPageVTwoPage() {
                       Secure Your One-Time Purchase Today{" "}
                     </Text>
                     <Heading size="6xl" as="h1">
-                      Explore Premium Market Insights with eFXData
+                      Explore Premium Market Insights with eFX Data
                     </Heading>
                   </div>
                 </div>
@@ -73,7 +75,7 @@ export default function LandingPageVTwoPage() {
               </div>
             </div>
             <div className="flex flex-col gap-[54px] sm:gap-[27px]">
-              <div className="flex flex-col gap-[43px] p-[22px] sm:p-5 bg-white-A700">
+              {/* <div className="flex flex-col gap-[43px] p-[22px] sm:p-5 bg-white-A700">
                 <div className="w-full mt-[5px] mx-auto max-w-[1302px]">
                   <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-between",alignItems:"center"}} >
                     <Button
@@ -88,7 +90,8 @@ export default function LandingPageVTwoPage() {
                     </Button>
                     <Button onClick={()=>{
                       handelDiv()
-                      setcardState(0)}
+                      setcardState(0)
+                    }
                       } size="md" variant="outline" className="sm:px-5 tracking-[4.00px] min-w-[220px] rounded-md">
                       eFX Plus HD
                     </Button>
@@ -519,21 +522,16 @@ export default function LandingPageVTwoPage() {
                     </Button>
                   </div>
                 </div>
-              </div>
-              <div ref={animateDivRef} className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
+              </div> */}
+              <div ref={animateDivRef} style={{paddingTop:120}} className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
                 
                 <Text  size="xl" as="p" className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]">
                   eFX carries the most comprehensive Big-Data streams in FX consisting of:
                 </Text>
                 <div   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
                
-
-
-
-
-
-
-      <CardContainer setcardState={setcardState} cardState={cardState}/>
+  
+      <CardContainer  setcardState={setcardState} cardState={cardState}/>
 
 
 
@@ -542,6 +540,7 @@ export default function LandingPageVTwoPage() {
 
 
               </div>
+              
               <div style={{marginTop:200}} className="flex flex-col w-full mx-auto md:p-5 max-w-[1080px]">
                 <div className="flex flex-col items-start gap-[22px]">
                   <Text size="xl" as="p" className="!text-blue_gray-400 tracking-[0.96px]">
@@ -599,14 +598,16 @@ export default function LandingPageVTwoPage() {
                 <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
                   <Img src="images/img_image_5.png" alt="imagefive_one" className="w-[11%] md:w-full object-cover" />
                   <Img src="images/img_image_6.png" alt="imagesix_one" className="w-[11%] md:w-full object-cover" />
-                  <Button
+                  <Img src="images/cuneus logo word (transparent).png" alt="imagesix_one" className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[30px]" />
+
+                  {/* <Button
                     color="indigo_A700"
                     size="2xl"
-                    leftIcon={<Img src="images/img_image_8.png" alt="image 8" className="w-[42px] h-[40px]" />}
+                    leftIcon={<Img src="images/cuneus logo word (transparent).png" alt="image 8" className="w-[42px] h-[40px]" />}
                     className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[60px]"
                   >
                     Cuneus
-                  </Button>
+                  </Button> */}
                   <Img src="images/img_image_7.png" alt="imageseven_one" className="w-[11%] md:w-full object-cover" />
                   <Img src="images/img_image_4.png" alt="imagefour_one" className="w-[11%] md:w-full object-cover" />
                 </div>
