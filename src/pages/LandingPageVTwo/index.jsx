@@ -13,15 +13,15 @@ export default function LandingPageVTwoPage() {
       animateDivRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
-  useEffect(() => {
-    const container = document.getElementById("cardContainer");
-    container.addEventListener("wheel", handelDiv);
+  // useEffect(() => {
+  //   const container = document.getElementById("cardContainer");
+  //   container.addEventListener("wheel", handelDiv);
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      container.removeEventListener("wheel", handelDiv);
-    };
-  }, []);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     container.removeEventListener("wheel", handelDiv);
+  //   };
+  // }, []);
   return (
     <>
       <Helmet>
@@ -530,8 +530,8 @@ export default function LandingPageVTwoPage() {
                 </Text>
                 <div   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
                
-
-      <CardContainer setcardState={setcardState} cardState={cardState}/>
+  
+      <CardContainer  setcardState={setcardState} cardState={cardState}/>
 
 
 
@@ -540,6 +540,7 @@ export default function LandingPageVTwoPage() {
 
 
               </div>
+              
               <div style={{marginTop:200}} className="flex flex-col w-full mx-auto md:p-5 max-w-[1080px]">
                 <div className="flex flex-col items-start gap-[22px]">
                   <Text size="xl" as="p" className="!text-blue_gray-400 tracking-[0.96px]">

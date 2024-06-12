@@ -97,7 +97,6 @@ const cardContainerStyle = {
 };
 
 const CardContainer = ({ setcardState, cardState }) => {
-  const animateDivRef = useRef(null);
 
   useEffect(() => {}, []);
   console.log("🚀 ~ CardContainer ~ cardState:", cardState);
@@ -202,7 +201,7 @@ const CardContainer = ({ setcardState, cardState }) => {
           height: 300,
         }}
       >
-        <div style={{display:"flex" ,width:"100%", flexDirection:"column" , gap:"1rem"}}>
+        <div  style={{display:"flex" ,width:"100%", flexDirection:"column" , gap:"1rem"}}>
         <div style={{ color: "green", position: "relative" }}>
           <div
             style={{
