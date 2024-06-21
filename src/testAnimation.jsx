@@ -5,6 +5,9 @@ import imagess from ".././src/assets/images/image 3.svg";
 import images2 from ".././src/assets/images/shutterstock_2349592357 1 (1).svg";
 import images3 from ".././src/assets/images/shutterstock_1890281956 1.svg";
 import images4 from ".././src/assets/images/shutterstock_9928186 1.svg";
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const cardsData = [
   {
     id: 0,
@@ -96,7 +99,8 @@ const cardContainerStyle = {
   borderRadius: 3,
 };
 
-const CardContainer = ({ setcardState, cardState }) => {
+const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
+  const animateDivRef = useRef(null);
 
   useEffect(() => {}, []);
   console.log("🚀 ~ CardContainer ~ cardState:", cardState);
@@ -193,135 +197,153 @@ const CardContainer = ({ setcardState, cardState }) => {
 
   return (
     <>
+     <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        height: 400,
+        position: "relative"
+      }}
+    >
+      <FontAwesomeIcon
+        icon={faChevronLeft}
+        style={{ cursor: 'pointer', zIndex: 1000,fontSize:25 }}
+        onClick={() => {
+          cardState > 0 ? setcardState(cardState - 1) : setcardState(cardsData.length - 1);
+        }}
+      />
+
       <div
         style={{
-          width: "100%",
+          width: "90%",
           display: "flex",
           justifyContent: "space-evenly",
-          height: 300,
+          height: "100%",
         }}
       >
-        <div  style={{display:"flex" ,width:"100%", flexDirection:"column" , gap:"1rem"}}>
-        <div style={{ color: "green", position: "relative" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "4rem",
-              width: "100%",
-              flexWrap: "wrap",
-            }}
-          >
+        <div style={{ display: "flex", width: "100%", flexDirection: "column", gap: "1rem" }}>
+          <div style={{ color: "green", position: "relative" }}>
             <div
-              style={{ color: "green", width: "100%", position: "relative" }}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: "4rem",
+                width: "100%",
+                flexWrap: "wrap",
+              }}
             >
-              <AnimatePresence>
-                {activeCards.map((card, index) => (
-                  <motion.div
-                    key={card.id}
-                    custom={cardState}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={cardVariants}
-                    style={cardStyle1}
-                    onClick={() => {
-                      cardState >= cardsData.length - 1
-                        ? setcardState(0)
-                        : setcardState(cardState + 1);
-                    }}
-                  >
-                    <span style={{ backgroundColor: "white" }}>
-                      {/* {`======>${cardState}`} */}
-                    </span>
-                    {/* Card {card.id + 1} */}
-                    <div
-                      onClick={handleCardClick}
-                      style={{
-                        backgroundColor: "white",
-                        maxWidth: 800,
-                        height: 700,
+              <div style={{ color: "green", width: "100%", position: "relative" }}>
+                <AnimatePresence>
+                  {activeCards.map((card, index) => (
+                    <motion.div
+                      key={card.id}
+                      custom={cardState}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={cardVariants}
+                      style={cardStyle1}
+                      onClick={() => {
+                        cardState >= cardsData.length - 1
+                          ? setcardState(0)
+                          : setcardState(cardState + 1);
                       }}
                     >
-                      <div className="flex justify-between gap-5">
-                        <div className="flex">
+                      <span style={{ backgroundColor: "white" }}>
+                        {/* {`======>${cardState}`} */}
+                      </span>
+                      {/* Card {card.id + 1} */}
+                      <div
+                        onClick={handleCardClick}
+                        style={{
+                          backgroundColor: "white",
+                          maxWidth: 800,
+                          height: 700,
+                        }}
+                      >
+                        <div className="flex justify-between gap-5">
+                          <div className="flex">
+                            <Text
+                              size="xl"
+                              as="p"
+                              className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
+                            >
+                              <span className="text-black-900">
+                                {cardsData[cardState]?.data?.heading1}
+                              </span>
+                              <span className="text-black-900 font-bold">
+                                {cardsData[cardState]?.data?.heading2}
+                              </span>
+                            </Text>
+                          </div>
+                          <div className="flex py-[13px]">
+                            <Heading
+                              as="h5"
+                              className="!text-black-900 tracking-[4.00px] uppercase"
+                            >
+                              {cardsData[cardState]?.data?.heading3}
+                            </Heading>
+                          </div>
+                        </div>
+                        <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
                           <Text
-                            size="xl"
+                            size="s"
                             as="p"
-                            className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
+                            className="!text-blue_gray-400 tracking-[3.20px]"
                           >
-                            <span className="text-black-900">
-                              {cardsData[cardState]?.data?.heading1}
-                            </span>
-                            <span className="text-black-900 font-bold">
-                              {cardsData[cardState]?.data?.heading2}
-                            </span>
+                            {cardsData[cardState]?.data?.heading4}
+                          </Text>
+                          <Text
+                            size="s"
+                            as="p"
+                            className="!text-blue_gray-400 tracking-[3.20px]"
+                          >
+                            PRE-ORDER to lock in rate*
                           </Text>
                         </div>
-                        <div className="flex py-[13px]">
-                          <Heading
-                            as="h5"
-                            className="!text-black-900 tracking-[4.00px] uppercase"
-                          >
-                            {cardsData[cardState]?.data?.heading3}
-                          </Heading>
-                        </div>
-                      </div>
-                      <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
                         <Text
-                          size="s"
+                          size="md"
                           as="p"
-                          className="!text-blue_gray-400 tracking-[3.20px]"
+                          className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
                         >
-                          {cardsData[cardState]?.data?.heading4}
-                        </Text>
-                        <Text
-                          size="s"
-                          as="p"
-                          className="!text-blue_gray-400 tracking-[3.20px]"
-                        >
-                          PRE-ORDER to lock in rate*
+                          {cardsData[cardState]?.data?.paragraphs?.map(
+                            (data, index) => (
+                              <React.Fragment key={index}>
+                                {data}
+                                <br />
+                                <br />
+                              </React.Fragment>
+                            )
+                          )}
                         </Text>
                       </div>
-                      <Text
-                        size="md"
-                        as="p"
-                        className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
-                      >
-                        {cardsData[cardState]?.data?.paragraphs?.map(
-                          (data, index) => (
-                            <React.Fragment key={index}>
-                              {data}
-                              <br />
-                              <br />
-                            </React.Fragment>
-                          )
-                        )}
-                      </Text>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{ position: "relative", top: 400, zIndex: 9999 }}>
+              <Button
+                variant="outline"
+                shape="round"
+                className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
+                onClick={() => {
+                  handelDivPlacePreOrder()
+                }}
+              >
+                Place Pre-Order
+              </Button>
+              <Heading
+                size="lg"
+                as="h6"
+                className="!text-gray-800 tracking-[3.20px] uppercase"
+              >
+                JOIN WAITLIST  →
+              </Heading>
             </div>
           </div>
-          <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{position:"relative",top:400,zIndex:9999}}>
-          <Button
-            variant="outline"
-            shape="round"
-            className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
-          >
-            Place Pre-Order
-          </Button>
-          <Heading
-            size="lg"
-            as="h6"
-            className="!text-gray-800 tracking-[3.20px] uppercase"
-          >
-            JOIN WAITLIST  →
-          </Heading>
-        </div>
-        </div>
-      
         </div>
         <div
           id="cardContainer"
@@ -336,7 +358,6 @@ const CardContainer = ({ setcardState, cardState }) => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                // alt="shutterstock"
                 variants={cardVariants}
                 style={cardStyle(
                   index,
@@ -350,33 +371,21 @@ const CardContainer = ({ setcardState, cardState }) => {
                     : setcardState(cardState + 1);
                 }}
               >
-                {/* Card {card.id + 1} */}
-                {/* <div className="h-[683px] w-[683px] md:h-auto p-5 rotate-[-30deg] bg-blue_gray-600 relative rounded-[16px]"> */}
-
-                <Img src={cardsData[cardState].image} alt="shutterstock" />
-                {/* <div className="h-[640px] w-[640px] md:h-auto left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 rotate-[-20deg] bg-gray-800 absolute rounded-[16px]">
-                        <Img
-                          src="images/img_shutterstock_1890281956.png"
-                          alt="shutterstock"
-                          className="h-[576px] w-[576px] object-cover"
-                        />
-                        <div className="h-[579px] w-[579px] md:h-auto left-0 bottom-0 right-0 top-0 p-7 m-auto sm:p-5 rotate-[-10deg] bg-gray-900 absolute rounded-[16px]">
-                          <Img
-                            src="images/img_shutterstock_2349592357.png"
-                            alt="shutterstock"
-                            className="h-[521px] w-[521px] object-cover"
-                          />
-                          <div className="w-[96%] h-max left-0 bottom-0 right-0 top-0 p-[25px] m-auto sm:p-5 bg-white-A700 shadow-lg absolute rounded-[16px]">
-                            <Img src="images/img_image_3.png" alt="imagethree_one" className="w-[450px] object-cover" />
-                          </div>
-                        </div>
-                      </div> */}
-                {/* </div> */}
+                <Img src={cardsData[cardState].image} />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
       </div>
+
+      <FontAwesomeIcon
+        icon={faChevronRight}
+        style={{ cursor: 'pointer', zIndex: 1000,fontSize:25 }}
+        onClick={() => {
+          cardState < cardsData.length - 1 ? setcardState(cardState + 1) : setcardState(0);
+        }}
+      />
+    </div>
     </>
   );
 };

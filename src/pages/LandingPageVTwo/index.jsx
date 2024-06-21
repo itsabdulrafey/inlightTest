@@ -6,13 +6,20 @@ import Footer from "components/Footer/Footer";
 import CardContainer from "testAnimation";
 
 export default function LandingPageVTwoPage() {
-  const [cardState,setcardState]=useState(0)
+  const [cardState, setcardState] = useState(0);
   const animateDivRef = useRef(null);
+  const placePreOrder = useRef(null);
+
   const handelDiv = () => {
-    if(animateDivRef.current){
-      animateDivRef.current.scrollIntoView({ behavior: 'smooth' })
+    if (animateDivRef.current) {
+      animateDivRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
+  const handelDivPlacePreOrder = () => {
+    if (placePreOrder.current) {
+      placePreOrder.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   // useEffect(() => {
   //   const container = document.getElementById("cardContainer");
   //   container.addEventListener("wheel", handelDiv);
@@ -26,7 +33,10 @@ export default function LandingPageVTwoPage() {
     <>
       <Helmet>
         <title>Itsabdulrafey's Application4</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center w-full pt-[22px] gap-3.5 sm:pt-5 bg-white-A700">
         {/* <header className="w-[88%] md:w-full md:p-5">
@@ -44,7 +54,11 @@ export default function LandingPageVTwoPage() {
             </div>
           </div>
         </header> */}
-       <Header handelDiv={handelDiv} cardState={cardState} setcardState={setcardState} />
+        <Header
+          handelDiv={handelDiv}
+          cardState={cardState}
+          setcardState={setcardState}
+        />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
@@ -65,7 +79,13 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-between items-center ml-[732px] gap-5 md:ml-0">
-                  <Button shape="round" className="sm:px-5 tracking-[1.60px] uppercase shadow-xs min-w-[228px]">
+                  <Button
+                    shape="round"
+                    className="sm:px-5 tracking-[1.60px] uppercase shadow-xs min-w-[228px]"
+                    onClick={() => {
+                      handelDivPlacePreOrder();
+                    }}
+                  >
                     Place Pre-Order
                   </Button>
                   <Heading size="lg" as="h2" className="tracking-[1.60px]">
@@ -523,82 +543,358 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
               </div> */}
-              <div ref={animateDivRef} style={{paddingTop:120}} className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700">
-                
-                <Text  size="xl" as="p" className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]">
-                  eFX carries the most comprehensive Big-Data streams in FX consisting of:
+              <div
+                ref={animateDivRef}
+                style={{ paddingTop: 120 }}
+                className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
+              >
+                <Text
+                  size="xl"
+                  as="p"
+                  className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]"
+                >
+                  eFX carries the most comprehensive Big-Data streams in FX
+                  consisting of:
                 </Text>
-                <div   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
-               
-  
-      <CardContainer  setcardState={setcardState} cardState={cardState}/>
-
-
-
-
+                <div className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
+                  <CardContainer
+                    setcardState={setcardState}
+                    cardState={cardState}
+                    handelDivPlacePreOrder={handelDivPlacePreOrder}
+                  />
                 </div>
-
-
               </div>
+             
+                <div  ref={placePreOrder}    style={{
+                  marginTop: 60,
+                  display: "flex",
+                  flexDirection: "column",
+                  paddingTop:50
+                }}>
+                <div style={{color:"#A46A1F",width:"100%",display:"flex",fontSize:27,justifyContent:"center",alignItems:"center",fontWeight:"bold"}}>
+                  <span>
+                    PRE-ORDER
+                  </span>
+                </div>
+              <div
               
-              <div style={{marginTop:200}} className="flex flex-col w-full mx-auto md:p-5 max-w-[1080px]">
-                <div className="flex flex-col items-start gap-[22px]">
-                  <Text size="xl" as="p" className="!text-blue_gray-400 tracking-[0.96px]">
-                    You will be invited when your eFX package is ready for release
-                  </Text>
-                  <Text size="lg" as="p" className="!text-black-900 tracking-[0.88px] leading-[42px]">
-                    Prices are estimates, pre-orders will guarantee no higher monthly charge, at service initiation, and
-                    may qualify for lower prices.
-                  </Text>
-                </div>
-                <div className="flex w-[39%] md:w-full mt-12">
-                  <div className="flex flex-col items-start w-full gap-[29px]">
-                    <div className="flex self-stretch justify-between items-start gap-5">
-                      <div className="flex flex-col gap-5">
-                        <a href="#">
-                          <Text size="lg" as="p" className="!text-black-900 tracking-[4.40px] uppercase">
-                            Due Today
-                          </Text>
-                        </a>
-                        <Text size="s" as="p" className="!text-blue_gray-400 tracking-[3.20px]">
-                          Fully Refundable
+              style={{
+               
+                display: "flex",
+                flexDirection: "row",
+              }}
+                className="flex flex-col w-full mx-auto md:p-5 max-w-[1080px]"
+              >
+                 
+                <div style={{margin:50}}>
+                     <div className="flex flex-col items-start gap-[22px]" >
+                        <Text
+                          size="xl"
+                          as="p"
+                          style={{color:"black",fontWeight:"bold"}}
+                        >
+                          Pre-Order Your eFX Package Today
                         </Text>
+                    
                       </div>
-                      <Heading size="3xl" as="h5" className="!text-black-900 tracking-[4.40px] uppercase">
-                        US$ 150
-                      </Heading>
-                    </div>
-                    <Button shape="round" className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]">
-                      Place Pre-Order
-                    </Button>
-                  </div>
-                </div>
-                <div className="flex mt-[17px]">
-                  <div className="flex">
-                    <div className="flex">
-                      <div className="flex">
-                        <Heading size="xl" as="h6" className="!text-blue_gray-400 tracking-[0.90px]">
-                          <span className="text-blue_gray-400 font-normal">By placing this order, I agree to the </span>
-                          <span className="text-blue_gray-400 font-normal">eFX Pre-Order Agreement</span>
-                          <span className="text-blue_gray-400 font-normal">, the </span>
-                          <span className="text-blue_gray-400 font-normal">eFX EULA</span>
-                          <span className="text-blue_gray-400 font-normal"> and the </span>
-                          <span className="text-blue_gray-400 font-normal">Privacy Policy</span>
-                          <span className="text-blue_gray-400 font-normal">.</span>
-                        </Heading>
+                      <div className="flex flex-col items-start gap-[22px]">
+                        <Text
+                          size="xl"
+                          as="p"
+                          style={{fontSize:15}}
+                          className="!text-blue_gray-400 tracking-[0.96px]"
+                          
+                        >
+                          You will be invited when your eFX package is ready for
+                          release
+                        </Text>
+            
                       </div>
-                    </div>
-                  </div>
+                      <div className="flex flex-col items-start gap-[22px]">
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                          
+                        >
+                          Prices are estimates.
+                        </Text>
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                         Pre-orders guarantee
+                        </Text>
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                          No higher monthly charge at service initiation.
+                        </Text>
+                        <Text
+                          
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                          Pre-orders may qualify for lower prices.
+                        </Text>
+            
+                      </div>
+                      <div className="flex w-[100%] md:w-full mt-12">
+                        <div className="flex flex-col items-start w-full gap-[29px]">
+                          <div className="flex self-stretch justify-between items-start gap-5">
+                            <div className="flex flex-col gap-5">
+                              <a href="#">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-black-900 tracking-[4.40px] uppercase"
+                                >
+                                  Due Today
+                                </Text>
+                              </a>
+                              <Text
+                                size="s"
+                                as="p"
+                                className="!text-blue_gray-400 tracking-[3.20px]"
+                              >
+                                Fully Refundable
+                              </Text>
+                            </div>
+                            <Heading
+                            size="4xl"
+                            as="h3"
+                            className="!text-black-900 tracking-[4.40px] uppercase"
+                            >
+                              US$ 150
+                            </Heading>
+                          </div>
+                          <div style={{width:"100%",display:"flex",justifyContent:"center"}}>
+                          <Button
+                            shape="round"
+                            className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
+                          >
+                            Place Pre-Order
+                          </Button>
+                          </div>
+                        
+                        </div>
+                      </div>
+                      <div className="flex mt-[17px]">
+                        <div className="flex">
+                          <div className="flex">
+                            <div >
+                              <div>
+                              <Heading
+                                size="xl"
+                                as="h6"
+                                // style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"100%"}}
+                                className="!text-blue_gray-400 tracking-[0.90px]"
+                              >
+                                <span className="text-blue_gray-400 font-normal">
+                                  By placing this order, I agree to the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  eFX Pre-Order Agreement
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  , the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  eFX EULA
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                   and the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  Privacy Policy
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  .
+                                </span>
+                              </Heading>
+                              </div>
+                            
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
+               
+                <div style={{margin:50}}>
+                     <div className="flex flex-col items-start gap-[22px]" >
+                        <Text
+                          size="xl"
+                          as="p"
+                          style={{color:"black",fontWeight:"bold"}}
+                        >
+                          Pre-Order Your eFX Package Today
+                        </Text>
+                    
+                      </div>
+                      <div className="flex flex-col items-start gap-[22px]">
+                        <Text
+                          size="xl"
+                          as="p"
+                          style={{fontSize:15}}
+                          className="!text-blue_gray-400 tracking-[0.96px]"
+                          
+                        >
+                          You will be invited when your eFX package is ready for
+                          release
+                        </Text>
+            
+                      </div>
+                      <div className="flex flex-col items-start gap-[22px]">
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                          
+                        >
+                          Prices are estimates.
+                        </Text>
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                         Pre-orders guarantee
+                        </Text>
+                        <Text
+                        
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                          No higher monthly charge at service initiation.
+                        </Text>
+                        <Text
+                          
+                          style={{fontSize:20,color:"black"}}
+                          className="tracking-[0.96px]"
+                          
+                        >
+                          Pre-orders may qualify for lower prices.
+                        </Text>
+            
+                      </div>
+                      <div className="flex w-[100%] md:w-full mt-12">
+                        <div className="flex flex-col items-start w-full gap-[29px]">
+                          <div className="flex self-stretch justify-between items-start gap-5">
+                            <div className="flex flex-col gap-5">
+                              <a href="#">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-black-900 tracking-[4.40px] uppercase"
+                                >
+                                  Due Today
+                                </Text>
+                              </a>
+                              <Text
+                                size="s"
+                                as="p"
+                                className="!text-blue_gray-400 tracking-[3.20px]"
+                              >
+                                Fully Refundable
+                              </Text>
+                            </div>
+                            <Heading
+                              size="4xl"
+                              as="h3"
+                              className="!text-black-900 tracking-[4.40px] uppercase"
+                            >
+                              US$ 250
+                            </Heading>
+                          </div>
+                          <div style={{width:"100%",display:"flex",justifyContent:"center"}}>
+                          <Button
+                            shape="round"
+                            className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
+                          >
+                            Place Pre-Order
+                          </Button>
+                          </div>
+                        
+                        </div>
+                      </div>
+                      <div className="flex mt-[17px]">
+                        <div className="flex">
+                          <div className="flex">
+                            <div >
+                              <div>
+                              <Heading
+                                size="xl"
+                                as="h6"
+                                // style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"100%"}}
+                                className="!text-blue_gray-400 tracking-[0.90px]"
+                              >
+                                <span className="text-blue_gray-400 font-normal">
+                                  By placing this order, I agree to the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  eFX Pre-Order Agreement
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  , the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  eFX EULA
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                   and the 
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  Privacy Policy
+                                </span>
+                                <span className="text-blue_gray-400 font-normal">
+                                  .
+                                </span>
+                              </Heading>
+                              </div>
+                            
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
               </div>
               <div className="flex flex-col items-center w-full gap-[57px] mx-auto md:p-5 sm:gap-7 max-w-[1080px]">
-                <Heading size="4xl" as="h2" className="!text-lime-900 tracking-[1.60px] uppercase">
+                <Heading
+                  size="4xl"
+                  as="h2"
+                  className="!text-lime-900 tracking-[1.60px] uppercase"
+                >
                   Our Industry Partners
                 </Heading>
                 <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
-                  <Img src="images/img_image_5.png" alt="imagefive_one" className="w-[11%] md:w-full object-cover" />
-                  <Img src="images/img_image_6.png" alt="imagesix_one" className="w-[11%] md:w-full object-cover" />
-                  <Img src="images/cuneus logo word (transparent).png" alt="imagesix_one" className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[30px]" />
+                  <Img
+                    src="images/img_image_5.png"
+                    alt="imagefive_one"
+                    className="w-[11%] md:w-full object-cover"
+                  />
+                  <Img
+                    src="images/img_image_6.png"
+                    alt="imagesix_one"
+                    className="w-[11%] md:w-full object-cover"
+                  />
+                  <Img
+                    src="images/cuneus logo word (transparent).png"
+                    alt="imagesix_one"
+                    className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[30px]"
+                  />
 
                   {/* <Button
                     color="indigo_A700"
@@ -608,8 +904,16 @@ export default function LandingPageVTwoPage() {
                   >
                     Cuneus
                   </Button> */}
-                  <Img src="images/img_image_7.png" alt="imageseven_one" className="w-[11%] md:w-full object-cover" />
-                  <Img src="images/img_image_4.png" alt="imagefour_one" className="w-[11%] md:w-full object-cover" />
+                  <Img
+                    src="images/img_image_7.png"
+                    alt="imageseven_one"
+                    className="w-[11%] md:w-full object-cover"
+                  />
+                  <Img
+                    src="images/img_image_4.png"
+                    alt="imagefour_one"
+                    className="w-[11%] md:w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -687,7 +991,7 @@ export default function LandingPageVTwoPage() {
               </div>
             </div>
           </footer> */}
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </>
