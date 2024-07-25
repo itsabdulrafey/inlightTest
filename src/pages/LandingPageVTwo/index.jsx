@@ -7,7 +7,7 @@ import CardContainer from "testAnimation";
 import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import { Typography, List, ListItem, ListItemText } from "@mui/material";
-
+import tick from "../../assets/images/tick.png";
 const CustomTab = styled(Tab)(({ theme }) => ({
   "&.Mui-selected": {
     color: "green",
@@ -571,7 +571,7 @@ export default function LandingPageVTwoPage() {
                   eFX carries the most comprehensive Big-Data streams in FX
                   consisting of:
                 </Text>
-                <div className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1319px]">
+                <div className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1500px]">
                   <CardContainer
                     setcardState={setcardState}
                     cardState={cardState}
@@ -607,360 +607,378 @@ export default function LandingPageVTwoPage() {
                     display: "flex",
                     flexDirection: "row",
                   }}
-                  className="flex flex-col w-full mx-auto md:p-5 max-w-[1080px]"
+                  className="flex flex-col w-full mx-auto md:p-5 max-w-[1318px]"
                 >
                   <div style={{ margin: 50 }}>
                     <div className="flex flex-col items-start gap-[22px]">
                       <Text
                         size="xl"
                         as="p"
-                        style={{ color: "black", fontWeight: "bold" }}
-                      >
-                        Pre-Order Your eFX Package Today
-                      </Text>
-                    </div>
-                    <div className="flex flex-col items-start gap-[22px]">
-                      <Text
-                        size="xl"
-                        as="p"
-                        style={{ fontSize: 15 }}
-                        className="!text-blue_gray-400 tracking-[0.96px]"
-                      >
-                        You will be invited when your eFX package is ready for
-                        release
-                      </Text>
-                    </div>
-                    <div className="flex flex-col items-start gap-[22px]">
-                      <Text
-                        size="xl"
-                        as="p"
-                        style={{ color: "black", fontWeight: "bold" }}
-                      >
-                        Starting at est. $199*
-                      </Text>
-                    </div>
-                    <div className="flex flex-col items-start gap-[22px]">
-                      <Text
-                        size="xl"
-                        as="p"
-                        style={{ fontSize: 15 }}
-                        className="!text-blue_gray-400 tracking-[0.96px]"
-                      >
-                        *Prices are estimates
-                      </Text>
-                    </div>
-
-                    <div>
-                      <AppBar
-                        position="static"
-                        color="default"
-                        style={{ boxShadow: "none", background: "none" }}
-                      >
-                        <Tabs
-                          value={value}
-                          onChange={handleChange}
-                          textColor="primary"
-                          centered
-                          sx={{
-                            "& .MuiTabs-indicator": {
-                              backgroundColor: "green",
-                            },
-                            "& .MuiTabs-flexContainer": {
-                              justifyContent: "flex-start",
-                            },
-                          }}
-                          style={{
-                            minHeight: "unset",
-                          }}
-                        >
-                          <CustomTab
-                            label={
-                              <>
-                                <Typography
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    fontWeight: "bold",
-                                    color: "black",
-                                  }}
-                                  variant="body2"
-                                >
-                                  $199*
-                                </Typography>
-                                <Typography variant="body1">
-                                  eFX Plus
-                                </Typography>
-                              </>
-                            }
-                          />
-                          <CustomTab
-                            label={
-                              <>
-                                <Typography
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    fontWeight: "bold",
-                                    color: "black",
-                                  }}
-                                  variant="body2"
-                                >
-                                  $299*
-                                </Typography>
-                                <Typography variant="body1">
-                                  eFX Plus HD
-                                </Typography>
-                              </>
-                            }
-                          />
-                          <CustomTab
-                            label={
-                              <>
-                                <Typography
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    fontWeight: "bold",
-                                    color: "black",
-                                  }}
-                                  variant="body2"
-                                >
-                                  $399*
-                                </Typography>
-                                <Typography variant="body1">
-                                  eFX Edge
-                                </Typography>
-                              </>
-                            }
-                          />
-                          <CustomTab
-                            label={
-                              <>
-                                <Typography
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    fontWeight: "bold",
-                                    color: "black",
-                                  }}
-                                  variant="body2"
-                                >
-                                  $499*
-                                </Typography>
-                                <Typography>eFX Alpha</Typography>
-                              </>
-                            }
-                          />
-                          <CustomTab
-                            label={
-                              <>
-                                <Typography
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    fontWeight: "bold",
-                                    color: "black",
-                                  }}
-                                  variant="body2"
-                                >
-                                  $899*
-                                </Typography>
-                                <Typography variant="body1">
-                                  eFX Apex
-                                </Typography>
-                              </>
-                            }
-                          />
-                        </Tabs>
-                      </AppBar>
-                      {/* {value === 0 && (
-        <Box p={3}>
-          <Typography>eFX Plus content</Typography>
-        </Box>
-      )}
-      {value === 1 && (
-        <Box p={3}>
-          <Typography>eFX Plus HD content</Typography>
-        </Box>
-      )}
-      {value === 2 && (
-        <Box p={3}>
-          <Typography>eFX Edge content</Typography>
-        </Box>
-      )}
-      {value === 3 && (
-        <Box p={3}>
-          <Typography>eFX Alpha content</Typography>
-        </Box>
-      )}
-      {value === 4 && (
-        <Box p={3}>
-          <Typography>eFX Apex content</Typography>
-        </Box>
-      )} */}
-                    </div>
-
-                    <div
-                      style={{ marginTop: 30 }}
-                      className="flex flex-col items-start gap-[22px]"
-                    >
-                      <Typography
                         style={{
-                          fontSize: 20,
                           color: "black",
                           fontWeight: "bold",
+                          fontSize: 40,
                         }}
-                        className="tracking-[0.96px]"
                       >
-                        Placing and paying the Pre-Order Fee guarantees:
-                      </Typography>
-                      <List style={{ paddingLeft: 20 }}>
-                        <ListItem>
-                          <ListItemText
-                            primary="Grant a 25% discount on the final retail prices for continuous subscriptions"
-                            primaryTypographyProps={{
-                              style: {
-                                fontSize: 20,
-                                color: "black",
-                                className: "tracking-[0.96px]",
-                              },
-                            }}
-                          />
-                        </ListItem>
-                        <ListItem>
-                          <ListItemText
-                            primary="First full month's access & Pre-orders guarantee"
-                            primaryTypographyProps={{
-                              style: {
-                                fontSize: 20,
-                                color: "black",
-                                className: "tracking-[0.96px]",
-                              },
-                            }}
-                          />
-                        </ListItem>
-                        <ListItem>
-                          <ListItemText
-                            primary="No higher monthly charge at service initiation."
-                            primaryTypographyProps={{
-                              style: {
-                                fontSize: 20,
-                                color: "black",
-                                className: "tracking-[0.96px]",
-                              },
-                            }}
-                          />
-                        </ListItem>
-                        <ListItem>
-                          <ListItemText
-                            primary="Pre-orders may qualify for lower prices."
-                            primaryTypographyProps={{
-                              style: {
-                                fontSize: 20,
-                                color: "black",
-                                className: "tracking-[0.96px]",
-                              },
-                            }}
-                          />
-                        </ListItem>
-                      </List>
+                        PRE ORDER
+                      </Text>
+                    </div>
+                    <div className="flex flex-col items-start gap-[22px]">
+                      <Text
+                        size="xl"
+                        as="p"
+                        style={{ fontSize: 20 }}
+                        className="!text-blue_gray-400 tracking-[0.96px]"
+                      >
+                        Starting at est. $199 - Prices are estimates
+                      </Text>
                     </div>
 
-                    <div className="flex w-[100%] md:w-full mt-12">
-                      <div className="flex flex-col items-start w-full gap-[29px]">
-                        <div className="flex self-stretch justify-between items-start gap-5">
-                          <div className="flex flex-row gap-5">
-                            <div className="flex flex-col gap-5">
-                              <a href="#">
-                                <Text
-                                  size="lg"
-                                  as="p"
-                                  className="!text-black-900 tracking-[4.40px] uppercase"
-                                >
-                                  Due Today
-                                </Text>
-                              </a>
-                              <Text
-                                size="s"
-                                as="p"
-                                className="!text-blue_gray-400 tracking-[3.20px]"
-                              >
-                                Fully Refundable
-                              </Text>
-                            </div>
-
-                            <Heading
-                              size="4xl"
-                              as="h3"
-                              className="flex flex-row !text-black-900 tracking-[4.40px] uppercase"
-                            >
-                              <span>US</span>
-                              <span style={{ fontSize: 18 }}>250$</span>
-                            </Heading>
-                          </div>
-                        </div>
-                        <div
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            justifyContent: "flex-end",
-                          }}
+                    <div style={{ display: "flex" }}>
+                      <div>
+                        <AppBar
+                          position="static"
+                          color="default"
+                          style={{ boxShadow: "none", background: "none" }}
                         >
-                          <Button
-                            shape="round"
-                            className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
+                          <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            textColor="primary"
+                            orientation="vertical"
+                            sx={{
+                              "& .MuiTabs-indicator": {
+                                display: "none", // Hide the default indicator
+                              },
+                              "& .MuiTabs-flexContainer": {
+                                flexDirection: "column",
+                              },
+                            }}
+                            style={{
+                              minHeight: "unset",
+                            }}
                           >
-                            Place Pre-Order
-                          </Button>
-                        </div>
+                            <CustomTab
+                              label={
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "flex-start",
+                                    borderRight: "3px solid #004D40", // Customize right border color
+                                    borderBottom: "3px solid #004D40", // Customize bottom border color
+                                    padding: "10px",
+                                    margin: "10px 0",
+                                    borderRadius: "4px",
+                                  }}
+                                >
+                                  <Typography
+                                    style={{
+                                      width: "100%",
+                                      display: "flex",
+                                      justifyContent: "flex-end",
+                                      fontWeight: "bold",
+                                      color: "#FF8F00",
+                                    }}
+                                  >
+                                    $299*
+                                  </Typography>
+                                  <Typography
+                                    style={{
+                                      textTransform: "none",
+                                      color: "black",
+                                      fontSize: 20,
+                                    }}
+                                  >
+                                    eFX Plus HD
+                                  </Typography>
+                                </Box>
+                              }
+                            />
+                            <CustomTab
+                              label={
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "flex-start",
+                                    borderRight: "3px solid #004D40", // Customize right border color
+                                    borderBottom: "3px solid #004D40", // Customize bottom border color
+                                    padding: "10px",
+                                    margin: "10px 0",
+                                    borderRadius: "4px",
+                                  }}
+                                >
+                                  <Typography
+                                    style={{
+                                      width: "100%",
+                                      display: "flex",
+                                      justifyContent: "flex-end",
+                                      fontWeight: "bold",
+                                      color: "#FF8F00",
+                                    }}
+                                  >
+                                    $399*
+                                  </Typography>
+                                  <Typography
+                                    style={{
+                                      textTransform: "none",
+                                      color: "black",
+                                      fontSize: 20,
+                                    }}
+                                  >
+                                    eFX Edge
+                                  </Typography>
+                                </Box>
+                              }
+                            />
+                            <CustomTab
+                              label={
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "flex-start",
+                                    borderRight: "3px solid #004D40", // Customize right border color
+                                    borderBottom: "3px solid #004D40", // Customize bottom border color
+                                    padding: "10px",
+                                    margin: "10px 0",
+                                    borderRadius: "4px",
+                                  }}
+                                >
+                                  <Typography
+                                    style={{
+                                      width: "100%",
+                                      display: "flex",
+                                      justifyContent: "flex-end",
+                                      fontWeight: "bold",
+                                      color: "#FF8F00",
+                                    }}
+                                    variant="body2"
+                                  >
+                                    $499*
+                                  </Typography>
+                                  <Typography
+                                    variant="body1"
+                                    style={{
+                                      color: "black",
+                                      fontSize: 20,
+                                      textTransform: "none",
+                                    }}
+                                  >
+                                   eFX Alpha
+                                  </Typography>
+                                </Box>
+                              }
+                            />
+                            <CustomTab
+                              label={
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "flex-start",
+                                    borderRight: "3px solid #004D40", // Customize right border color
+                                    borderBottom: "3px solid #004D40", // Customize bottom border color
+                                    padding: "10px",
+                                    margin: "10px 0",
+                                    borderRadius: "4px",
+                                  }}
+                                >
+                                  <Typography
+                                    style={{
+                                      width: "100%",
+                                      display: "flex",
+                                      justifyContent: "flex-end",
+                                      fontWeight: "bold",
+                                      color: "#FF8F00",
+                                    }}
+                                    variant="body2"
+                                  >
+                                    $899*
+                                  </Typography>
+                                  <Typography
+                                    variant="body1"
+                                    style={{
+                                      textTransform: "none",
+                                      color: "black",
+                                      fontSize: 20,
+                                    }}
+                                  >
+                                    eFX Apex
+                                  </Typography>
+                                </Box>
+                              }
+                            />
+                          </Tabs>
+                        </AppBar>
                       </div>
-                    </div>
-                    <div
-                      style={{ display: "flex", justifyContent: "flex-end" }}
-                      className="flex mt-[17px]"
-                    >
-                      <div
-                        style={{ display: "flex", maxWidth: "30%" }}
-                        className="flex"
-                      >
-                        <div className="flex">
-                          <div>
-                            <div>
-                              <Heading
-                                size="xl"
-                                as="h6"
-                                // style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"100%"}}
-                                className="!text-blue_gray-400 tracking-[0.90px]"
+
+                      <div>
+                        <div
+                          style={{ marginTop: 30 }}
+                          className="flex flex-col items-start gap-[22px]"
+                        >
+                          <Typography
+                            style={{
+                              fontSize: 24,
+                              color: "#4F805D",
+                              fontWeight: "bold",
+                              alignSelf: "center",
+                              textTransform: "uppercase",
+                            }}
+                            className="tracking-[0.96px]"
+                          >
+                            Pre-Ordering guarantees
+                          </Typography>
+                          <List style={{ paddingLeft: 24 }}>
+                            <ListItem
+                              style={{
+                                display: "flex",
+                                alignItems: "flex-start",
+                              }}
+                            >
+                              <img
+                                src={tick}
+                                alt="Tick icon"
+                                style={{ marginTop: 10, marginRight: 10 }}
+                              />
+                              <ListItemText
+                                primary="Grant a 25% discount on the final retail prices for continuous subscriptions"
+                                primaryTypographyProps={{
+                                  style: {
+                                    fontSize: 24,
+                                    color: "black",
+                                    className: "tracking-[0.96px]",
+                                  },
+                                }}
+                              />
+                            </ListItem>
+                            <ListItem
+                              style={{
+                                display: "flex",
+                                alignItems: "flex-start",
+                              }}
+                            >
+                              <img
+                                src={tick}
+                                alt="Tick icon"
+                                style={{ marginTop: 10, marginRight: 10 }}
+                              />
+                              <ListItemText
+                                primary="Full access for the first month"
+                                primaryTypographyProps={{
+                                  style: {
+                                    fontSize: 24,
+                                    color: "black",
+                                    className: "tracking-[0.96px]",
+                                  },
+                                }}
+                              />
+                            </ListItem>
+                            <ListItem
+                              style={{
+                                display: "flex",
+                                alignItems: "flex-start",
+                              }}
+                            >
+                              <img
+                                src={tick}
+                                alt="Tick icon"
+                                style={{ marginTop: 10, marginRight: 10 }}
+                              />
+                              <ListItemText
+                                primary="No higher monthly charge at service initiation."
+                                primaryTypographyProps={{
+                                  style: {
+                                    fontSize: 24,
+                                    color: "black",
+                                    className: "tracking-[0.96px]",
+                                  },
+                                }}
+                              />
+                            </ListItem>
+                            <ListItem
+                              style={{
+                                display: "flex",
+                                alignItems: "flex-start",
+                              }}
+                            >
+                              <img
+                                src={tick}
+                                alt="Tick icon"
+                                style={{ marginTop: 10, marginRight: 10 }}
+                              />
+                              <ListItemText
+                                primary="Pre-orders may qualify for lower prices."
+                                primaryTypographyProps={{
+                                  style: {
+                                    fontSize: 24,
+                                    color: "black",
+                                    className: "tracking-[0.96px]",
+                                  },
+                                }}
+                              />
+                            </ListItem>
+                            <div
+                              style={{
+                                flexDirection: "row",
+                                display: "flex",
+                                justifyContent: "space-between",
+                                height: "100%",
+                                marginTop: 70,
+                              }}
+                              className="flex flex-col items-start w-full gap-[29px]"
+                            >
+                              <div
+                                style={{
+                                  display: "flex",
+                                }}
                               >
-                                <span className="text-blue_gray-400 font-normal">
-                                  By placing this order, I agree to the 
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                  eFX Pre-Order Agreement
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                  , the 
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                  eFX EULA
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                   and the 
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                  Privacy Policy
-                                </span>
-                                <span className="text-blue_gray-400 font-normal">
-                                  .
-                                </span>
-                              </Heading>
+                                <Button
+                                  shape="round"
+                                  className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
+                                >
+                                  Place Pre-Order
+                                </Button>
+                              </div>
+                              <div className="flex self-stretch justify-between items-start gap-5">
+                                <div className="flex flex-row gap-5">
+                                  <div className="flex flex-col gap-5">
+                                    <a href="#">
+                                      <Text
+                                        size="lg"
+                                        as="p"
+                                        className="!text-black-900 tracking-[4.40px] uppercase"
+                                      >
+                                        Due Today
+                                      </Text>
+                                    </a>
+                                    <Text
+                                      size="s"
+                                      as="p"
+                                      className="!text-blue_gray-400 tracking-[3.20px]"
+                                    >
+                                      Fully Refundable
+                                    </Text>
+                                  </div>
+                                  
+                                  
+
+
+                                  <Heading
+                                    size="4xl"
+                                    as="h3"
+                                    style={{color: "#4F805D"}}
+                                    className="flex flex-row text-black-900 tracking-[4.40px] uppercase"
+                                  >
+                                    <span>US</span>
+                                    <span style={{ fontSize: 18 }}>250$</span>
+                                  </Heading>
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          </List>
                         </div>
                       </div>
                     </div>
