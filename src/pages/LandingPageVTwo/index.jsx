@@ -8,6 +8,7 @@ import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import { Typography, List, ListItem, ListItemText } from "@mui/material";
 import tick from "../../assets/images/tick.png";
+import { Link, useNavigate } from "react-router-dom";
 const CustomTab = styled(Tab)(({ theme }) => ({
   "&.Mui-selected": {
     color: "green",
@@ -15,6 +16,39 @@ const CustomTab = styled(Tab)(({ theme }) => ({
   },
 }));
 export default function LandingPageVTwoPage() {
+  const [value, setValue] = React.useState(0);
+  const [value2, setValue2] = React.useState(0);
+  const navigate = useNavigate();
+
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  //   handleTabChange(newValue);
+  // };
+  const handleTabChange = (index) => {
+    switch (index) {
+      case 0:
+        window.open("https://plus.efxdata.com/login");
+        break;
+      case 1:
+        handelDiv();
+        setcardState(0);
+        break;
+      case 2:
+        handelDiv();
+        setcardState(1);
+        break;
+      case 3:
+        handelDiv();
+        setcardState(2);
+        break;
+      case 4:
+        handelDiv();
+        setcardState(3);
+        break;
+      default:
+        break;
+    }
+  };
   const [cardState, setcardState] = useState(0);
   const animateDivRef = useRef(null);
   const placePreOrder = useRef(null);
@@ -38,11 +72,19 @@ export default function LandingPageVTwoPage() {
   //     container.removeEventListener("wheel", handelDiv);
   //   };
   // }, []);
-  const [value, setValue] = useState(1); // Default selected tab (eFX Plus HD)
-
+  const handleChange2 = (event, newValue) => {
+  
+    setValue2(newValue);
+  };
   const handleChange = (event, newValue) => {
+    console.log("🚀 ~ handleChange ~ newValue:", newValue);
+    handelDiv();
+    setcardState(newValue);
     setValue(newValue);
   };
+  useEffect(()=>{
+    setValue(cardState);
+  },[cardState])
 
   return (
     <>
@@ -560,7 +602,7 @@ export default function LandingPageVTwoPage() {
               </div> */}
               <div
                 ref={animateDivRef}
-                style={{ paddingTop: 120 }}
+                style={{ paddingTop: 40 }}
                 className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
               >
                 <Text
@@ -571,7 +613,92 @@ export default function LandingPageVTwoPage() {
                   eFX carries the most comprehensive Big-Data streams in FX
                   consisting of:
                 </Text>
-                <div className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1500px]">
+
+                <div
+                  style={{ display: "flex", flexDirection: "column" }}
+                  className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1600px]"
+                >
+                  <div
+                    style={{
+                      marginLeft: "200px",
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                      width: "100%",
+                    }}
+                  >
+                    <Tabs
+                      value={value}
+                      onChange={handleChange}
+                      aria-label="navigation tabs"
+                      sx={{
+                        "& .MuiTabs-indicator": { backgroundColor: "green" },
+                        "& .Mui-selected": { color: "green" }, // Set font color of the selected tab to green
+                      }}
+                    >
+                      <Tab
+                        sx={{ marginRight: "80px" }}
+                        label={
+                          <Typography
+                            sx={{
+                              fontWeight: "bold",
+                              letterSpacing: "2px",
+                              color: value === 0 ? "green" : "inherit",
+                              textTransform:"none"
+                            }}
+                          >
+                            eFX Plus HD
+                          </Typography>
+                        }
+                      />
+                      <Tab
+                        sx={{ marginRight: "80px" }}
+                        label={
+                          <Typography
+                            sx={{
+                              fontWeight: "bold",
+                              letterSpacing: "2px",
+                              color: value === 1 ? "green" : "inherit",
+                              textTransform:"none"
+                            }}
+                          >
+                            eFX Edge
+                          </Typography>
+                        }
+                      />
+                      <Tab
+                        sx={{ marginRight: "80px" }}
+                        label={
+                          <Typography
+                            sx={{
+                              fontWeight: "bold",
+                              letterSpacing: "2px",
+                              color: value === 2 ? "green" : "inherit",
+                              textTransform:"none"
+                            }}
+                          >
+                            eFX Alpha
+                          </Typography>
+                        }
+                      />
+                      <Tab
+                        sx={{ marginRight: "80px" }}
+                        label={
+                          <Typography
+                            sx={{
+                              fontWeight: "bold",
+                              letterSpacing: "2px",
+                              color: value === 3 ? "green" : "inherit",
+                              textTransform:"none"
+                            }}
+                          >
+                            eFX Apex
+                          </Typography>
+                        }
+                      />
+                    </Tabs>
+                  </div>
+
                   <CardContainer
                     setcardState={setcardState}
                     cardState={cardState}
@@ -583,13 +710,13 @@ export default function LandingPageVTwoPage() {
               <div
                 ref={placePreOrder}
                 style={{
-                  marginTop: 60,
                   display: "flex",
                   flexDirection: "column",
-                  paddingTop: 50,
+                  // paddingTop: 50,
+                  // backgroundColor:"red"
                 }}
               >
-                <div
+                {/* <div
                   style={{
                     color: "#A46A1F",
                     width: "100%",
@@ -601,7 +728,7 @@ export default function LandingPageVTwoPage() {
                   }}
                 >
                   <span>PRE-ORDER</span>
-                </div>
+                </div> */}
                 <div
                   style={{
                     display: "flex",
@@ -642,8 +769,8 @@ export default function LandingPageVTwoPage() {
                           style={{ boxShadow: "none", background: "none" }}
                         >
                           <Tabs
-                            value={value}
-                            onChange={handleChange}
+                            value2={value2}
+                            onChange={handleChange2}
                             textColor="primary"
                             orientation="vertical"
                             sx={{
@@ -670,6 +797,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
+                                    width:150
                                   }}
                                 >
                                   <Typography
@@ -681,7 +809,7 @@ export default function LandingPageVTwoPage() {
                                       color: "#FF8F00",
                                     }}
                                   >
-                                    $299*
+                                    $199*
                                   </Typography>
                                   <Typography
                                     style={{
@@ -696,6 +824,8 @@ export default function LandingPageVTwoPage() {
                               }
                             />
                             <CustomTab
+      
+
                               label={
                                 <Box
                                   sx={{
@@ -707,6 +837,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
+                                    width:150
                                   }}
                                 >
                                   <Typography
@@ -718,7 +849,7 @@ export default function LandingPageVTwoPage() {
                                       color: "#FF8F00",
                                     }}
                                   >
-                                    $399*
+                                    $299*
                                   </Typography>
                                   <Typography
                                     style={{
@@ -744,6 +875,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
+                                    width:150
                                   }}
                                 >
                                   <Typography
@@ -756,7 +888,7 @@ export default function LandingPageVTwoPage() {
                                     }}
                                     variant="body2"
                                   >
-                                    $499*
+                                    $399*
                                   </Typography>
                                   <Typography
                                     variant="body1"
@@ -766,7 +898,7 @@ export default function LandingPageVTwoPage() {
                                       textTransform: "none",
                                     }}
                                   >
-                                   eFX Alpha
+                                    eFX Alpha
                                   </Typography>
                                 </Box>
                               }
@@ -783,6 +915,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
+                                    width:150
                                   }}
                                 >
                                   <Typography
@@ -949,7 +1082,12 @@ export default function LandingPageVTwoPage() {
                                       <Text
                                         size="lg"
                                         as="p"
-                                        className="!text-black-900 tracking-[4.40px] uppercase"
+                                        className="!text-black-900 tracking-[6.40px] uppercase"
+                                        style={{
+                                          color: "black",
+                                          fontWeight: "bold",
+                                          fontSize: 24,
+                                        }}
                                       >
                                         Due Today
                                       </Text>
@@ -962,14 +1100,11 @@ export default function LandingPageVTwoPage() {
                                       Fully Refundable
                                     </Text>
                                   </div>
-                                  
-                                  
-
 
                                   <Heading
                                     size="4xl"
                                     as="h3"
-                                    style={{color: "#4F805D"}}
+                                    style={{ color: "#4F805D" }}
                                     className="flex flex-row text-black-900 tracking-[4.40px] uppercase"
                                   >
                                     <span>US</span>
@@ -989,7 +1124,7 @@ export default function LandingPageVTwoPage() {
                 <Heading
                   size="4xl"
                   as="h2"
-                  className="!text-lime-900 tracking-[1.60px] uppercase"
+                  className="!text-black-900 tracking-[1.60px] uppercase"
                 >
                   Our Industry Partners
                 </Heading>
