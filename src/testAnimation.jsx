@@ -204,8 +204,9 @@ const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
         justifyContent: "space-between",
         alignItems: "center",
         height: 400,
-        position: "relative"
+        position: "relative",
       }}
+
     >
       <FontAwesomeIcon
         icon={faChevronLeft}
@@ -260,7 +261,7 @@ const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
                         style={{
                           backgroundColor: "white",
                           maxWidth: 800,
-                          height: 700,
+                          height: 400,
                         }}
                       >
                         <div className="flex justify-between gap-5">
