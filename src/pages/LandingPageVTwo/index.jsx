@@ -697,7 +697,7 @@ export default function LandingPageVTwoPage() {
                       />
                     </Tabs>
                   </div>
-                  <div style={{ width: "100%",marginTop:70 }}>
+                  <div style={{ width: "100%", marginTop: 70 }}>
                     <CardContainer
                       setcardState={setcardState}
                       cardState={cardState}
@@ -945,7 +945,7 @@ export default function LandingPageVTwoPage() {
                         </AppBar>
                       </div>
 
-                      <div>
+                      <div style={{marginLeft:80}}>
                         <div
                           style={{ marginTop: 30 }}
                           className="flex flex-col items-start gap-[22px]"
