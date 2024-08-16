@@ -1118,7 +1118,7 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center w-full gap-[57px] mx-auto md:p-5 sm:gap-7 max-w-[1080px]">
+              <div className="flex flex-col items-center w-full gap-[57px] mx-auto md:p-5 sm:gap-7 max-w-[1500px]">
                 <Heading
                   size="4xl"
                   as="h2"
@@ -1126,22 +1126,22 @@ export default function LandingPageVTwoPage() {
                 >
                   Our Industry Partners
                 </Heading>
-                <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
+                <div className="flex md:flex-col self-stretch justify-between items-center gap-20">
                   <Img
                     src="images/img_image_5.png"
                     alt="imagefive_one"
-                    className="w-[11%] md:w-full object-cover"
+                    className="w-[9%] md:w-full object-cover"
                   />
                   <Img
                     src="images/img_image_6.png"
                     alt="imagesix_one"
-                    className="w-[11%] md:w-full object-cover"
+                    className="w-[9%] md:w-full object-cover"
                   />
-                  <Img
-                    src="images/cuneus logo word (transparent).png"
-                    alt="imagesix_one"
-                    className="gap-[15px] sm:px-5 tracking-[1.60px] uppercase min-w-[290px] rounded-[30px]"
-                  />
+                <Img
+  src="images/cuneus logo word (transparent).png"
+  alt="imagesix_one"
+  className="w-[27%] md:w-full object-cover"
+  />
 
                   {/* <Button
                     color="indigo_A700"
@@ -1154,12 +1154,12 @@ export default function LandingPageVTwoPage() {
                   <Img
                     src="images/img_image_7.png"
                     alt="imageseven_one"
-                    className="w-[11%] md:w-full object-cover"
+                    className="w-[9%] md:w-full object-cover"
                   />
                   <Img
                     src="images/img_image_4.png"
                     alt="imagefour_one"
-                    className="w-[11%] md:w-full object-cover"
+                    className="w-[9%] md:w-full object-cover"
                   />
                 </div>
               </div>
