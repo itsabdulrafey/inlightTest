@@ -73,7 +73,6 @@ export default function LandingPageVTwoPage() {
   //   };
   // }, []);
   const handleChange2 = (event, newValue) => {
-  
     setValue2(newValue);
   };
   const handleChange = (event, newValue) => {
@@ -82,9 +81,9 @@ export default function LandingPageVTwoPage() {
     setcardState(newValue);
     setValue(newValue);
   };
-  useEffect(()=>{
+  useEffect(() => {
     setValue(cardState);
-  },[cardState])
+  }, [cardState]);
 
   return (
     <>
@@ -644,7 +643,7 @@ export default function LandingPageVTwoPage() {
                               fontWeight: "bold",
                               letterSpacing: "2px",
                               color: value === 0 ? "green" : "inherit",
-                              textTransform:"none"
+                              textTransform: "none",
                             }}
                           >
                             eFX Plus HD
@@ -659,7 +658,7 @@ export default function LandingPageVTwoPage() {
                               fontWeight: "bold",
                               letterSpacing: "2px",
                               color: value === 1 ? "green" : "inherit",
-                              textTransform:"none"
+                              textTransform: "none",
                             }}
                           >
                             eFX Edge
@@ -674,7 +673,7 @@ export default function LandingPageVTwoPage() {
                               fontWeight: "bold",
                               letterSpacing: "2px",
                               color: value === 2 ? "green" : "inherit",
-                              textTransform:"none"
+                              textTransform: "none",
                             }}
                           >
                             eFX Alpha
@@ -689,7 +688,7 @@ export default function LandingPageVTwoPage() {
                               fontWeight: "bold",
                               letterSpacing: "2px",
                               color: value === 3 ? "green" : "inherit",
-                              textTransform:"none"
+                              textTransform: "none",
                             }}
                           >
                             eFX Apex
@@ -698,12 +697,13 @@ export default function LandingPageVTwoPage() {
                       />
                     </Tabs>
                   </div>
-
-                  <CardContainer
-                    setcardState={setcardState}
-                    cardState={cardState}
-                    handelDivPlacePreOrder={handelDivPlacePreOrder}
-                  />
+                  <div style={{ width: "100%",marginTop:70 }}>
+                    <CardContainer
+                      setcardState={setcardState}
+                      cardState={cardState}
+                      handelDivPlacePreOrder={handelDivPlacePreOrder}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -797,7 +797,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
-                                    width:150
+                                    width: 150,
                                   }}
                                 >
                                   <Typography
@@ -824,8 +824,6 @@ export default function LandingPageVTwoPage() {
                               }
                             />
                             <CustomTab
-      
-
                               label={
                                 <Box
                                   sx={{
@@ -837,7 +835,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
-                                    width:150
+                                    width: 150,
                                   }}
                                 >
                                   <Typography
@@ -875,7 +873,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
-                                    width:150
+                                    width: 150,
                                   }}
                                 >
                                   <Typography
@@ -915,7 +913,7 @@ export default function LandingPageVTwoPage() {
                                     padding: "10px",
                                     margin: "10px 0",
                                     borderRadius: "4px",
-                                    width:150
+                                    width: 150,
                                   }}
                                 >
                                   <Typography
