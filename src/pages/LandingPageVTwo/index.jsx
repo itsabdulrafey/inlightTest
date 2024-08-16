@@ -806,7 +806,7 @@ export default function LandingPageVTwoPage() {
                                       display: "flex",
                                       justifyContent: "flex-end",
                                       fontWeight: "bold",
-                                      color: "#FF8F00",
+                                      color: "#EA9E52",
                                     }}
                                   >
                                     $199*
@@ -844,7 +844,7 @@ export default function LandingPageVTwoPage() {
                                       display: "flex",
                                       justifyContent: "flex-end",
                                       fontWeight: "bold",
-                                      color: "#FF8F00",
+                                      color: "#EA9E52",
                                     }}
                                   >
                                     $299*
@@ -882,7 +882,7 @@ export default function LandingPageVTwoPage() {
                                       display: "flex",
                                       justifyContent: "flex-end",
                                       fontWeight: "bold",
-                                      color: "#FF8F00",
+                                      color: "#EA9E52",
                                     }}
                                     variant="body2"
                                   >
@@ -922,7 +922,7 @@ export default function LandingPageVTwoPage() {
                                       display: "flex",
                                       justifyContent: "flex-end",
                                       fontWeight: "bold",
-                                      color: "#FF8F00",
+                                      color: "#EA9E52",
                                     }}
                                     variant="body2"
                                   >
