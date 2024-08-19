@@ -234,95 +234,90 @@ const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
                 width: "100%",
                 flexWrap: "wrap",
               }}
+         
             >
               <div style={{ color: "green", width: "100%", position: "relative" }}>
-                <AnimatePresence>
-                  {activeCards.map((card, index) => (
-                    <motion.div
-                      key={card.id}
-                      custom={cardState}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={cardVariants}
-                      style={cardStyle1}
-                      onClick={() => {
-                        cardState >= cardsData.length - 1
-                          ? setcardState(0)
-                          : setcardState(cardState + 1);
-                      }}
-                    >
-                      <span style={{ backgroundColor: "white" }}>
-                        {/* {`======>${cardState}`} */}
-                      </span>
-                      {/* Card {card.id + 1} */}
-                      <div
-                        onClick={handleCardClick}
-                        style={{
-                          backgroundColor: "white",
-                          maxWidth: 800,
-                          height: 400,
-                        }}
-                      >
-                        <div className="flex justify-between gap-5">
-                          <div className="flex">
-                            <Text
-                              size="xl"
-                              as="p"
-                              className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
-                            >
-                              <span className="text-black-900">
-                                {cardsData[cardState]?.data?.heading1}
-                              </span>
-                              <span className="text-black-900 font-bold">
-                                {cardsData[cardState]?.data?.heading2}
-                              </span>
-                            </Text>
-                          </div>
-                          <div className="flex py-[13px]">
-                            <Heading
-                              as="h5"
-                              className="!text-black-900 tracking-[4.00px] uppercase"
-                            >
-                              {cardsData[cardState]?.data?.heading3}
-                            </Heading>
-                          </div>
-                        </div>
-                        <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
-                          <Text
-                            size="s"
-                            as="p"
-                            className="!text-blue_gray-400 tracking-[3.20px]"
-                          >
-                            {cardsData[cardState]?.data?.heading4}
-                          </Text>
-                          <Text
-                            size="s"
-                            as="p"
-                            className="!text-blue_gray-400 tracking-[3.20px]"
-                          >
-                            PRE-ORDER to lock in rate*
-                          </Text>
-                        </div>
-                        <Text
-                          size="md"
-                          as="p"
-                          className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
-                        >
-                          {cardsData[cardState]?.data?.paragraphs?.map(
-                            (data, index) => (
-                              <React.Fragment key={index}>
-                                {data}
-                                <br />
-                                <br />
-                              </React.Fragment>
-                            )
-                          )}
-                        </Text>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+              {activeCards.map((card, index) => (
+  <div
+    key={card.id}
+    style={cardStyle1}
+    onClick={() => {
+      cardState >= cardsData.length - 1
+        ? setcardState(0)
+        : setcardState(cardState + 1);
+    }}
+  >
+    <span style={{ backgroundColor: "white" }}>
+      {/* {`======>${cardState}`} */}
+    </span>
+    {/* Card {card.id + 1} */}
+    <div
+      onClick={handleCardClick}
+      style={{
+        backgroundColor: "white",
+        maxWidth: 800,
+        height: 400,
+      }}
+    >
+      <div className="flex justify-between gap-5">
+        <div className="flex">
+          <Text
+            size="xl"
+            as="p"
+            className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
+          >
+            <span className="text-black-900">
+              {cardsData[cardState]?.data?.heading1}
+            </span>
+            <span className="text-black-900 font-bold">
+              {cardsData[cardState]?.data?.heading2}
+            </span>
+          </Text>
+        </div>
+        <div className="flex py-[13px]">
+          <Heading
+            as="h5"
+            className="!text-black-900 tracking-[4.00px] uppercase"
+          >
+            {cardsData[cardState]?.data?.heading3}
+          </Heading>
+        </div>
+      </div>
+      <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
+        <Text
+          size="s"
+          as="p"
+          className="!text-blue_gray-400 tracking-[3.20px]"
+        >
+          {cardsData[cardState]?.data?.heading4}
+        </Text>
+        <Text
+          size="s"
+          as="p"
+          className="!text-blue_gray-400 tracking-[3.20px]"
+        >
+          PRE-ORDER to lock in rate*
+        </Text>
+      </div>
+      <Text
+        size="md"
+        as="p"
+        className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
+      >
+        {cardsData[cardState]?.data?.paragraphs?.map(
+          (data, index) => (
+            <React.Fragment key={index}>
+              {data}
+              <br />
+              <br />
+            </React.Fragment>
+          )
+        )}
+      </Text>
+    </div>
+  </div>
+))}
+
               </div>
             </div>
             <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{ position: "relative", top: 400, zIndex: 9999 }}>
@@ -349,33 +344,27 @@ const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
         <div
           id="cardContainer"
           style={{ width: "40%", height: 400, position: "relative" }}
-          onClick={handleCardClick}
+          // onClick={handleCardClick}
         >
-          <AnimatePresence>
-            {activeCards.map((card, index) => (
-              <motion.div
-                key={card.id}
-                custom={cardState}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                variants={cardVariants}
-                style={cardStyle(
-                  index,
-                  activeCards.length,
-                  card.color,
-                  card.text
-                )}
-                onClick={() => {
-                  cardState >= cardsData.length - 1
-                    ? setcardState(0)
-                    : setcardState(cardState + 1);
-                }}
-              >
-                <Img src={cardsData[cardState].image} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+         {activeCards.map((card, index) => (
+  <div
+    key={card.id}
+    style={cardStyle(
+      index,
+      activeCards.length,
+      card.color,
+      card.text
+    )}
+    onClick={() => {
+      cardState >= cardsData.length - 1
+        ? setcardState(0)
+        : setcardState(cardState + 1);
+    }}
+  >
+    <Img src={cardsData[cardState].image} />
+  </div>
+))}
+
         </div>
       </div>
 

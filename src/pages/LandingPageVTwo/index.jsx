@@ -1106,7 +1106,7 @@ export default function LandingPageVTwoPage() {
                                     className="flex flex-row text-black-900 tracking-[4.40px] uppercase"
                                   >
                                     <span>US</span>
-                                    <span style={{ fontSize: 18 }}>250$</span>
+                                    <span style={{ fontSize: 18 }}>150$</span>
                                   </Heading>
                                 </div>
                               </div>
