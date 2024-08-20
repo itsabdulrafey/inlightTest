@@ -763,186 +763,188 @@ export default function LandingPageVTwoPage() {
 
                     <div style={{ display: "flex" }}>
                       <div>
-                        <AppBar
-                          position="static"
-                          color="default"
-                          style={{ boxShadow: "none", background: "none" }}
-                        >
-                          <Tabs
-                            value2={value2}
-                            onChange={handleChange2}
-                            textColor="primary"
-                            orientation="vertical"
-                            sx={{
-                              "& .MuiTabs-indicator": {
-                                display: "none", // Hide the default indicator
-                              },
-                              "& .MuiTabs-flexContainer": {
-                                flexDirection: "column",
-                              },
-                            }}
-                            style={{
-                              minHeight: "unset",
-                            }}
-                          >
-                            <CustomTab
-                              label={
-                                <Box
-                                  sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    borderRight: "2px solid #4F805D", // Customize right border color
-                                    borderBottom: "2px solid #4F805D", // Customize bottom border color
-                                    padding: "10px",
-                                    margin: "10px 0",
-                                    borderRadius: "4px",
-                                    width: 150,
-                                  }}
-                                >
-                                  <Typography
-                                    style={{
-                                      width: "100%",
-                                      display: "flex",
-                                      justifyContent: "flex-end",
-                                      fontWeight: "bold",
-                                      color: "#EA9E52",
-                                    }}
-                                  >
-                                    $199*
-                                  </Typography>
-                                  <Typography
-                                    style={{
-                                      textTransform: "none",
-                                      color: "black",
-                                      fontSize: 20,
-                                    }}
-                                  >
-                                    eFX Plus HD
-                                  </Typography>
-                                </Box>
-                              }
-                            />
-                            <CustomTab
-                              label={
-                                <Box
-                                  sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    borderRight: "2px solid #4F805D", // Customize right border color
-                                    borderBottom: "2px solid #4F805D", // Customize bottom border color
-                                    padding: "10px",
-                                    margin: "10px 0",
-                                    borderRadius: "4px",
-                                    width: 150,
-                                  }}
-                                >
-                                  <Typography
-                                    style={{
-                                      width: "100%",
-                                      display: "flex",
-                                      justifyContent: "flex-end",
-                                      fontWeight: "bold",
-                                      color: "#EA9E52",
-                                    }}
-                                  >
-                                    $299*
-                                  </Typography>
-                                  <Typography
-                                    style={{
-                                      textTransform: "none",
-                                      color: "black",
-                                      fontSize: 20,
-                                    }}
-                                  >
-                                    eFX Edge
-                                  </Typography>
-                                </Box>
-                              }
-                            />
-                            <CustomTab
-                              label={
-                                <Box
-                                  sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    borderRight: "2px solid #4F805D", // Customize right border color
-                                    borderBottom: "2px solid #4F805D", // Customize bottom border color
-                                    padding: "10px",
-                                    margin: "10px 0",
-                                    borderRadius: "4px",
-                                    width: 150,
-                                  }}
-                                >
-                                  <Typography
-                                    style={{
-                                      width: "100%",
-                                      display: "flex",
-                                      justifyContent: "flex-end",
-                                      fontWeight: "bold",
-                                      color: "#EA9E52",
-                                    }}
-                                    variant="body2"
-                                  >
-                                    $399*
-                                  </Typography>
-                                  <Typography
-                                    variant="body1"
-                                    style={{
-                                      color: "black",
-                                      fontSize: 20,
-                                      textTransform: "none",
-                                    }}
-                                  >
-                                    eFX Alpha
-                                  </Typography>
-                                </Box>
-                              }
-                            />
-                            <CustomTab
-                              label={
-                                <Box
-                                  sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    borderRight: "2px solid #4F805D", // Customize right border color
-                                    borderBottom: "2px solid #4F805D", // Customize bottom border color
-                                    padding: "10px",
-                                    margin: "10px 0",
-                                    borderRadius: "4px",
-                                    width: 150,
-                                  }}
-                                >
-                                  <Typography
-                                    style={{
-                                      width: "100%",
-                                      display: "flex",
-                                      justifyContent: "flex-end",
-                                      fontWeight: "bold",
-                                      color: "#EA9E52",
-                                    }}
-                                    variant="body2"
-                                  >
-                                    $899*
-                                  </Typography>
-                                  <Typography
-                                    variant="body1"
-                                    style={{
-                                      textTransform: "none",
-                                      color: "black",
-                                      fontSize: 20,
-                                    }}
-                                  >
-                                    eFX Apex
-                                  </Typography>
-                                </Box>
-                              }
-                            />
-                          </Tabs>
-                        </AppBar>
+                      <AppBar
+  position="static"
+  color="default"
+  style={{ boxShadow: "none", background: "none" }}
+>
+  <Tabs
+    value2={value2}
+    onChange={handleChange2}
+    textColor="primary"
+    orientation="vertical"
+    sx={{
+      "& .MuiTabs-indicator": {
+        display: "none", // Hide the default indicator
+      },
+      "& .MuiTabs-flexContainer": {
+        flexDirection: "column",
+      },
+    }}
+    style={{
+      minHeight: "unset",
+    }}
+  >
+    <CustomTab
+      label={
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            borderRight: "2px solid #4F805D", // Customize right border color
+            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            padding: "5px", // Reduce padding to decrease height
+            margin: "5px 0", // Reduce margin to decrease height
+            borderRadius: "4px",
+            width: 150,
+          }}
+        >
+          <Typography
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              fontWeight: "bold",
+              color: "#EA9E52",
+            }}
+          >
+            $199*
+          </Typography>
+          <Typography
+            style={{
+              textTransform: "none",
+              color: "black",
+              fontSize: 20,
+            }}
+          >
+            eFX Plus HD
+          </Typography>
+        </Box>
+      }
+    />
+    <CustomTab
+      label={
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            borderRight: "2px solid #4F805D", // Customize right border color
+            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            padding: "5px", // Reduce padding
+            margin: "5px 0", // Reduce margin
+            borderRadius: "4px",
+            width: 150,
+          }}
+        >
+          <Typography
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              fontWeight: "bold",
+              color: "#EA9E52",
+            }}
+          >
+            $299*
+          </Typography>
+          <Typography
+            style={{
+              textTransform: "none",
+              color: "black",
+              fontSize: 20,
+            }}
+          >
+            eFX Edge
+          </Typography>
+        </Box>
+      }
+    />
+    <CustomTab
+      label={
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            borderRight: "2px solid #4F805D", // Customize right border color
+            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            padding: "5px", // Reduce padding
+            margin: "5px 0", // Reduce margin
+            borderRadius: "4px",
+            width: 150,
+          }}
+        >
+          <Typography
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              fontWeight: "bold",
+              color: "#EA9E52",
+            }}
+            variant="body2"
+          >
+            $399*
+          </Typography>
+          <Typography
+            variant="body1"
+            style={{
+              color: "black",
+              fontSize: 20,
+              textTransform: "none",
+            }}
+          >
+            eFX Alpha
+          </Typography>
+        </Box>
+      }
+    />
+    <CustomTab
+      label={
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            borderRight: "2px solid #4F805D", // Customize right border color
+            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            padding: "5px", // Reduce padding
+            margin: "5px 0", // Reduce margin
+            borderRadius: "4px",
+            width: 150,
+          }}
+        >
+          <Typography
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              fontWeight: "bold",
+              color: "#EA9E52",
+            }}
+            variant="body2"
+          >
+            $899*
+          </Typography>
+          <Typography
+            variant="body1"
+            style={{
+              textTransform: "none",
+              color: "black",
+              fontSize: 20,
+            }}
+          >
+            eFX Apex
+          </Typography>
+        </Box>
+      }
+    />
+  </Tabs>
+</AppBar>
+
+
                       </div>
 
                       <div style={{marginLeft:80}}>
