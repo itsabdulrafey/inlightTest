@@ -1126,7 +1126,7 @@ export default function LandingPageVTwoPage() {
                 >
                   Our Industry Partners
                 </Heading>
-                <div className="flex md:flex-col self-stretch justify-between items-center gap-20">
+                <div className="flex md:flex-col self-stretch justify-evenly items-center gap-20">
                   <Img
                     src="images/img_image_5.png"
                     alt="imagefive_one"
