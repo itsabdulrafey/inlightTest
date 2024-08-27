@@ -750,7 +750,7 @@ export default function LandingPageVTwoPage() {
                         PRE ORDER
                       </Text>
                     </div>
-                    <div className="flex flex-col items-start gap-[22px]">
+                    <div style={{marginTop:15}} className="flex flex-col items-start gap-[22px]">
                       <Text
                         size="xl"
                         as="p"
