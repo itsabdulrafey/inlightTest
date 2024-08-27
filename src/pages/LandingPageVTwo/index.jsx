@@ -792,8 +792,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding to decrease height
             margin: "5px 0", // Reduce margin to decrease height
             borderRadius: "4px",
@@ -830,8 +830,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
@@ -868,8 +868,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
@@ -908,8 +908,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
