@@ -750,7 +750,7 @@ export default function LandingPageVTwoPage() {
                         PRE ORDER
                       </Text>
                     </div>
-                    <div className="flex flex-col items-start gap-[22px]">
+                    <div style={{marginTop:15}} className="flex flex-col items-start gap-[22px]">
                       <Text
                         size="xl"
                         as="p"
@@ -792,8 +792,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding to decrease height
             margin: "5px 0", // Reduce margin to decrease height
             borderRadius: "4px",
@@ -830,8 +830,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
@@ -868,8 +868,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
@@ -908,8 +908,8 @@ export default function LandingPageVTwoPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            borderRight: "2px solid #4F805D", // Customize right border color
-            borderBottom: "2px solid #4F805D", // Customize bottom border color
+            // borderRight: "2px solid #4F805D", // Customize right border color
+            // borderBottom: "2px solid #4F805D", // Customize bottom border color
             padding: "5px", // Reduce padding
             margin: "5px 0", // Reduce margin
             borderRadius: "4px",
@@ -1128,7 +1128,7 @@ export default function LandingPageVTwoPage() {
                 >
                   Our Industry Partners
                 </Heading>
-                <div className="flex md:flex-col self-stretch justify-evenly items-center gap-20">
+                <div className="flex md:flex-col self-stretch justify-evenly items-center gap-10">
                   <Img
                     src="images/img_image_5.png"
                     alt="imagefive_one"
@@ -1139,10 +1139,15 @@ export default function LandingPageVTwoPage() {
                     alt="imagesix_one"
                     className="w-[9%] md:w-full object-cover"
                   />
+                    <Img
+                    src="images/Mitrade-forex-broker-Review-2.png"
+                    alt="imagesix_one"
+                    className="w-[9%] md:w-full object-cover"
+                  />
                 <Img
   src="images/cuneus logo word (transparent).png"
   alt="imagesix_one"
-  className="w-[27%] md:w-full object-cover"
+  className="w-[22%] md:w-full object-cover"
   />
 
                   {/* <Button
@@ -1153,6 +1158,11 @@ export default function LandingPageVTwoPage() {
                   >
                     Cuneus
                   </Button> */}
+                   <Img
+                    src="images/Tradu_Logo_Suite_RGB_Black54-1536x540.png"
+                    alt="imageseven_one"
+                    className="w-[9%] md:w-full object-cover"
+                  />
                   <Img
                     src="images/img_image_7.png"
                     alt="imageseven_one"
