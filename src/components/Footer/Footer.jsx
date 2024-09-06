@@ -65,12 +65,12 @@ useEffect(() => {
                         <span style={{ fontSize: 24, fontWeight: 600 }}>
                           Quick Links
                         </span>
-                        <span style={{ fontSize: 20, cursor: "pointer" }}>Home</span>
+                        {/* <span style={{ fontSize: 20, cursor: "pointer" }}>Home</span> */}
                         <span style={{ fontSize: 20, cursor: "pointer" }}>
                           Pre Register
                         </span>
                         <span style={{ fontSize: 20, cursor: "pointer" }}>
-                          Efx Data
+                          efx Data
                         </span>
                   </div>
                       <Img
@@ -109,7 +109,7 @@ useEffect(() => {
                     </div>
                   </div>
             </div>
-            <div style={{color:"white"}} className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1375px]">
+            {/* <div style={{color:"white"}} className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1375px]">
               <div style={{display:"flex",flexDirection:"column"}}>
                   <span style={{fontSize:24,fontWeight:600}}>
                   Email
@@ -134,7 +134,7 @@ useEffect(() => {
                   Grand Arumba C-5, London,
                   </span>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex md:flex-col justify-between items-center gap-5">
               <div className="flex md:flex-col items-center gap-[30px]">

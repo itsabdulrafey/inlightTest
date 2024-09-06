@@ -99,7 +99,7 @@ const cardContainerStyle = {
   borderRadius: 3,
 };
 
-const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
+const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
   const animateDivRef = useRef(null);
 
   useEffect(() => {}, []);
@@ -326,7 +326,7 @@ const CardContainer = ({ setcardState, cardState,handelDivPlacePreOrder }) => {
                 shape="round"
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
                 onClick={() => {
-                  handelDivPlacePreOrder()
+                  handleDivPlacePreOrder()
                 }}
               >
                 Place Pre-Order
