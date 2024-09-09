@@ -320,7 +320,7 @@ const onsubmit =async()=>{
           <>
             <div
               style={{ marginTop: 50 }}
-              className="flex w-[92%] justify-between gap-5 md:w-full md:flex-col"
+              className="flex w-[100%] justify-between gap-5 md:w-full md:flex-col"
             >
               <div className="flex w-[43%] flex-col gap-10 md:w-full">
                 <Input
@@ -499,14 +499,14 @@ const onsubmit =async()=>{
 
       <div
         style={{ marginTop: 70 }}
-        className="flex w-[84%] justify-between gap-5 self-center md:w-full"
+        className="flex w-[100%] justify-between gap-5 self-center md:w-full"
       >
         <button.AuthButton
           color="black_900"
           size="lg"
           variant="fill"
           shape="round"
-          className="min-w-[320px] border border-white-A700_19 tracking-[0.96px] sm:px-5"
+          className="w-[50%] border border-white-A700_19 tracking-[0.96px] sm:px-5"
           onClick={() => {
             setstep(1);
             setTabIndex(0);
@@ -519,7 +519,7 @@ const onsubmit =async()=>{
           size="lg"
           variant="fill"
           shape="round"
-          className="min-w-[320px] border border-white-A700_19 tracking-[0.96px] !text-black-900 sm:px-5"
+          className="w-[50%]  border border-white-A700_19 tracking-[0.96px] !text-black-900 sm:px-5"
           onClick={() => {
             console.log("YESSSSSSSSSSSSSSSSSSSSSSSSSSSS");
             onsubmit()

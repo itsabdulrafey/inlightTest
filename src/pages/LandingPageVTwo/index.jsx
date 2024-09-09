@@ -5,7 +5,6 @@ import Header from "../../components/Header/Header";
 import Footer from "components/Footer/Footer";
 import CardContainer from "testAnimation";
 import { AppBar, Tabs, Tab, Box } from "@mui/material";
-import { styled } from "@mui/system";
 import { Typography, List, ListItem, ListItemText } from "@mui/material";
 import tick from "../../assets/images/tick.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,211 +17,105 @@ export default function LandingPageVTwoPage() {
   const [isheight, setisheight] = React.useState("");
   const [hideSurroundingDivs, setHideSurroundingDivs] = useState(false);
   const [hideSurroundingDivsPreOrder, sethideSurroundingDivsPreOrder] = useState(false);
+  const [hideSurroundingDivsOurindustry, sethideSurroundingOurindustry] = useState(false);
 
-  const headerHandleClick = () => {
-    setisheight("100vh");
-    console.log("========================>>>>headerHandleClick");
-  };
-  const navigate = useNavigate();
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  //   handleTabChange(newValue);
-  // };
-  const handleTabChange = (index) => {
-    switch (index) {
-      case 0:
-        window.open("https://plus.efxdata.com/login");
-        break;
-      case 1:
-        handelDiv();
-        setcardState(0);
-        break;
-      case 2:
-        handelDiv();
-        setcardState(1);
-        break;
-      case 3:
-        handelDiv();
-        setcardState(2);
-        break;
-      case 4:
-        handelDiv();
-        setcardState(3);
-        break;
-      default:
-        break;
-    }
-  };
   const [cardState, setcardState] = useState(0);
+
   const animateDivRef = useRef(null);
   const placePreOrder = useRef(null);
-  const Ourindustry = useRef(null)
+  const Ourindustry = useRef(null);
+
+  const headerHandleClick = () => {
+    //  sethideSurroundingDivsPreOrder(true);
+    setHideSurroundingDivs(true)
+    console.log("========================>>>>headerHandleClick");
+  };
+
+  const navigate = useNavigate();
 
 
+  const handleChange2 = (event, newValue) => {
+    setValue2(newValue);
+  };
   const handelDiv = () => {
     if (animateDivRef.current) {
       animateDivRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const handelDivPlacePreOrder = () => {
+      //  setHideSurroundingDivs(false);
+      sethideSurroundingDivsPreOrder(true);
+      // sethideSurroundingOurindustry(true);
+
     if (placePreOrder.current) {
+      console.log("======================YES =================")
+     
       placePreOrder.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  // useEffect(() => {
-  //   const container = document.getElementById("cardContainer");
-  //   container.addEventListener("wheel", handelDiv);
 
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     container.removeEventListener("wheel", handelDiv);
-  //   };
-  // }, []);
-  const handleChange2 = (event, newValue) => {
-    setValue2(newValue);
-  };
   const handleChange = (event, newValue) => {
-    console.log("🚀 ~ handleChange ~ newValue:", newValue);
     handelDiv();
     setcardState(newValue);
     setValue(newValue);
   };
+
   useEffect(() => {
     setValue(cardState);
   }, [cardState]);
-  const [isDivVisible, setIsDivVisible] = useState(false);
-  const handleDivVisible = () => {
-    console.log("Div is now visible in the viewport!");
-    // Call the function you want here
-  };
 
+  // Single scroll handler for all the refs
   const handleScroll = () => {
-    if (animateDivRef.current) {
+    const rectAnimation = animateDivRef.current?.getBoundingClientRect();
+    const rectPreOrder = placePreOrder.current?.getBoundingClientRect();
+    const rectIndustry = Ourindustry.current?.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-      const rectpreOrder = placePreOrder.current.getBoundingClientRect();
-      const windowHeightpreOrder = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInViewPreOrder = rectpreOrder.top < windowHeightpreOrder && rectpreOrder.bottom > 0;
+    // Conditions for hiding/showing surrounding divs based on viewport
+    const isAnimationInView = rectAnimation?.top < windowHeight && rectAnimation?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isAnimationInView:", isAnimationInView)
+    const isPreOrderInView = rectPreOrder?.top < windowHeight && rectPreOrder?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isPreOrderInView:", isPreOrderInView)
+    const isIndustryInView = rectIndustry?.top < windowHeight && rectIndustry?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isIndustryInView:", isIndustryInView)
 
-      const rect = animateDivRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInView = rect.top < windowHeight && rect.bottom > 0;
-  
-      // Show/hide surrounding divs based on whether the div is in view
-      if(divInViewPreOrder && divInView){
-        setHideSurroundingDivs(false); // Hide surrounding divs when in view
-        sethideSurroundingDivsPreOrder(false); // Hide surrounding divs when in view
-        return
-
-      }
-      if (divInView) {
-        setHideSurroundingDivs(true); // Hide surrounding divs when in view
-      } 
+    // Logic for hiding/showing surrounding divs based on which div is in view
+    if (isAnimationInView && isPreOrderInView && isIndustryInView) {
+      console.log("🚀 ~ handleScroll ~ isIndustryInView:===============>>>>")
+      setHideSurroundingDivs(false);
+      sethideSurroundingDivsPreOrder(false);
+    }else if(isIndustryInView && isPreOrderInView) {
+      setHideSurroundingDivs(false);
+      sethideSurroundingDivsPreOrder(false);
+      sethideSurroundingOurindustry(false)
+    }else if(isAnimationInView && isPreOrderInView  ) {;
+      // setHideSurroundingDivs(false);
+   
+       
     }
+    console.log("hideSurroundingOurindustry",hideSurroundingDivsOurindustry)
+
   };
+
+  
+
+  console.log("hideSurroundingDivsPreOrder",hideSurroundingDivsPreOrder)
+
+  // Single useEffect for handling scroll events and updating based on refs
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array to add the listener only once
 
-
-
-
-  const handleScrollPreOrder = () => {
-    if (placePreOrder.current) {
-      const rect = placePreOrder.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInView = rect.top < windowHeight && rect.bottom > 0;
-  
-      const rectAnimationSection = placePreOrder.current.getBoundingClientRect();
-      const windowHeightAnimationSection = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInViewAnimationSection = rectAnimationSection.top < windowHeightAnimationSection && rectAnimationSection.bottom > 0;
-
-
-
-      const rectOurindustry = Ourindustry.current.getBoundingClientRect();
-      const windowHeightOurindustry = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInViewOurindustry = rect.top < windowHeightOurindustry && rectOurindustry.bottom > 0;
-
-
-      // Show/hide surrounding divs based on whether the div is in view
-      
-      if(divInViewAnimationSection && divInView &&divInViewOurindustry){
-        setHideSurroundingDivs(false); // Hide surrounding divs when in view
-        sethideSurroundingDivsPreOrder(false); // Hide surrounding divs when in view
-        return
-
-      }
-
-        if (divInView) {
-        sethideSurroundingDivsPreOrder(true); // Hide surrounding divs when in view
-      }
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrollPreOrder);
-    return () => {
-      window.removeEventListener("scroll", handleScrollPreOrder);
-    };
-  }, []); // Empty dependency array to add the listener only once
-
-
-
-
-
-  const handleScrollOurindustry = () => {
-    if (Ourindustry.current) {
-      const rect = Ourindustry.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInView = rect.top < windowHeight && rect.bottom > 0;
-      const rectAnimationSection = animateDivRef.current.getBoundingClientRect();
-      const windowHeightAnimationSection = window.innerHeight;
-  
-      // Check if div is partially in view
-      const divInViewAnimationSection = rectAnimationSection.top < windowHeightAnimationSection && rectAnimationSection.bottom > 0;
-      // Show/hide surrounding divs based on whether the div is in view
-      // if (divInView && divInViewAnimationSection) {
-      //   sethideSurroundingDivsPreOrder(false);
-      //   return // Hide surrounding divs when in view
-      // } 
-      if (divInView) {
-        sethideSurroundingDivsPreOrder(true); // Hide surrounding divs when in view
-      } 
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrollOurindustry);
-  
-    return () => {
-      window.removeEventListener("scroll", handleScrollOurindustry);
-    };
-  }, []); // Empty dependency array to add the listener only once
-
-
-
   return (
     <>
       <Helmet>
         <title>Itsabdulrafey's Application4</title>
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
+        <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
       <div className="flex flex-col items-center w-full pt-[22px] gap-3.5 sm:pt-5 bg-white-A700">
         <Header
@@ -269,10 +162,10 @@ export default function LandingPageVTwoPage() {
             <div className="flex flex-col gap-[54px] sm:gap-[27px]">
               {/* Commented Code */}
               <div
-              ref={animateDivRef}
-              style={{  height:hideSurroundingDivs ? "100vh" : "auto"  }}
-              className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
-            >
+                ref={animateDivRef}
+                style={{ height: hideSurroundingDivs ? "100vh" : "auto" }}
+                className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
+              >
                 <Text
                   size="xl"
                   as="p"
@@ -301,7 +194,7 @@ export default function LandingPageVTwoPage() {
                       aria-label="navigation tabs"
                       sx={{
                         "& .MuiTabs-indicator": { backgroundColor: "green" },
-                        "& .Mui-selected": { color: "green" }, // Set font color of the selected tab to green
+                        "& .Mui-selected": { color: "green" },
                       }}
                     >
                       <Tab
@@ -380,12 +273,9 @@ export default function LandingPageVTwoPage() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  // paddingTop: 50,
-               height:hideSurroundingDivsPreOrder ? "100vh" : "auto",
-               justifyContent: "center",
-               alignItems:"center"
-
-                  // backgroundColor:"red"
+                  height: hideSurroundingDivsPreOrder ? "100vh" : "auto",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
                 ref={placePreOrder}
               >
@@ -394,8 +284,14 @@ export default function LandingPageVTwoPage() {
                   value2={value2}
                 />
               </div>
-              <div ref={Ourindustry}>
-              <OurIndustrySection />
+              <div 
+               style={{
+                
+                height: hideSurroundingDivsOurindustry ? "100vh" : "auto",
+                
+              }}
+              ref={ Ourindustry}>
+                <OurIndustrySection />
               </div>
             </div>
           </div>
