@@ -291,13 +291,13 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
         >
           {cardsData[cardState]?.data?.heading4}
         </Text>
-        <Text
+        {/* <Text
           size="s"
           as="p"
           className="!text-blue_gray-400 tracking-[3.20px]"
         >
           PRE-ORDER to lock in rate*
-        </Text>
+        </Text> */}
       </div>
       <Text
         size="md"
