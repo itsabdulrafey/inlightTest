@@ -256,7 +256,7 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
       style={{
         backgroundColor: "white",
         maxWidth: 800,
-        height: 400,
+     
       }}
     >
       <div className="flex justify-between gap-5">
