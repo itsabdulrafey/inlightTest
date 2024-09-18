@@ -269,7 +269,7 @@ export default function LandingPageVTwoPage() {
                 </div>
               </div>
 
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -283,7 +283,7 @@ export default function LandingPageVTwoPage() {
                   handleChange2={handleChange2}
                   value2={value2}
                 />
-              </div>
+              </div> */}
               <div 
                style={{
                 
