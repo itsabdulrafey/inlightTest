@@ -74,7 +74,7 @@ const cardsData = [
       heading1: "eFX ",
       heading2: "Apex",
       heading3: "Est. 899$*",
-      heading4: "The Standard eFX Trades",
+      heading4: "The Most Powerful Big-Data Stream",
       paragraphs: [
         "Plus, Edge, and Alpha datasets",
         "Exclusive trades in selective G10 crosses",
