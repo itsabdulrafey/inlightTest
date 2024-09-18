@@ -136,7 +136,7 @@ export default function LandingPageVTwoPage() {
                 <div className="flex w-[73%] md:w-full">
                   <div className="flex flex-col items-start w-full gap-7">
                     <Text size="xl" as="p" className="!text-gray-200">
-                      Secure Your One-Time Purchase Today{" "}
+                      Secure Your Join our eFX Apex waitlist, today{" "}
                     </Text>
                     <Heading size="6xl" as="h1">
                       Explore Premium Market Insights with eFX Data
