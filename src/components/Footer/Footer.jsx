@@ -31,7 +31,7 @@ useEffect(() => {
         <div className="flex justify-center w-[97%] md:w-full mt-4 md:p-5">
           <div
             // style={{ backgroundColor: "blue" }}
-            className="flex flex-col w-full gap-[72px] md:gap-[54px] sm:gap-9"
+            className="flex flex-col w-full  md:gap-[54px] sm:gap-9"
           >
             <div
               // style={{ backgroundColor: "red" }}
@@ -78,7 +78,7 @@ useEffect(() => {
                         alt="shutterstock"
                         className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[976px]"
                       />
-                  <div
+                  {/* <div
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -107,7 +107,7 @@ useEffect(() => {
 
                           <Img src="images/Vector.png" alt="shutterstock" />
                     </div>
-                  </div>
+                  </div> */}
             </div>
             {/* <div style={{color:"white"}} className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1375px]">
               <div style={{display:"flex",flexDirection:"column"}}>
