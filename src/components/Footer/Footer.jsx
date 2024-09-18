@@ -138,13 +138,7 @@ useEffect(() => {
 
             <div className="flex md:flex-col justify-between items-center gap-5">
               <div className="flex md:flex-col items-center gap-[30px]">
-                <Button
-                  size="xs"
-                  shape="square"
-                  className="tracking-[1.00px] min-w-[60px]"
-                >
-                  200
-                </Button>
+              
                 <div className="flex md:flex-col items-center gap-[30px]">
                   <Heading as="h5" className="self-end tracking-[1.00px]">
                     @landing_apex
