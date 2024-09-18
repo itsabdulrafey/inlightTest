@@ -321,7 +321,7 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
               </div>
             </div>
             <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{ position: "relative", top: 400, zIndex: 9999 }}>
-              <Button
+              {/* <Button
                 variant="outline"
                 shape="round"
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
@@ -330,11 +330,11 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
                 }}
               >
                 Place Pre-Order
-              </Button>
+              </Button> */}
               <Heading
                 size="lg"
                 as="h6"
-                className="!text-gray-800 tracking-[3.20px] uppercase"
+                className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
               >
                 JOIN WAITLIST  →
               </Heading>
