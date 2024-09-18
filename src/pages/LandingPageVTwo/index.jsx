@@ -143,8 +143,8 @@ export default function LandingPageVTwoPage() {
                     </Heading>
                   </div>
                 </div>
-                <div className="flex justify-between items-center ml-[732px] gap-5 md:ml-0">
-                  <Button
+                <div  className="flex justify-end items-center ml-[732px] gap-5 md:ml-0">
+                  {/* <Button
                     shape="round"
                     className="sm:px-5 tracking-[1.60px] uppercase shadow-xs min-w-[228px]"
                     onClick={() => {
@@ -152,8 +152,8 @@ export default function LandingPageVTwoPage() {
                     }}
                   >
                     Place Pre-Order
-                  </Button>
-                  <Heading size="lg" as="h2" className="tracking-[1.60px]">
+                  </Button> */}
+                  <Heading style={{cursor:"pointer"}} size="lg" as="h2" className="tracking-[1.60px]">
                     JOIN WAITLIST →
                   </Heading>
                 </div>
