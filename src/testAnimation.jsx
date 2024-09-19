@@ -36,7 +36,7 @@ const cardsData = [
       heading1: "eFX ",
       heading2: "Edge",
       heading3: "Est. 299$*",
-      heading4: "The Standard eFX Trades",
+      heading4: "The Sentiment Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
         "Generated from eFX’s medium and short term indicators.",
@@ -54,7 +54,7 @@ const cardsData = [
       heading1: "eFX ",
       heading2: "Alpha",
       heading3: "Est. 399$*",
-      heading4: "The Standard eFX Trades",
+      heading4: "The Sentiment Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
         "Provides quant-based trades for data-driven decision making",
@@ -74,7 +74,7 @@ const cardsData = [
       heading1: "eFX ",
       heading2: "Apex",
       heading3: "Est. 899$*",
-      heading4: "The Standard eFX Trades",
+      heading4: "The Most Powerful Big-Data Stream",
       paragraphs: [
         "Plus, Edge, and Alpha datasets",
         "Exclusive trades in selective G10 crosses",
@@ -256,7 +256,7 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
       style={{
         backgroundColor: "white",
         maxWidth: 800,
-        height: 400,
+     
       }}
     >
       <div className="flex justify-between gap-5">
@@ -291,13 +291,13 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
         >
           {cardsData[cardState]?.data?.heading4}
         </Text>
-        <Text
+        {/* <Text
           size="s"
           as="p"
           className="!text-blue_gray-400 tracking-[3.20px]"
         >
           PRE-ORDER to lock in rate*
-        </Text>
+        </Text> */}
       </div>
       <Text
         size="md"
@@ -321,7 +321,7 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
               </div>
             </div>
             <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{ position: "relative", top: 400, zIndex: 9999 }}>
-              <Button
+              {/* <Button
                 variant="outline"
                 shape="round"
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
@@ -330,11 +330,11 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
                 }}
               >
                 Place Pre-Order
-              </Button>
+              </Button> */}
               <Heading
                 size="lg"
                 as="h6"
-                className="!text-gray-800 tracking-[3.20px] uppercase"
+                className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
               >
                 JOIN WAITLIST  →
               </Heading>

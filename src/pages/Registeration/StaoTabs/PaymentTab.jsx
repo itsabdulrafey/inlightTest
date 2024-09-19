@@ -6,7 +6,7 @@ const PaymentTab = () => {
   return (
     <>
     
-      <div className="mt-[55px] flex w-[55%] flex-col items-start gap-[30px] md:w-full">
+      <div className="mt-[55px] flex w-[100%] flex-col items-start gap-[30px] md:w-full">
                   <AuthHeading size="xl" as="h6" className="tracking-[0.72px]">
                     Choose a Payment Method
                   </AuthHeading>

@@ -8,7 +8,25 @@ const SideContant = ({step=0}) => {
 
 
           
-  {step==1?  <div className="mt-[343px] flex w-[25%] flex-col gap-4 md:w-full">
+  {step==1?  
+  <div>
+  <div className="flex flex-col items-start gap-[7px]">
+                <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
+                Our Products
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Plus HD
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Edge
+              </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Alpha           
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Apex           
+                </AuthText>
+              </div>
               <div className="flex flex-col items-start gap-[7px]">
                 <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
                   eFXplus
@@ -21,7 +39,24 @@ const SideContant = ({step=0}) => {
             </div>
             :step==2?
           <div>
-           <div style={{padding:40}} className="absolute left-[0.00px] top-[20%] m-auto flex w-[50%] flex-col gap-[78px] md:gap-[58px] sm:gap-[39px]">
+             <div className="flex flex-col items-start gap-[7px]">
+                <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
+                Our Products
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Plus HD
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Edge
+              </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Alpha           
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Apex           
+                </AuthText>
+              </div>
+           <div  >
             <div className="flex flex-col gap-[33px]">
               <div className="flex flex-col items-start gap-[3px]">
                 <AuthText size="md" as="p" className="!font-audiowide !text-indigo-900">
@@ -133,7 +168,24 @@ const SideContant = ({step=0}) => {
             </div>
           </div>
           </div>:step==3?
-<div className="mt-[196px] flex w-[25%] flex-col gap-20 md:w-full md:gap-[60px] sm:gap-10">
+<div >
+<div className="flex flex-col items-start gap-[7px]">
+                <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
+                Our Products
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Plus HD
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Edge
+              </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Alpha           
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Apex           
+                </AuthText>
+              </div>
               <div className="flex flex-col gap-[22px]">
                 <div className="flex flex-col items-start gap-1">
                   <AuthText size="lg" as="p" className="!font-audiowide !text-indigo-900">
@@ -163,7 +215,24 @@ const SideContant = ({step=0}) => {
                 </AuthText>
               </div>
             </div>:step==4?<>
-            <div className="mt-[343px] flex w-[25%] flex-col gap-4 md:w-full">
+            <div >
+            <div className="flex flex-col items-start gap-[7px]">
+                <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
+                Our Products
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Plus HD
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Edge
+              </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Alpha           
+                </AuthText>
+                <AuthText size="s" as="p" className="w-full leading-[140%]">
+                eFX Apex           
+                </AuthText>
+              </div> 
               <div className="flex flex-col items-start gap-[7px]">
                 <AuthText  size="lg" as="p" className="!font-audiowide !text-indigo-900">
                   eFXplus
