@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { Heading, Img, Button, Text } from "../../components";
+import { useNavigate, useRoutes } from "react-router-dom";
 
 // Assuming Img is a styled img tag, we'll replace it with MUI's Box component for this example
 
 
 const Footer = () => {
+  const Navigate=useNavigate()
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -44,6 +46,10 @@ useEffect(() => {
                 shape="round"
                 style={{ backgroundColor: "white", color: "black" }}
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[183px]"
+              onClick={() => {
+    window.scrollTo(0, 0);  // Scroll to top
+    Navigate("/ContactUs");
+  }}
               >
                 Contact us
               </Button>
