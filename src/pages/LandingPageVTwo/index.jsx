@@ -113,6 +113,21 @@ export default function LandingPageVTwoPage() {
 
   return (
     <>
+    
+    <Helmet>
+        <title>Itsabdulrafey's Application4</title>
+        <meta name="description" content="Web site created using create-react-app" />
+      </Helmet>
+      <div className="flex flex-col items-center w-full pt-[22px] gap-3.5 sm:pt-5 bg-white-A700">
+        <Header
+          handelDiv={handelDiv}
+          cardState={cardState}
+          setcardState={setcardState}
+          headerHandleClick={headerHandleClick}
+        />
+        <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
+
+
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
               <Img
@@ -283,6 +298,10 @@ export default function LandingPageVTwoPage() {
               </div>
             </div>
           </div>
+          <Footer />
+        </div>
+      </div>
+
     </>
   );
 }

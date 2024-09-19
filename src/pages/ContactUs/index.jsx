@@ -1,5 +1,33 @@
 import React, { useState } from 'react';
-import { TextField, Button, Card, CardContent, Typography, Box, Divider } from '@mui/material';
+import { TextField,IconButton,AppBar, Toolbar,Button, Card, CardContent, Typography, Box, Divider } from '@mui/material';
+import Footer from 'components/Footer/Footer';
+
+import { useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+const HeaderWithBack = () => {
+  const navigate = useNavigate();
+
+  return (
+    <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
+      <Toolbar>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="back"
+          onClick={() => navigate(-1)} // Navigate back
+        >
+          <ArrowBackIcon style={{fontSize:40}} />
+        </IconButton>
+        {/* <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>
+          Header Title
+        </Typography> */}
+      </Toolbar>
+    </AppBar>
+  );
+}
+
+
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +51,8 @@ const ContactUs = () => {
   };
 
   return (
+    <>
+    {HeaderWithBack()}
     <Box
       sx={{
         display: 'flex',
@@ -130,6 +160,8 @@ const ContactUs = () => {
         )}
       </Card>
     </Box>
+    <Footer/>
+    </>
   );
 };
 

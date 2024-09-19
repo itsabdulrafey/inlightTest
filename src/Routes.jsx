@@ -11,18 +11,12 @@ import ContactUs from "pages/ContactUs";
 import MainLayout from "layout/MainLayout";
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "/", element: <MainLayout />,
-    children: [
-      {
-        path: "/",
-        element: <LandingPageVTwo />
-      },
-      {
-        path: "ContactUs",
-        element: <ContactUs />
-      },
-    ] 
+    { path: "/", element: <LandingPageVTwo />,
+
   },
+  { path: "/ContactUs", element: <ContactUs />,
+},
+
     { path: "*", element: <NotFound /> },
     {
       path: "Registeration",
