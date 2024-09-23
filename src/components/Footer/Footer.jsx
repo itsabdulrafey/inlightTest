@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { Heading, Img, Button, Text } from "../../components";
+import { useNavigate, useRoutes } from "react-router-dom";
 
 // Assuming Img is a styled img tag, we'll replace it with MUI's Box component for this example
 
 
 const Footer = () => {
+  const Navigate=useNavigate()
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -35,7 +37,7 @@ useEffect(() => {
           >
             <div
               // style={{ backgroundColor: "red" }}
-              className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1375px]"
+              className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1200px]"
             >
               <Heading size="5xl" as="h1" className="tracking-[8.00px]">
                 eFX Plus
@@ -44,11 +46,15 @@ useEffect(() => {
                 shape="round"
                 style={{ backgroundColor: "white", color: "black" }}
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[183px]"
+              onClick={() => {
+    window.scrollTo(0, 0);  // Scroll to top
+    Navigate("/ContactUs");
+  }}
               >
                 Contact us
               </Button>
             </div>
-            <div className="flex justify-between items-start w-full gap-5 mx-auto max-w-[1375px] md:p-5 ">
+            <div className="flex  justify-between items-start w-full gap-5 mx-auto max-w-[1200px] md:p-5 ">
                   <div
                     style={{
                       display: "flex",
@@ -76,7 +82,7 @@ useEffect(() => {
                       <Img
                         src="images/img_shutterstock_2344967333.png"
                         alt="shutterstock"
-                        className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[976px]"
+                        className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[676px] ml-14"
                       />
                   {/* <div
                     style={{
@@ -136,7 +142,7 @@ useEffect(() => {
               </div>
             </div> */}
 
-            <div className="flex md:flex-col justify-between items-center gap-5">
+            {/* <div className="flex md:flex-col justify-between items-center gap-5">
               <div className="flex md:flex-col items-center gap-[30px]">
               
                 <div className="flex md:flex-col items-center gap-[30px]">
@@ -209,7 +215,7 @@ useEffect(() => {
                   5.4.25
                 </Heading>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>

@@ -113,7 +113,8 @@ export default function LandingPageVTwoPage() {
 
   return (
     <>
-      <Helmet>
+    
+    <Helmet>
         <title>Itsabdulrafey's Application4</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
@@ -125,6 +126,8 @@ export default function LandingPageVTwoPage() {
           headerHandleClick={headerHandleClick}
         />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
+
+
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
               <Img
@@ -132,14 +135,26 @@ export default function LandingPageVTwoPage() {
                 alt="shutterstock"
                 className="h-[634px] w-full object-cover rounded-[76px]"
               />
-              <div className="flex flex-col w-[90%] gap-[197px] bottom-[10%] right-0 left-0 m-auto md:gap-[147px] sm:gap-[98px] absolute">
-                <div className="flex w-[73%] md:w-full">
-                  <div className="flex flex-col items-start w-full gap-7">
+              <div className="flex flex-col w-[90%] gap-[197px] bottom-0 top-11 right-0 left-0 m-auto md:gap-[147px] sm:gap-[98px] absolute">
+                <div className="flex w-[73%] md:w-full top-44">
+                  <div className="flex flex-col items-start w-full gap-2">
                     <Text size="xl" as="p" className="!text-gray-200">
-                      Secure Your Join our eFX Apex waitlist, today{" "}
+                      eFX Apex institutional-Grade Data Hub
                     </Text>
+                    <Heading size="6xl" as="h4">
+                      Trade smart with efx:
+                    </Heading>
+                     <Heading size="6xl" as="h4">
+                      Plus HD
+                    </Heading>
+                     <Heading size="6xl" as="h4">
+                      Edge
+                    </Heading>
                     <Heading size="6xl" as="h1">
-                      Explore Premium Market Insights with eFX Data
+                      Alpha
+                    </Heading>
+                    <Heading size="6xl" as="h1">
+                     Apex
                     </Heading>
                   </div>
                 </div>
@@ -298,6 +313,7 @@ export default function LandingPageVTwoPage() {
           <Footer />
         </div>
       </div>
+
     </>
   );
 }

@@ -7,14 +7,17 @@ import PaymentTab from "pages/Registeration/StaoTabs/PaymentTab";
 import Registeration from "pages/Registeration";
 import Signup from "pages/Registeration/Signup";
 import Payment from "pages/Registeration/StaoTabs/PaymentTab";
+import ContactUs from "pages/ContactUs";
+import MainLayout from "layout/MainLayout";
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "/", element: <LandingPageVTwo /> },
+    { path: "/", element: <LandingPageVTwo />,
+
+  },
+  { path: "/ContactUs", element: <ContactUs />,
+},
+
     { path: "*", element: <NotFound /> },
-    {
-      path: "landingpagevtwo",
-      element: <LandingPageVTwo />,
-    },
     {
       path: "Registeration",
       element: <Registeration />,
