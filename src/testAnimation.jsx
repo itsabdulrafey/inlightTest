@@ -54,7 +54,7 @@ const cardsData = [
       heading1: "eFX ",
       heading2: "Alpha",
       heading3: "Est. 399$*",
-      heading4: "The Sentiment Trades",
+      heading4: "The Systematic Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
         "Provides quant-based trades for data-driven decision making",
