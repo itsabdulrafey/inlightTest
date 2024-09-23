@@ -37,7 +37,7 @@ useEffect(() => {
           >
             <div
               // style={{ backgroundColor: "red" }}
-              className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1375px]"
+              className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1200px]"
             >
               <Heading size="5xl" as="h1" className="tracking-[8.00px]">
                 eFX Plus
@@ -54,7 +54,7 @@ useEffect(() => {
                 Contact us
               </Button>
             </div>
-            <div className="flex justify-between items-start w-full gap-5 mx-auto max-w-[1375px] md:p-5 ">
+            <div className="flex  justify-between items-start w-full gap-5 mx-auto max-w-[1200px] md:p-5 ">
                   <div
                     style={{
                       display: "flex",
@@ -82,7 +82,7 @@ useEffect(() => {
                       <Img
                         src="images/img_shutterstock_2344967333.png"
                         alt="shutterstock"
-                        className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[976px]"
+                        className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[676px] ml-14"
                       />
                   {/* <div
                     style={{
@@ -142,7 +142,7 @@ useEffect(() => {
               </div>
             </div> */}
 
-            <div className="flex md:flex-col justify-between items-center gap-5">
+            {/* <div className="flex md:flex-col justify-between items-center gap-5">
               <div className="flex md:flex-col items-center gap-[30px]">
               
                 <div className="flex md:flex-col items-center gap-[30px]">
@@ -215,7 +215,7 @@ useEffect(() => {
                   5.4.25
                 </Heading>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
