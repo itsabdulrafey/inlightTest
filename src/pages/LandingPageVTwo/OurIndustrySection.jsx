@@ -18,7 +18,7 @@ const OurIndustrySection = () => {
         >
           Our Industry Partners
         </Heading>
-        <div className="flex md:flex-col self-stretch justify-evenly items-center gap-10">
+        <div className="flex md:flex-col self-stretch justify-evenly items-center gap-10 mt-[30px]">
           <Img
             src="images/img_image_4.png"
             alt="imagefour_one"
