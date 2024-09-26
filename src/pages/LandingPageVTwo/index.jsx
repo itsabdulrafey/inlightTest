@@ -139,11 +139,11 @@ export default function LandingPageVTwoPage() {
                 <div className="flex w-[73%] md:w-full top-44">
                   <div style={{marginTop:70}} className="flex flex-col items-start w-full gap-2">
                     <Text style={{backgroundColor:"black"}} size="xl" as="p" className="!text-gray-200">
-                      eFX Apex institutional-Grade Data Hub
+                      eFX institutional-Grade Data Hub
                     </Text>
                     <div style={{backgroundColor:"black",marginTop:25}}>
                     <Heading size="6xl" as="h4">
-                      Trade smart with efx:
+                      Trade smart with eFX:
                     </Heading>
                      <Heading className="mt-[20px]" size="6xl" as="h4">
                       Plus HD
