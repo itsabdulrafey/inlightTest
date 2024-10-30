@@ -16,8 +16,10 @@ export default function LandingPageVTwoPage() {
   const [value2, setValue2] = React.useState(0);
   const [isheight, setisheight] = React.useState("");
   const [hideSurroundingDivs, setHideSurroundingDivs] = useState(false);
-  const [hideSurroundingDivsPreOrder, sethideSurroundingDivsPreOrder] = useState(false);
-  const [hideSurroundingDivsOurindustry, sethideSurroundingOurindustry] = useState(false);
+  const [hideSurroundingDivsPreOrder, sethideSurroundingDivsPreOrder] =
+    useState(false);
+  const [hideSurroundingDivsOurindustry, sethideSurroundingOurindustry] =
+    useState(false);
 
   const [cardState, setcardState] = useState(0);
 
@@ -27,12 +29,11 @@ export default function LandingPageVTwoPage() {
 
   const headerHandleClick = () => {
     //  sethideSurroundingDivsPreOrder(true);
-    setHideSurroundingDivs(true)
+    setHideSurroundingDivs(true);
     console.log("========================>>>>headerHandleClick");
   };
 
   const navigate = useNavigate();
-
 
   const handleChange2 = (event, newValue) => {
     setValue2(newValue);
@@ -44,13 +45,13 @@ export default function LandingPageVTwoPage() {
   };
 
   const handelDivPlacePreOrder = () => {
-      //  setHideSurroundingDivs(false);
-      sethideSurroundingDivsPreOrder(true);
-      // sethideSurroundingOurindustry(true);
+    //  setHideSurroundingDivs(false);
+    sethideSurroundingDivsPreOrder(true);
+    // sethideSurroundingOurindustry(true);
 
     if (placePreOrder.current) {
-      console.log("======================YES =================")
-     
+      console.log("======================YES =================");
+
       placePreOrder.current.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -73,34 +74,32 @@ export default function LandingPageVTwoPage() {
     const windowHeight = window.innerHeight;
 
     // Conditions for hiding/showing surrounding divs based on viewport
-    const isAnimationInView = rectAnimation?.top < windowHeight && rectAnimation?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isAnimationInView:", isAnimationInView)
-    const isPreOrderInView = rectPreOrder?.top < windowHeight && rectPreOrder?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isPreOrderInView:", isPreOrderInView)
-    const isIndustryInView = rectIndustry?.top < windowHeight && rectIndustry?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isIndustryInView:", isIndustryInView)
+    const isAnimationInView =
+      rectAnimation?.top < windowHeight && rectAnimation?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isAnimationInView:", isAnimationInView);
+    const isPreOrderInView =
+      rectPreOrder?.top < windowHeight && rectPreOrder?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isPreOrderInView:", isPreOrderInView);
+    const isIndustryInView =
+      rectIndustry?.top < windowHeight && rectIndustry?.bottom > 0;
+    console.log("🚀 ~ handleScroll ~ isIndustryInView:", isIndustryInView);
 
     // Logic for hiding/showing surrounding divs based on which div is in view
     if (isAnimationInView && isPreOrderInView && isIndustryInView) {
-      console.log("🚀 ~ handleScroll ~ isIndustryInView:===============>>>>")
+      console.log("🚀 ~ handleScroll ~ isIndustryInView:===============>>>>");
       setHideSurroundingDivs(false);
       sethideSurroundingDivsPreOrder(false);
-    }else if(isIndustryInView && isPreOrderInView) {
+    } else if (isIndustryInView && isPreOrderInView) {
       setHideSurroundingDivs(false);
       sethideSurroundingDivsPreOrder(false);
-      sethideSurroundingOurindustry(false)
-    }else if(isAnimationInView && isPreOrderInView  ) {;
+      sethideSurroundingOurindustry(false);
+    } else if (isAnimationInView && isPreOrderInView) {
       // setHideSurroundingDivs(false);
-   
-       
     }
-    console.log("hideSurroundingOurindustry",hideSurroundingDivsOurindustry)
-
+    console.log("hideSurroundingOurindustry", hideSurroundingDivsOurindustry);
   };
 
-  
-
-  console.log("hideSurroundingDivsPreOrder",hideSurroundingDivsPreOrder)
+  console.log("hideSurroundingDivsPreOrder", hideSurroundingDivsPreOrder);
 
   // Single useEffect for handling scroll events and updating based on refs
   useEffect(() => {
@@ -113,12 +112,14 @@ export default function LandingPageVTwoPage() {
 
   return (
     <>
-    
-    <Helmet>
+      <Helmet>
         <title>Itsabdulrafey's Application4</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-[22px] gap-3.5 sm:pt-5 bg-white-A700">
+      <div className="flex flex-col items-center w-full gap-3.5 bg-white-A700">
         <Header
           handelDiv={handelDiv}
           cardState={cardState}
@@ -126,41 +127,76 @@ export default function LandingPageVTwoPage() {
           headerHandleClick={headerHandleClick}
         />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
-
-
           <div className="flex flex-col gap-5">
-            <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative max-w-[1300px]">
+            <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative w-[100%]">
               <Img
-                src="images/img_shutterstock_454907698.png"
+                src="images/heroImage.svg"
                 alt="shutterstock"
-                className="h-[634px] w-full object-cover rounded-[76px]"
+                className="h-[634px] w-full object-cover rounded-[0px]"
               />
-              <div className="flex flex-col w-[90%] gap-[28px] bottom-0 top-11 right-0 left-0 m-auto md:gap-[147px] sm:gap-[98px] absolute">
-                <div className="flex w-[73%] md:w-full top-44">
-                  <div style={{marginTop:70}} className="flex flex-col items-start w-full gap-2">
-                    <Text style={{backgroundColor:"black"}} size="xl" as="p" className="!text-gray-200">
-                      eFX institutional-Grade Data Hub
+              <div
+                style={{ maxWidth: 1300 }}
+                className="flex flex-col w-[100%] gap-[28px] bottom-0 top-11 right-0 left-0 m-auto md:gap-[147px] sm:gap-[98px] absolute"
+              >
+                <div className="flex w-[100%] md:w-full top-44">
+                  <div
+                    style={{ marginTop: 70 }}
+                    className="flex flex-col items-start w-full gap-2"
+                  >
+                    <Text
+                      style={{
+                        backgroundColor: "rgba(100, 96, 92, 0.7)", // Semi-transparent dark gray
+                        padding: "5px 10px",
+                        borderRadius: "6px",
+                        fontWeight: 700,
+                        paddingLeft: 30,
+                        paddingRight: 30,
+                      }}
+                      size="xl"
+                      as="p"
+                      className="!text-white-A700"
+                    >
+                      The Institutional-Grade Data Hub
                     </Text>
-                    <div style={{backgroundColor:"black",marginTop:25}}>
-                    <Heading size="6xl" as="h4">
-                      Trade smart with eFX:
-                    </Heading>
-                     <Heading className="mt-[20px]" size="6xl" as="h4">
-                      Plus HD
-                    </Heading>
-                     <Heading size="6xl" as="h4">
-                      Edge
-                    </Heading>
-                    <Heading size="6xl" as="h1">
-                      Alpha
-                    </Heading>
-                    <Heading size="6xl" as="h1">
-                     Apex
-                    </Heading>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        marginTop: 100,
+                      }}
+                    >
+                      <div
+                        style={{
+                          backgroundColor: "rgba(100, 96, 92, 0.7)", // Semi-transparent dark gray
+                          padding: "10px 20px",
+                          marginTop: 25,
+                          borderRadius: "6px",
+
+                          // boxShadow:
+                          //   "inset 0 0 10px 5px rgba(255, 255, 255, 0.5)", // Inner white glow effect
+                        }}
+                      >
+                        <Heading
+                          size="4xl"
+                          as="h4"
+                          className="!text-white-A700"
+                          style={{
+                            fontWeight: 300,
+                            paddingLeft: 30,
+                            paddingRight: 30,
+                          }}
+                        >
+                          Trade With Data Intelligence From eFX
+                        </Heading>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div  className="flex justify-end items-center ml-[732px] gap-5 md:ml-0">
+                <div
+                  className="flex justify-end items-center ml-[732px] gap-5 md:ml-0"
+                  style={{ marginTop: 150 }}
+                >
                   {/* <Button
                     shape="round"
                     className="sm:px-5 tracking-[1.60px] uppercase shadow-xs min-w-[228px]"
@@ -170,9 +206,19 @@ export default function LandingPageVTwoPage() {
                   >
                     Place Pre-Order
                   </Button> */}
-                  <Heading style={{cursor:"pointer"}} size="lg" as="h2" className="tracking-[1.60px]">
-                    JOIN WAITLIST →
-                  </Heading>
+                  <Button
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor: "white",
+                      color: "black",
+                    }}
+                    shape="round"
+                    size="lg"
+                    as="h2"
+                    className="tracking-[1.60px]"
+                  >
+                    JOIN WAITLIST
+                  </Button>
                 </div>
               </div>
             </div>
@@ -301,13 +347,12 @@ export default function LandingPageVTwoPage() {
                   value2={value2}
                 />
               </div> */}
-              <div 
-               style={{
-                
-                height: hideSurroundingDivsOurindustry ? "100vh" : "auto",
-                
-              }}
-              ref={ Ourindustry}>
+              <div
+                style={{
+                  height: hideSurroundingDivsOurindustry ? "100vh" : "auto",
+                }}
+                ref={Ourindustry}
+              >
                 <OurIndustrySection />
               </div>
             </div>
@@ -315,7 +360,6 @@ export default function LandingPageVTwoPage() {
           <Footer />
         </div>
       </div>
-
     </>
   );
 }

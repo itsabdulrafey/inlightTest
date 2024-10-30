@@ -46,7 +46,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
       </MenuItem>
       <MenuItem
         onClick={() => {
-        
           handelDiv();
           setcardState(0);
           handleMenuClose();
@@ -89,7 +88,7 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
 
   const textStyle = {
     fontWeight: "bold",
-    color: "black",
+    color: "white",
     fontSize: !isLargeScreen ? "0.75rem" : "1rem",
     letterSpacing: !isLargeScreen ? "1px" : "2px",
   };
@@ -100,15 +99,22 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        backgroundColor: "transparent",
+        position: "absolute",
+        top: 0,
+        width: "80%",
+        padding: "10px 0",
+        zIndex: 1000,  // Keeps the header on top
+        maxWidth:1300
       }}
-      className="w-[88%] md:w-full md:p-5 mx-auto"
+      className="w-[38%] md:w-full md:p-5 mx-auto"
     >
       <div
         style={{ color: "orange" }}
         className="flex sm:flex-col justify-between items-center gap-5"
       >
         <StyledImage>
-          <img src="images/img_image_19.png" alt="imagenineteen" />
+          <img src="images/headerLogo.svg" alt="imagenineteen" />
         </StyledImage>
       </div>
       {isLargeScreen && (
@@ -131,7 +137,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
               <Link
                 onClick={(event) => {
                   event.preventDefault()
-                  console.log("========================asdasd====>");
                   headerHandleClick();
                   handelDiv();
                   setcardState(0);
@@ -144,7 +149,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  console.log("========================asdasd====>");
                   headerHandleClick();
                   handelDiv();
                   setcardState(1);
@@ -157,8 +161,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  console.log("========================asdasd====>");
-                  
                   headerHandleClick();
                   handelDiv();
                   setcardState(2);
@@ -171,7 +173,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  console.log("========================asdasd====>");
                   headerHandleClick();
                   handelDiv();
                   setcardState(3);
@@ -193,7 +194,7 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
               aria-label="menu"
               onClick={handleMenuOpen}
             >
-              <MenuIcon />
+              <MenuIcon style={{ color: "white" }} />
             </IconButton>
             <Menu
               anchorEl={anchorEl}
@@ -213,9 +214,7 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           <Heading
             size="lg"
             as="h6"
-            className={`!text-gray-900 ${
-              !isLargeScreen ? "text-sm" : "text-lg"
-            } uppercase`}
+            className={`!text-white ${!isLargeScreen ? "text-sm" : "text-lg"} uppercase`}
           >
             Sign up
           </Heading>
@@ -229,6 +228,8 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           className={`sm:px-5 ${
             !isLargeScreen ? "text-xs" : "text-sm"
           } tracking-[3.20px] uppercase min-w-[150px]`}
+          style={{ color: "black", backgroundColor:"white" }}
+          
         >
           Log in
         </Button>
