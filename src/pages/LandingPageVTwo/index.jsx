@@ -145,12 +145,14 @@ export default function LandingPageVTwoPage() {
                   >
                     <Text
                       style={{
-                        backgroundColor: "rgba(100, 96, 92, 0.7)", // Semi-transparent dark gray
+                        backgroundColor: "#75716DB2", // Semi-transparent background color
                         padding: "5px 10px",
                         borderRadius: "6px",
                         fontWeight: 700,
                         paddingLeft: 30,
                         paddingRight: 30,
+                        boxShadow:
+                          "0 15px 50px rgba(255, 255, 255, 0.2), 0 -15px 50px rgba(255, 255, 255, 0.2)", // Lighter and more spread-out glow
                       }}
                       size="xl"
                       as="p"
@@ -158,6 +160,7 @@ export default function LandingPageVTwoPage() {
                     >
                       The Institutional-Grade Data Hub
                     </Text>
+
                     <div
                       style={{
                         width: "100%",
@@ -172,6 +175,8 @@ export default function LandingPageVTwoPage() {
                           padding: "10px 20px",
                           marginTop: 25,
                           borderRadius: "6px",
+                          boxShadow:
+                            "0 15px 50px rgba(255, 255, 255, 0.2), 0 -15px 50px rgba(255, 255, 255, 0.2)", // Lighter and more spread-out glow
 
                           // boxShadow:
                           //   "inset 0 0 10px 5px rgba(255, 255, 255, 0.5)", // Inner white glow effect
