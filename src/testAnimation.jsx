@@ -5,8 +5,11 @@ import imagess from ".././src/assets/images/image 3.svg";
 import images2 from ".././src/assets/images/shutterstock_2349592357 1 (1).svg";
 import images3 from ".././src/assets/images/shutterstock_1890281956 1.svg";
 import images4 from ".././src/assets/images/shutterstock_9928186 1.svg";
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cardsData = [
   {
@@ -69,7 +72,7 @@ const cardsData = [
     id: 3,
     color: "white",
     text: "khaki",
-    image: images4,
+    image: "images/shutterstock_9928186 1.svg",
     data: {
       heading1: "eFX ",
       heading2: "Apex",
@@ -99,7 +102,7 @@ const cardContainerStyle = {
   borderRadius: 3,
 };
 
-const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
+const CardContainer = ({ setcardState, cardState, handleDivPlacePreOrder }) => {
   const animateDivRef = useRef(null);
 
   useEffect(() => {}, []);
@@ -197,131 +200,145 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
 
   return (
     <>
-     <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        height: 400,
-        position: "relative",
-      }}
-
-    >
-      <FontAwesomeIcon
-        icon={faChevronLeft}
-        style={{ cursor: 'pointer', zIndex: 1000,fontSize:25 }}
-        onClick={() => {
-          cardState > 0 ? setcardState(cardState - 1) : setcardState(cardsData.length - 1);
-        }}
-      />
-
       <div
         style={{
-          width: "90%",
+          width: "100%",
           display: "flex",
-          justifyContent: "space-evenly",
-          height: "100%",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: 400,
+          position: "relative",
         }}
       >
-        <div style={{ display: "flex", width: "100%", flexDirection: "column", gap: "1rem" }}>
-          <div style={{ color: "green", position: "relative" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: "4rem",
-                width: "100%",
-                flexWrap: "wrap",
-              }}
-         
-            >
-              <div style={{ color: "green", width: "100%", position: "relative" }}>
-              {activeCards.map((card, index) => (
-  <div
-    key={card.id}
-    style={cardStyle1}
-    onClick={() => {
-      cardState >= cardsData.length - 1
-        ? setcardState(0)
-        : setcardState(cardState + 1);
-    }}
-  >
-    <span style={{ backgroundColor: "white" }}>
-      {/* {`======>${cardState}`} */}
-    </span>
-    {/* Card {card.id + 1} */}
-    <div
-      onClick={handleCardClick}
-      style={{
-        backgroundColor: "white",
-        maxWidth: 800,
-     
-      }}
-    >
-      <div className="flex justify-between gap-5">
-        <div className="flex">
-          <Text
-            size="xl"
-            as="p"
-            className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
-          >
-            <span className="text-black-900">
-              {cardsData[cardState]?.data?.heading1}
-            </span>
-            <span className="text-black-900 font-bold">
-              {cardsData[cardState]?.data?.heading2}
-            </span>
-          </Text>
-        </div>
-        <div className="flex py-[13px]">
-          <Heading
-            as="h5"
-            className="!text-black-900 tracking-[4.00px] uppercase"
-          >
-            {cardsData[cardState]?.data?.heading3}
-          </Heading>
-        </div>
-      </div>
-      <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
-        <Text
-          size="s"
-          as="p"
-          className="!text-blue_gray-400 tracking-[3.20px]"
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          style={{ cursor: "pointer", zIndex: 1000, fontSize: 25 }}
+          onClick={() => {
+            cardState > 0
+              ? setcardState(cardState - 1)
+              : setcardState(cardsData.length - 1);
+          }}
+        />
+
+        <div
+          style={{
+            width: "90%",
+            display: "flex",
+            justifyContent: "space-evenly",
+            height: "100%",
+          }}
         >
-          {cardsData[cardState]?.data?.heading4}
-        </Text>
-        {/* <Text
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "column",
+              gap: "1rem",
+            }}
+          >
+            <div style={{ color: "green", position: "relative" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "4rem",
+                  width: "100%",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div
+                  style={{
+                    color: "green",
+                    width: "100%",
+                    position: "relative",
+                  }}
+                >
+                  {activeCards.map((card, index) => (
+                    <div
+                      key={card.id}
+                      style={cardStyle1}
+                      onClick={() => {
+                        cardState >= cardsData.length - 1
+                          ? setcardState(0)
+                          : setcardState(cardState + 1);
+                      }}
+                    >
+                      <span style={{ backgroundColor: "white" }}>
+                        {/* {`======>${cardState}`} */}
+                      </span>
+                      {/* Card {card.id + 1} */}
+                      <div
+                        onClick={handleCardClick}
+                        style={{
+                          backgroundColor: "white",
+                          maxWidth: 800,
+                        }}
+                      >
+                        <div className="flex justify-between gap-5">
+                          <div className="flex">
+                            <Text
+                              size="xl"
+                              as="p"
+                              className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
+                            >
+                              <span className="text-black-900">
+                                {cardsData[cardState]?.data?.heading1}
+                              </span>
+                              <span className="text-black-900 font-bold">
+                                {cardsData[cardState]?.data?.heading2}
+                              </span>
+                            </Text>
+                          </div>
+                          <div className="flex py-[13px]">
+                            <Heading
+                              as="h5"
+                              className="!text-black-900 tracking-[4.00px] uppercase"
+                            >
+                              {cardsData[cardState]?.data?.heading3}
+                            </Heading>
+                          </div>
+                        </div>
+                        <div className="flex justify-between mt-[15px] gap-5 flex-wrap">
+                          <Text
+                            size="s"
+                            as="p"
+                            className="!text-blue_gray-400 tracking-[3.20px]"
+                          >
+                            {cardsData[cardState]?.data?.heading4}
+                          </Text>
+                          {/* <Text
           size="s"
           as="p"
           className="!text-blue_gray-400 tracking-[3.20px]"
         >
           PRE-ORDER to lock in rate*
         </Text> */}
-      </div>
-      <Text
-        size="md"
-        as="p"
-        className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
-      >
-        {cardsData[cardState]?.data?.paragraphs?.map(
-          (data, index) => (
-            <React.Fragment key={index}>
-              {data}
-              <br />
-              <br />
-            </React.Fragment>
-          )
-        )}
-      </Text>
-    </div>
-  </div>
-))}
-
+                        </div>
+                        <Text
+                          size="md"
+                          as="p"
+                          className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
+                        >
+                          {cardsData[cardState]?.data?.paragraphs?.map(
+                            (data, index) => (
+                              <React.Fragment key={index}>
+                                {data}
+                                <br />
+                                <br />
+                              </React.Fragment>
+                            )
+                          )}
+                        </Text>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="flex justify-between items-center mt-[50px] gap-5 w-full " style={{ position: "relative", top: 400, zIndex: 9999 }}>
-              {/* <Button
+              <div
+                className="flex justify-between items-center mt-[50px] gap-5 w-full "
+                style={{ position: "relative", top: 400, zIndex: 9999 }}
+              >
+                {/* <Button
                 variant="outline"
                 shape="round"
                 className="sm:px-5 tracking-[3.20px] uppercase min-w-[250px]"
@@ -331,51 +348,52 @@ const CardContainer = ({ setcardState, cardState,handleDivPlacePreOrder }) => {
               >
                 Place Pre-Order
               </Button> */}
-              <Heading
-                size="lg"
-                as="h6"
-                className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
-              >
-                JOIN WAITLIST  →
-              </Heading>
+                <Heading
+                  size="lg"
+                  as="h6"
+                  className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
+                >
+                  JOIN WAITLIST →
+                </Heading>
+              </div>
             </div>
           </div>
+          <div
+            id="cardContainer"
+            style={{ width: "40%", height: 400, position: "relative" }}
+            // onClick={handleCardClick}
+          >
+            {activeCards.map((card, index) => (
+              <div
+                key={card.id}
+                style={cardStyle(
+                  index,
+                  activeCards.length,
+                  card.color,
+                  card.text
+                )}
+                onClick={() => {
+                  cardState >= cardsData.length - 1
+                    ? setcardState(0)
+                    : setcardState(cardState + 1);
+                }}
+              >
+                <Img src={cardsData[cardState].image} />
+              </div>
+            ))}
+          </div>
         </div>
-        <div
-          id="cardContainer"
-          style={{ width: "40%", height: 400, position: "relative" }}
-          // onClick={handleCardClick}
-        >
-         {activeCards.map((card, index) => (
-  <div
-    key={card.id}
-    style={cardStyle(
-      index,
-      activeCards.length,
-      card.color,
-      card.text
-    )}
-    onClick={() => {
-      cardState >= cardsData.length - 1
-        ? setcardState(0)
-        : setcardState(cardState + 1);
-    }}
-  >
-    <Img src={cardsData[cardState].image} />
-  </div>
-))}
 
-        </div>
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          style={{ cursor: "pointer", zIndex: 1000, fontSize: 25 }}
+          onClick={() => {
+            cardState < cardsData.length - 1
+              ? setcardState(cardState + 1)
+              : setcardState(0);
+          }}
+        />
       </div>
-
-      <FontAwesomeIcon
-        icon={faChevronRight}
-        style={{ cursor: 'pointer', zIndex: 1000,fontSize:25 }}
-        onClick={() => {
-          cardState < cardsData.length - 1 ? setcardState(cardState + 1) : setcardState(0);
-        }}
-      />
-    </div>
     </>
   );
 };
