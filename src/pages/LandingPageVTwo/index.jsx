@@ -4,7 +4,7 @@ import { Heading, Img, Button, Text } from "../../components";
 import Header from "../../components/Header/Header";
 import Footer from "components/Footer/Footer";
 import CardContainer from "testAnimation";
-import { AppBar, Tabs, Tab, Box } from "@mui/material";
+import { AppBar, Tabs, Tab, Box, useMediaQuery } from "@mui/material";
 import { Typography, List, ListItem, ListItemText } from "@mui/material";
 import tick from "../../assets/images/tick.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function LandingPageVTwoPage() {
   const [hideSurroundingDivsOurindustry, sethideSurroundingOurindustry] =
     useState(false);
 
-  const [cardState, setcardState] = useState(0);
+  // const [cardState, setcardState] = useState(0);
 
   const animateDivRef = useRef(null);
   const placePreOrder = useRef(null);
@@ -62,53 +62,63 @@ export default function LandingPageVTwoPage() {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    setValue(cardState);
-  }, [cardState]);
+  // useEffect(() => {
+  //   setValue(cardState);
+  // }, [cardState]);
 
   // Single scroll handler for all the refs
-  const handleScroll = () => {
-    const rectAnimation = animateDivRef.current?.getBoundingClientRect();
-    const rectPreOrder = placePreOrder.current?.getBoundingClientRect();
-    const rectIndustry = Ourindustry.current?.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+  // const handleScroll = () => {
+  //   const rectAnimation = animateDivRef.current?.getBoundingClientRect();
+  //   const rectPreOrder = placePreOrder.current?.getBoundingClientRect();
+  //   const rectIndustry = Ourindustry.current?.getBoundingClientRect();
+  //   const windowHeight = window.innerHeight;
 
-    // Conditions for hiding/showing surrounding divs based on viewport
-    const isAnimationInView =
-      rectAnimation?.top < windowHeight && rectAnimation?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isAnimationInView:", isAnimationInView);
-    const isPreOrderInView =
-      rectPreOrder?.top < windowHeight && rectPreOrder?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isPreOrderInView:", isPreOrderInView);
-    const isIndustryInView =
-      rectIndustry?.top < windowHeight && rectIndustry?.bottom > 0;
-    console.log("🚀 ~ handleScroll ~ isIndustryInView:", isIndustryInView);
+  //   // Conditions for hiding/showing surrounding divs based on viewport
+  //   const isAnimationInView =
+  //     rectAnimation?.top < windowHeight && rectAnimation?.bottom > 0;
+  //   console.log("🚀 ~ handleScroll ~ isAnimationInView:", isAnimationInView);
+  //   const isPreOrderInView =
+  //     rectPreOrder?.top < windowHeight && rectPreOrder?.bottom > 0;
+  //   console.log("🚀 ~ handleScroll ~ isPreOrderInView:", isPreOrderInView);
+  //   const isIndustryInView =
+  //     rectIndustry?.top < windowHeight && rectIndustry?.bottom > 0;
+  //   console.log("🚀 ~ handleScroll ~ isIndustryInView:", isIndustryInView);
 
-    // Logic for hiding/showing surrounding divs based on which div is in view
-    if (isAnimationInView && isPreOrderInView && isIndustryInView) {
-      console.log("🚀 ~ handleScroll ~ isIndustryInView:===============>>>>");
-      setHideSurroundingDivs(false);
-      sethideSurroundingDivsPreOrder(false);
-    } else if (isIndustryInView && isPreOrderInView) {
-      setHideSurroundingDivs(false);
-      sethideSurroundingDivsPreOrder(false);
-      sethideSurroundingOurindustry(false);
-    } else if (isAnimationInView && isPreOrderInView) {
-      // setHideSurroundingDivs(false);
-    }
-    console.log("hideSurroundingOurindustry", hideSurroundingDivsOurindustry);
+  //   // Logic for hiding/showing surrounding divs based on which div is in view
+  //   if (isAnimationInView && isPreOrderInView && isIndustryInView) {
+  //     console.log("🚀 ~ handleScroll ~ isIndustryInView:===============>>>>");
+  //     setHideSurroundingDivs(false);
+  //     sethideSurroundingDivsPreOrder(false);
+  //   } else if (isIndustryInView && isPreOrderInView) {
+  //     setHideSurroundingDivs(false);
+  //     sethideSurroundingDivsPreOrder(false);
+  //     sethideSurroundingOurindustry(false);
+  //   } else if (isAnimationInView && isPreOrderInView) {
+  //     // setHideSurroundingDivs(false);
+  //   }
+  //   console.log("hideSurroundingOurindustry", hideSurroundingDivsOurindustry);
+  // };
+
+  // console.log("hideSurroundingDivsPreOrder", hideSurroundingDivsPreOrder);
+
+  // // Single useEffect for handling scroll events and updating based on refs
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []); // Empty dependency array to add the listener only once
+  // const [selectedSectionIndex, setSelectedSectionIndex] = useState(null);
+  // const handleSectionClick = (index) => {
+  //   setSelectedSectionIndex(index);
+  // };
+  const [cardState, setcardState] = useState(0);
+  const Navigate = useNavigate();
+  const handleHeaderClick = (index) => {
+    setcardState(index); // Update cardState to scroll to the correct section
   };
-
-  console.log("hideSurroundingDivsPreOrder", hideSurroundingDivsPreOrder);
-
-  // Single useEffect for handling scroll events and updating based on refs
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // Empty dependency array to add the listener only once
+  const isLargeScreen = useMediaQuery("(min-width:1300px)");
 
   return (
     <>
@@ -121,10 +131,10 @@ export default function LandingPageVTwoPage() {
       </Helmet>
       <div className="flex flex-col items-center w-full gap-3.5 bg-white-A700">
         <Header
-          handelDiv={handelDiv}
           cardState={cardState}
-          setcardState={setcardState}
-          headerHandleClick={headerHandleClick}
+          setcardState={handleHeaderClick}
+          handelDiv={() => {}}
+          headerHandleClick={() => {}}
         />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
           <div className="flex flex-col gap-5">
@@ -148,7 +158,7 @@ export default function LandingPageVTwoPage() {
                         backgroundColor: "#75716DB2", // Semi-transparent background color
                         padding: "5px 10px",
                         borderRadius: "6px",
-                        fontWeight: 700,
+                        fontWeight: 300,
                         paddingLeft: 30,
                         paddingRight: 30,
                         boxShadow:
@@ -192,7 +202,7 @@ export default function LandingPageVTwoPage() {
                             paddingRight: 30,
                           }}
                         >
-                          Trade With Data Intelligence From eFX
+                          Trade With Data Intelligence
                         </Heading>
                       </div>
                     </div>
@@ -212,15 +222,15 @@ export default function LandingPageVTwoPage() {
                     Place Pre-Order
                   </Button> */}
                   <Button
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor: "white",
-                      color: "black",
-                    }}
+                    size="sm"
                     shape="round"
-                    size="lg"
-                    as="h2"
-                    className="tracking-[1.60px]"
+                    className={`sm:px-5 ${
+                      !isLargeScreen ? "text-xs" : "text-sm"
+                    } tracking-[3.20px] uppercase min-w-[150px]`}
+                    style={{ color: "black", backgroundColor: "white" }}
+                    onClick={() => {
+                      Navigate("/ContactUs");
+                    }}
                   >
                     JOIN WAITLIST
                   </Button>
@@ -247,7 +257,7 @@ export default function LandingPageVTwoPage() {
                   style={{ display: "flex", flexDirection: "column" }}
                   className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1600px]"
                 >
-                  <div
+                  {/* <div
                     style={{
                       marginLeft: "200px",
                       display: "flex",
@@ -326,13 +336,9 @@ export default function LandingPageVTwoPage() {
                         }
                       />
                     </Tabs>
-                  </div>
+                  </div> */}
                   <div style={{ width: "100%", marginTop: 70 }}>
-                    <CardContainer
-                      setcardState={setcardState}
-                      cardState={cardState}
-                      handleDivPlacePreOrder={handelDivPlacePreOrder}
-                    />
+                    <CardContainer selectedSectionIndex={cardState} />
                   </div>
                 </div>
               </div>

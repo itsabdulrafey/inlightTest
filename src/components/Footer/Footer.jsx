@@ -73,7 +73,9 @@ const Footer = () => {
                 >
                   Follow eFX :
                 </span>
-                <div style={{ marginTop: 3, marginLeft: 5 }}>
+                <div
+                  style={{ marginLeft: 5, marginBottom: 3, marginRight: 10 }}
+                >
                   <Img src="images/X.svg" alt="shutterstock" />
                 </div>
 
@@ -125,6 +127,7 @@ const Footer = () => {
                     gap: 20,
                     marginTop: 20,
                     marginBottom: 20,
+                    // fontFamily: "Raleway",
                   }}
                 >
                   <span style={{ cursor: "pointer" }}>eFX Data</span>
@@ -135,7 +138,14 @@ const Footer = () => {
                   </span>
                   <span style={{ cursor: "pointer" }}>EULA</span>
                   <span style={{ cursor: "pointer" }}>About</span>
-                  <span style={{ cursor: "pointer" }}>Contact Us</span>
+                  <span
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      Navigate("/ContactUs");
+                    }}
+                  >
+                    Contact Us
+                  </span>
                 </div>
                 <div
                   style={{
@@ -149,6 +159,9 @@ const Footer = () => {
                   <span>
                     Copyright © 2024 -{" "}
                     <span
+                      onClick={() => {
+                        window.open("https://plus.efxdata.com/login");
+                      }}
                       style={{ textDecoration: "underline", cursor: "pointer" }}
                     >
                       eFXplus

@@ -24,7 +24,7 @@ const StyledImage = styled(Box)({
 
 const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const isLargeScreen = useMediaQuery("(min-width:1300px)");
+  const isLargeScreen = useMediaQuery("(min-width:1500px)");
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -104,8 +104,8 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
         top: 0,
         width: "80%",
         padding: "10px 0",
-        zIndex: 1000,  // Keeps the header on top
-        maxWidth:1300
+        zIndex: 1000, // Keeps the header on top
+        maxWidth: 1300,
       }}
       className="w-[38%] md:w-full md:p-5 mx-auto"
     >
@@ -136,9 +136,9 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={(event) => {
-                  event.preventDefault()
-                  headerHandleClick();
-                  handelDiv();
+                  event.preventDefault();
+                  // headerHandleClick();
+                  // handelDiv();
                   setcardState(0);
                 }}
                 to="#"
@@ -149,8 +149,8 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  headerHandleClick();
-                  handelDiv();
+                  // headerHandleClick();
+                  // handelDiv();
                   setcardState(1);
                 }}
                 to="#"
@@ -161,8 +161,8 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  headerHandleClick();
-                  handelDiv();
+                  // headerHandleClick();
+                  // handelDiv();
                   setcardState(2);
                 }}
                 to="#"
@@ -173,8 +173,8 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  headerHandleClick();
-                  handelDiv();
+                  // headerHandleClick();
+                  // handelDiv();
                   setcardState(3);
                 }}
                 to="#"
@@ -214,7 +214,9 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           <Heading
             size="lg"
             as="h6"
-            className={`!text-white ${!isLargeScreen ? "text-sm" : "text-lg"} uppercase`}
+            className={`!text-white ${
+              !isLargeScreen ? "text-sm" : "text-lg"
+            } uppercase`}
           >
             Sign up
           </Heading>
@@ -228,8 +230,7 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           className={`sm:px-5 ${
             !isLargeScreen ? "text-xs" : "text-sm"
           } tracking-[3.20px] uppercase min-w-[150px]`}
-          style={{ color: "black", backgroundColor:"white" }}
-          
+          style={{ color: "black", backgroundColor: "white" }}
         >
           Log in
         </Button>
