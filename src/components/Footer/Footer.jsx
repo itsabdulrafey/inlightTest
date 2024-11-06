@@ -42,13 +42,13 @@ const Footer = () => {
               // style={{ backgroundColor: "red" }}
               className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1200px]"
             ></div>
-            <hr
+            {/* <hr
               style={{
                 borderColor: "#888888",
                 borderWidth: "1px",
                 borderStyle: "solid",
               }}
-            />
+            /> */}
             <div className="flex  justify-evenly items-center w-full gap-5 mx-auto max-w-[1600px] md:p-5 ">
               <div>
                 <img src="images/headerLogo.svg" alt="imagenineteen" />
@@ -98,13 +98,13 @@ const Footer = () => {
               </div>
             </div>
 
-            <hr
+            {/* <hr
               style={{
                 borderColor: "#888888",
                 borderWidth: "1px",
                 borderStyle: "solid",
               }}
-            />
+            /> */}
 
             <div
               style={{
