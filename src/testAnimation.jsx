@@ -168,15 +168,18 @@ const CardContainer = ({ selectedSectionIndex }) => {
               <Text
                 size="md"
                 as="p"
-                className="w-[96%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
+                className="w-[100%] md:w-full mt-9 !text-gray-800 tracking-[2.00px] leading-6"
               >
-                {card.data.paragraphs.map((data, idx) => (
-                  <React.Fragment key={idx}>
-                    {data}
-                    <br />
-                    <br />
-                  </React.Fragment>
-                ))}
+                <ul>
+                  {card.data.paragraphs.map((data, idx) => (
+                    <div style={{ display: "flex", gap: 10 }}>
+                      <span>•</span>{" "}
+                      <li key={idx} style={{ marginBottom: "1em" }}>
+                        {data}
+                      </li>
+                    </div>
+                  ))}
+                </ul>
               </Text>
               <div
                 className="flex justify-between items-center mt-[50px] gap-5 w-full"
