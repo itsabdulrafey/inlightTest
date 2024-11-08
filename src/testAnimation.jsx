@@ -15,7 +15,7 @@ const cardsData = [
     data: {
       heading1: "eFX ",
       heading2: "Plus HD",
-      heading3: "est. USD 199$*",
+      heading3: "est. USD 199*",
       heading4: "The Standard eFX Trades",
       paragraphs: [
         "Offers institutional Discretionary FX positions in G10 currencies.",
@@ -33,7 +33,7 @@ const cardsData = [
     data: {
       heading1: "eFX ",
       heading2: "Edge",
-      heading3: "est. USD 299$*",
+      heading3: "est. USD 299*",
       heading4: "The Sentiment Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
@@ -51,7 +51,7 @@ const cardsData = [
     data: {
       heading1: "eFX ",
       heading2: "Alpha",
-      heading3: "est. USD 399$*",
+      heading3: "est. USD 399*",
       heading4: "The Systematic Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
@@ -70,7 +70,7 @@ const cardsData = [
     data: {
       heading1: "eFX ",
       heading2: "Apex",
-      heading3: "est. USD 899$*",
+      heading3: "est. USD 899*",
       heading4: "The Most Powerful Big-Data Stream",
       paragraphs: [
         "Plus, Edge, and Alpha datasets",
