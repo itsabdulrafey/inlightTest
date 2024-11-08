@@ -123,7 +123,7 @@ export default function LandingPageVTwoPage() {
   return (
     <>
       <Helmet>
-        <title>Itsabdulrafey's Application4</title>
+        <title>eFX DATA</title>
         <meta
           name="description"
           content="Web site created using create-react-app"
@@ -136,7 +136,7 @@ export default function LandingPageVTwoPage() {
           handelDiv={() => {}}
           headerHandleClick={() => {}}
         />
-        <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px] sm:gap-[50px]">
+        <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px]">
           <div className="flex flex-col gap-5">
             <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative w-[100%]">
               <Img
@@ -145,8 +145,8 @@ export default function LandingPageVTwoPage() {
                 className="h-[634px] w-full object-cover rounded-[0px]"
               />
               <div
-                style={{ maxWidth: 1300 }}
-                className="flex flex-col w-[100%] gap-[28px] bottom-0 top-11 right-0 left-0 m-auto md:gap-[147px] sm:gap-[98px] absolute"
+                style={{ maxWidth: 1300, width: "80%" }}
+                className="flex flex-col w-[100%] gap-[28px] bottom-0 top-11 right-0 left-0 m-auto  absolute"
               >
                 <div className="flex w-[100%] md:w-full top-44">
                   <div
@@ -209,8 +209,13 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
                 <div
-                  className="flex justify-end items-center ml-[732px] gap-5 md:ml-0"
-                  style={{ marginTop: 150 }}
+                  className="flex justify-end items-center   gap-5 md:ml-0"
+                  style={{
+                    marginTop: 150,
+                    position: "absolute",
+                    top: 300,
+                    width: "100%",
+                  }}
                 >
                   {/* <Button
                     shape="round"
