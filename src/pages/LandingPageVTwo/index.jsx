@@ -249,8 +249,7 @@ export default function LandingPageVTwoPage() {
                   as="p"
                   className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]"
                 >
-                  eFX carries the most comprehensive Big-Data streams in FX
-                  consisting of:
+                  eFX carries the most comprehensive FX Big-Data Streams:
                 </Text>
 
                 <div
