@@ -209,7 +209,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
             <Img
               src={card.image}
               alt={`Image for ${card.data.heading2}`}
-              style={{ width: "70%", borderRadius: "15px" }}
+              style={{ width: "53%", borderRadius: "15px" }}
             />
           </div>
         </div>
