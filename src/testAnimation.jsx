@@ -3,7 +3,7 @@ import { Heading, Img, Text } from "components";
 import imagess from ".././src/assets/images/image 3.svg";
 import images2 from ".././src/assets/images/shutterstock_2349592357 1 (1).svg";
 import images3 from ".././src/assets/images/shutterstock_1890281956 1.svg";
-import images4 from ".././src/assets/images/shutterstock_9928186 1.svg";
+import images4 from ".././src/assets/images/productImage4.svg";
 import { useNavigate } from "react-router-dom";
 
 const cardsData = [
