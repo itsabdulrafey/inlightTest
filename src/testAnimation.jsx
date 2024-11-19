@@ -55,10 +55,10 @@ const cardsData = [
       heading4: "The Systematic Trades",
       paragraphs: [
         "Sentiment-based FX positions in G10 currencies.",
-        "Provides quant-based trades for data-driven decision making",
-        "Built on robust institutional mark to market targets and eFX’s comprehensive ledgers",
-        "Features system-orchestrated placements and closings",
-        "Maintains a stable portfolio of 60+ trades",
+        "Provides quant-based trades for data-driven decision making.",
+        "Built on robust institutional mark to market targets and eFX’s comprehensive ledgers.",
+        "Features system-orchestrated placements and closings.",
+        "Maintains a stable portfolio of 60+ trades.",
       ],
     },
   },
@@ -73,10 +73,10 @@ const cardsData = [
       heading3: "est. USD 899*",
       heading4: "The Most Powerful Big-Data Stream",
       paragraphs: [
-        "Plus, Edge, and Alpha datasets",
-        "Exclusive trades in selective G10 crosses",
-        "Allows API access requests for seamless integration into existing systems",
-        "An average of 100 trades for diversified trading",
+        "Plus, Edge, and Alpha datasets.",
+        "Exclusive trades in selective G10 crosses.",
+        "Allows API access requests for seamless integration into existing systems.",
+        "An average of 100 trades for diversified trading.",
       ],
     },
   },
@@ -212,7 +212,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
             <Img
               src={card.image}
               alt={`Image for ${card.data.heading2}`}
-              style={{ width: "53%", borderRadius: "15px" }}
+              style={{ width: "60%", borderRadius: "15px" }}
             />
           </div>
         </div>
@@ -220,5 +220,4 @@ const CardContainer = ({ selectedSectionIndex }) => {
     </>
   );
 };
-
 export default CardContainer;
