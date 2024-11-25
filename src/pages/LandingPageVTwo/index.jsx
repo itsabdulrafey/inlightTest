@@ -234,7 +234,7 @@ export default function LandingPageVTwoPage() {
                     } tracking-[3.20px] uppercase min-w-[150px]`}
                     style={{ color: "black", backgroundColor: "white" }}
                     onClick={() => {
-                      Navigate("/ContactUs");
+                      Navigate("/JoinWeightList");
                     }}
                   >
                     JOIN WAITLIST

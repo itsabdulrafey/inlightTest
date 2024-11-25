@@ -8,15 +8,13 @@ import Registeration from "pages/Registeration";
 import Signup from "pages/Registeration/Signup";
 import Payment from "pages/Registeration/StaoTabs/PaymentTab";
 import ContactUs from "pages/ContactUs";
+import JoinWeightList from "pages/JoinWeightList";
 import MainLayout from "layout/MainLayout";
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "/", element: <LandingPageVTwo />,
-
-  },
-  { path: "/ContactUs", element: <ContactUs />,
-},
-
+    { path: "/", element: <LandingPageVTwo /> },
+    { path: "/ContactUs", element: <ContactUs /> },
+    { path: "/JoinWeightList", element: <JoinWeightList /> },
     { path: "*", element: <NotFound /> },
     {
       path: "Registeration",
@@ -24,13 +22,13 @@ const ProjectRoutes = () => {
       children: [
         {
           path: "Signup",
-          element: <Signup />
+          element: <Signup />,
         },
         {
           path: "Payment",
-          element: <Payment />
-        }
-      ]
+          element: <Payment />,
+        },
+      ],
     },
     {
       path: "Payment",

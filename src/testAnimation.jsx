@@ -190,7 +190,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
                   as="h6"
                   className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
                   onClick={() => {
-                    Navigate("/ContactUs");
+                    Navigate("/JoinWeightList");
                   }}
                 >
                   JOIN WAITLIST →
