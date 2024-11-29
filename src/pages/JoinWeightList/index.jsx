@@ -15,6 +15,8 @@ import Footer from "components/Footer/Footer";
 
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ApiCall from "utils/Api";
+import { toast } from "react-toastify";
 
 const HeaderWithBack = () => {
   const navigate = useNavigate();
@@ -54,11 +56,21 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    try {
+      console.log("🚀 ~ handleSubmit ~ formData:", formData);
+      const responsedata = await ApiCall.Api.post("user/add-user", formData);
+      console.log("🚀 ~ handleSubmit ~ responsedata:", responsedata);
+
+      setIsSubmitted(true);
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+      console.log("🚀 ~ onSubmit ~ error:======>>", error);
+    }
   };
   const Navigate = useNavigate();
+  const onSubmit = async () => {};
   return (
     <>
       {HeaderWithBack()}

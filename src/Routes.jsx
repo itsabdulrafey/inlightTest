@@ -9,12 +9,17 @@ import Signup from "pages/Registeration/Signup";
 import Payment from "pages/Registeration/StaoTabs/PaymentTab";
 import ContactUs from "pages/ContactUs";
 import JoinWeightList from "pages/JoinWeightList";
+import VarifyEmail from "pages/VarifyEmail";
 import MainLayout from "layout/MainLayout";
 const ProjectRoutes = () => {
   let element = useRoutes([
     { path: "/", element: <LandingPageVTwo /> },
     { path: "/ContactUs", element: <ContactUs /> },
     { path: "/JoinWeightList", element: <JoinWeightList /> },
+    {
+      path: "/VarifyEmail/:id", // Adding :id to the path for dynamic URL
+      element: <VarifyEmail />,
+    },
     { path: "*", element: <NotFound /> },
     {
       path: "Registeration",
