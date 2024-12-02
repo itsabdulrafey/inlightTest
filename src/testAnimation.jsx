@@ -29,6 +29,10 @@ const CardContainer = ({ selectedSectionIndex }) => {
     <>
       <style>
         {`
+        .heading10{
+        font-size: 34px !important;
+        gap:20px;
+        }
     @media (max-width: 768px) {
       .card-container {
         flex-direction: column !important;
@@ -51,14 +55,12 @@ const CardContainer = ({ selectedSectionIndex }) => {
         order: 1;
         width: 100% !important;
       }
-      .detail-section h5.heading3 {
-        font-size: 16px !important;
-      }
+   
       .detail-section h5 {
         font-size: 18px !important;
       }
       .detail-section p {
-        font-size: 14px !important;
+        // font-size: 14px !important;
         line-height: 1.5 !important;
       }
       .detail-section ul li {
@@ -67,27 +69,10 @@ const CardContainer = ({ selectedSectionIndex }) => {
       .detail-section .join-waitlist {
         font-size: 16px !important;
       }
-      .detail-section .heading1 {
-        font-size: 18px !important;
-      }
-      .detail-section .heading2 {
-        font-size: 20px !important;
-        font-weight: bold !important;
-      }
+  
     }
 
-    @media (max-width: 480px) {
-      .detail-section h5.heading3 {
-        font-size: 14px !important;
-      }
-      .detail-section .heading1 {
-        font-size: 16px !important;
-      }
-      .detail-section .heading2 {
-        font-size: 18px !important;
-        font-weight: bold !important;
-      }
-    }
+
   `}
       </style>
 
@@ -121,30 +106,30 @@ const CardContainer = ({ selectedSectionIndex }) => {
           >
             <div style={{ color: "green", position: "relative" }}>
               <div
-                className="flex justify-between items-center gap-5 md:flex-col md:items-start"
+                className="flex justify-between items-center md:flex-col md:items-start"
                 style={{}}
               >
                 <div className="flex">
                   <Text
                     size="xl"
                     as="p"
-                    className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
+                    className="mt-[9px]  mb-2 !text-white-A700 tracking-[4.80px] heading10"
                   >
                     <span className="text-black-900 heading1">
                       {card.data.heading1}
                     </span>
-                    <span className="text-black-900 font-bold heading2">
+                    <span className="text-black-900 font-bold heading2 italic">
                       {card.data.heading2}
                     </span>
                   </Text>
                 </div>
-                <div className="flex py-[13px]">
-                  <Heading
-                    as="h5"
-                    className="heading3 !text-black-900 tracking-[4.00px]"
+                <div className="flex">
+                  <span
+                    style={{ fontWeight: "bold" }}
+                    className="!text-black-900 tracking-[4.00px]"
                   >
                     {card.data.heading3}
-                  </Heading>
+                  </span>
                 </div>
               </div>
               <div className="flex justify-between mt-[15px] gap-5 flex-wrap">

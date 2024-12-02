@@ -254,13 +254,24 @@ export default function LandingPageVTwoPage() {
                 style={{ height: hideSurroundingDivs ? "100vh" : "auto" }}
                 className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
               >
-                <Text
-                  size="xl"
-                  as="p"
-                  className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px]"
+                <div
+                  style={{
+                    maxWidth: 1600,
+                    width: "100%",
+
+                    alignSelf: "center",
+                  }}
                 >
-                  eFX carries the most comprehensive FX Big-Data Streams:
-                </Text>
+                  <Text
+                    size="xl"
+                    as="p"
+                    className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px] md:text-center"
+                    style={{ paddingLeft: 20, paddingRight: 20 }}
+                  >
+                    eFX carries the most comprehensive Big-Data streams in FX
+                    consisting of:
+                  </Text>
+                </div>
 
                 <div
                   style={{ display: "flex", flexDirection: "column" }}
@@ -351,7 +362,24 @@ export default function LandingPageVTwoPage() {
                   </div>
                 </div>
               </div>
+              <div
+                style={{
+                  maxWidth: 1300,
+                  width: "100%",
 
+                  alignSelf: "center",
+                }}
+              >
+                <Text
+                  size="xl"
+                  as="p"
+                  className="ml-[23px] md:ml-0 !text-blue_gray-400 tracking-[0.48px] md:text-center"
+                  style={{ paddingLeft: 20, paddingRight: 20 }}
+                >
+                  * Prices are estimates. Joining the waitlist will guarantee
+                  this or lower prices at inception
+                </Text>
+              </div>
               {/* <div
                 style={{
                   display: "flex",

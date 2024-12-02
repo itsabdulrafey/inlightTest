@@ -51,7 +51,7 @@ const Footer = () => {
               {/* Image Section */}
               <div
                 className="flex justify-center"
-                style={{ alignItems: "center", backgroundColor: "red" }}
+                style={{ alignItems: "center" }}
               >
                 <Img
                   src="images/img_shutterstock_2344967333.png"
@@ -61,21 +61,26 @@ const Footer = () => {
               </div>
 
               {/* Follow Section */}
-              <div className="flex flex-wrap justify-evenly items-center">
-                <span
-                  style={{ color: "white", fontWeight: 1000, fontSize: 24 }}
-                >
-                  Follow eFX :
-                </span>
-                <div
-                  className="mt-2"
-                  style={{ marginLeft: 5, marginBottom: 8, marginRight: 10 }}
-                >
-                  <Img
-                    src="images/X.svg"
-                    alt="shutterstock"
-                    className="object-contain"
-                  />
+              <div className="flex flex-wrap justify-between items-center">
+                <div className="flex items-center">
+                  <span
+                    className="text-24px text-emerald-50 md:text-14px lg:text-24px text-white font-extrabold"
+                    // className="text-white font-extrabold"
+                    style={{ marginTop: 10 }}
+                  >
+                    Follow eFX:
+                  </span>
+
+                  <div
+                    className="mt-2"
+                    style={{ marginLeft: 5, marginRight: 10 }}
+                  >
+                    <Img
+                      src="images/X.svg"
+                      alt="shutterstock"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
 
                 <Button
@@ -84,7 +89,7 @@ const Footer = () => {
                   }}
                   size="sm"
                   shape="round"
-                  className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px] mt-2"
+                  className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[120px] mt-2"
                   style={{
                     color: "white",
                     backgroundColor: "black",
@@ -112,7 +117,7 @@ const Footer = () => {
               >
                 {/* Navigation Links */}
                 <div
-                  className="flex flex-wrap  md:justify-center gap-4 mt-5 text-center md:text-left"
+                  className="flex flex-wrap md:flex-col md:items-center md:gap-7 md:justify-center gap-4 mt-5 text-center md:text-left"
                   style={{
                     color: "white",
                   }}
@@ -133,7 +138,7 @@ const Footer = () => {
 
                 {/* Footer Bottom */}
                 <div
-                  className="flex flex-wrap mb-5  md:justify-center items-center gap-4 mt-4 text-center md:text-center"
+                  className="flex flex-wrap mb-5   md:justify-center items-center gap-4 mt-4 text-center md:text-center"
                   style={{
                     color: "white",
                   }}

@@ -94,7 +94,11 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           size="sm"
           shape="round"
           className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px]"
-          style={{ color: "black", backgroundColor: "white" }}
+          style={{
+            color: "black",
+            backgroundColor: "white",
+            border: "1px solid gray",
+          }}
         >
           Sign up
         </Button>
@@ -112,7 +116,11 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
           size="sm"
           shape="round"
           className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px]"
-          style={{ color: "black", backgroundColor: "white" }}
+          style={{
+            color: "black",
+            backgroundColor: "white",
+            border: "1px solid gray",
+          }}
         >
           Log in
         </Button>
