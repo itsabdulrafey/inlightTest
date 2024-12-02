@@ -38,45 +38,44 @@ const Footer = () => {
             // style={{ backgroundColor: "blue" }}
             className="flex flex-col w-full  md:gap-[54px] sm:gap-9"
           >
-            <div
-              // style={{ backgroundColor: "red" }}
-              className="flex justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1200px]"
-            ></div>
-            {/* <hr
-              style={{
-                borderColor: "#888888",
-                borderWidth: "1px",
-                borderStyle: "solid",
-              }}
-            /> */}
-            <div className="flex  justify-evenly items-center w-full gap-5 mx-auto max-w-[1600px] md:p-5 ">
+            <div className="flex flex-wrap justify-evenly items-center w-full gap-5 mx-auto max-w-[1600px] md:p-5 md:flex-col">
+              {/* Logo Section */}
               <div>
-                <img src="images/headerLogo.svg" alt="imagenineteen" />
+                <img
+                  src="images/headerLogo.svg"
+                  alt="imagenineteen"
+                  className="object-contain w-[150px]"
+                />
               </div>
-              <div>
+
+              {/* Image Section */}
+              <div
+                className="flex justify-center"
+                style={{ alignItems: "center", backgroundColor: "red" }}
+              >
                 <Img
                   src="images/img_shutterstock_2344967333.png"
                   alt="shutterstock"
-                  className="w-full md:h-auto mx-auto md:p-5 object-cover max-w-[576px] ml-14"
+                  className="w-full md:h-auto  object-cover max-w-[576px]"
                 />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                }}
-              >
+
+              {/* Follow Section */}
+              <div className="flex flex-wrap justify-evenly items-center">
                 <span
                   style={{ color: "white", fontWeight: 1000, fontSize: 24 }}
                 >
                   Follow eFX :
                 </span>
                 <div
-                  style={{ marginLeft: 5, marginBottom: 3, marginRight: 10 }}
+                  className="mt-2"
+                  style={{ marginLeft: 5, marginBottom: 8, marginRight: 10 }}
                 >
-                  <Img src="images/X.svg" alt="shutterstock" />
+                  <Img
+                    src="images/X.svg"
+                    alt="shutterstock"
+                    className="object-contain"
+                  />
                 </div>
 
                 <Button
@@ -85,9 +84,7 @@ const Footer = () => {
                   }}
                   size="sm"
                   shape="round"
-                  className={`sm:px-5 ${
-                    !isLargeScreen ? "text-xs" : "text-sm"
-                  } tracking-[3.20px] uppercase min-w-[150px] `}
+                  className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px] mt-2"
                   style={{
                     color: "white",
                     backgroundColor: "black",
@@ -100,14 +97,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* <hr
-              style={{
-                borderColor: "#888888",
-                borderWidth: "1px",
-                borderStyle: "solid",
-              }}
-            /> */}
-
             <div
               style={{
                 display: "flex",
@@ -119,50 +108,43 @@ const Footer = () => {
                   maxWidth: 1350,
                   width: "100%",
                 }}
+                className="px-4"
               >
+                {/* Navigation Links */}
                 <div
+                  className="flex flex-wrap  md:justify-center gap-4 mt-5 text-center md:text-left"
                   style={{
                     color: "white",
-                    display: "flex",
-                    gap: 20,
-                    marginTop: 20,
-                    marginBottom: 20,
-                    // fontFamily: "Raleway",
                   }}
                 >
-                  <span style={{ cursor: "pointer" }}>eFX Data</span>
-                  <span style={{ cursor: "pointer" }}>eFX Plus Login</span>
-                  <span style={{ cursor: "pointer" }}>Disclaimer</span>
-                  <span style={{ cursor: "pointer" }}>
-                    Public Privacy Notice
-                  </span>
-                  <span style={{ cursor: "pointer" }}>EULA</span>
-                  <span style={{ cursor: "pointer" }}>About</span>
+                  <span className="cursor-pointer">eFX Data</span>
+                  <span className="cursor-pointer">eFX Plus Login</span>
+                  <span className="cursor-pointer">Disclaimer</span>
+                  <span className="cursor-pointer">Public Privacy Notice</span>
+                  <span className="cursor-pointer">EULA</span>
+                  <span className="cursor-pointer">About</span>
                   <span
-                    style={{ cursor: "pointer" }}
-                    onClick={() => {
-                      Navigate("/ContactUs");
-                    }}
+                    className="cursor-pointer"
+                    onClick={() => Navigate("/ContactUs")}
                   >
                     Contact Us
                   </span>
                 </div>
+
+                {/* Footer Bottom */}
                 <div
+                  className="flex flex-wrap mb-5  md:justify-center items-center gap-4 mt-4 text-center md:text-center"
                   style={{
                     color: "white",
-
-                    display: "flex",
-                    gap: 20,
-                    marginBottom: 20,
                   }}
                 >
-                  <span>
+                  <span className="text-sm">
                     Copyright © 2024 -{" "}
                     <span
                       onClick={() => {
                         window.open("https://plus.efxdata.com/login");
                       }}
-                      style={{ textDecoration: "underline", cursor: "pointer" }}
+                      className="underline cursor-pointer"
                     >
                       eFXplus
                     </span>{" "}

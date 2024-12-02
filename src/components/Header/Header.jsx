@@ -83,6 +83,40 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
       >
         eFX Apex
       </MenuItem>
+      {/* Add Sign Up and Log In Buttons */}
+      <MenuItem
+        onClick={() => {
+          window.open("https://plus.efxdata.com/login");
+          handleMenuClose();
+        }}
+      >
+        <Button
+          size="sm"
+          shape="round"
+          className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px]"
+          style={{ color: "black", backgroundColor: "white" }}
+        >
+          Sign up
+        </Button>
+        {/* <Heading size="md" as="h6" className="!text-black uppercase">
+          Sign up
+        </Heading> */}
+      </MenuItem>
+      <MenuItem
+        onClick={() => {
+          window.open("https://plus.efxdata.com/login");
+          handleMenuClose();
+        }}
+      >
+        <Button
+          size="sm"
+          shape="round"
+          className="sm:px-5 text-xs tracking-[3.20px] uppercase min-w-[150px]"
+          style={{ color: "black", backgroundColor: "white" }}
+        >
+          Log in
+        </Button>
+      </MenuItem>
     </>
   );
 
@@ -137,8 +171,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
               <Link
                 onClick={(event) => {
                   event.preventDefault();
-                  // headerHandleClick();
-                  // handelDiv();
                   setcardState(0);
                 }}
                 to="#"
@@ -149,8 +181,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  // headerHandleClick();
-                  // handelDiv();
                   setcardState(1);
                 }}
                 to="#"
@@ -161,8 +191,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  // headerHandleClick();
-                  // handelDiv();
                   setcardState(2);
                 }}
                 to="#"
@@ -173,8 +201,6 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             <li>
               <Link
                 onClick={() => {
-                  // headerHandleClick();
-                  // handelDiv();
                   setcardState(3);
                 }}
                 to="#"
@@ -205,35 +231,39 @@ const Header = ({ cardState, setcardState, handelDiv, headerHandleClick }) => {
             </Menu>
           </>
         )}
-        <Link
-          to="#"
-          onClick={() => {
-            window.open("https://plus.efxdata.com/login");
-          }}
-        >
-          <Heading
-            size="lg"
-            as="h6"
-            className={`!text-white ${
-              !isLargeScreen ? "text-sm" : "text-lg"
-            } uppercase`}
-          >
-            Sign up
-          </Heading>
-        </Link>
-        <Button
-          onClick={() => {
-            window.open("https://plus.efxdata.com/login");
-          }}
-          size="sm"
-          shape="round"
-          className={`sm:px-5 ${
-            !isLargeScreen ? "text-xs" : "text-sm"
-          } tracking-[3.20px] uppercase min-w-[150px]`}
-          style={{ color: "black", backgroundColor: "white" }}
-        >
-          Log in
-        </Button>
+        {isLargeScreen && (
+          <>
+            <Link
+              to="#"
+              onClick={() => {
+                window.open("https://plus.efxdata.com/login");
+              }}
+            >
+              <Heading
+                size="lg"
+                as="h6"
+                className={`${
+                  !isLargeScreen ? "text-sm" : "text-lg"
+                } !text-black uppercase`}
+              >
+                Sign up
+              </Heading>
+            </Link>
+            <Button
+              onClick={() => {
+                window.open("https://plus.efxdata.com/login");
+              }}
+              size="sm"
+              shape="round"
+              className={`sm:px-5 ${
+                !isLargeScreen ? "text-xs" : "text-sm"
+              } tracking-[3.20px] uppercase min-w-[150px]`}
+              style={{ color: "black", backgroundColor: "white" }}
+            >
+              Log in
+            </Button>
+          </>
+        )}
       </div>
     </header>
   );

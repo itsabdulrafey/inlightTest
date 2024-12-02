@@ -119,6 +119,7 @@ export default function LandingPageVTwoPage() {
     setcardState(index); // Update cardState to scroll to the correct section
   };
   const isLargeScreen = useMediaQuery("(min-width:1300px)");
+  // const isLargeScreen = useMediaQuery("(min-width:1300px)");
 
   return (
     <>
@@ -161,6 +162,7 @@ export default function LandingPageVTwoPage() {
                         fontWeight: 300,
                         paddingLeft: 30,
                         paddingRight: 30,
+                        textAlign: "center",
                         boxShadow:
                           "0 15px 50px rgba(255, 255, 255, 0.2), 0 -15px 50px rgba(255, 255, 255, 0.2)", // Lighter and more spread-out glow
                       }}
@@ -200,6 +202,7 @@ export default function LandingPageVTwoPage() {
                             fontWeight: 300,
                             paddingLeft: 30,
                             paddingRight: 30,
+                            textAlign: "center",
                           }}
                         >
                           Trade With Data Intelligence
@@ -215,6 +218,8 @@ export default function LandingPageVTwoPage() {
                     position: "absolute",
                     top: 300,
                     width: "100%",
+                    display: "flex",
+                    justifyContent: !isLargeScreen ? "center" : "",
                   }}
                 >
                   {/* <Button

@@ -1,86 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Heading, Img, Text } from "components";
-import imagess from ".././src/assets/images/image 3.svg";
-import images2 from ".././src/assets/images/shutterstock_2349592357 1 (1).svg";
-import images3 from ".././src/assets/images/shutterstock_1890281956 1.svg";
-import images4 from ".././src/assets/images/productImage4.svg";
 import { useNavigate } from "react-router-dom";
-
-const cardsData = [
-  {
-    id: 0,
-    color: "white",
-    text: "skyblue",
-    image: imagess,
-    data: {
-      heading1: "eFX ",
-      heading2: "Plus HD",
-      heading3: "est. USD 199*",
-      heading4: "The Standard eFX Trades",
-      paragraphs: [
-        "Offers institutional Discretionary FX positions in G10 currencies.",
-        "Derived from sophisticated Institutional Research and LSEG-Refinitiv IFR.",
-        "Features ad-hoc placement with dynamic Entry/Stops/Targets adjustments.",
-        "Typically maintains 10-15 active trades in orders.",
-      ],
-    },
-  },
-  {
-    id: 1,
-    color: "white",
-    text: "salmon",
-    image: images2,
-    data: {
-      heading1: "eFX ",
-      heading2: "Edge",
-      heading3: "est. USD 299*",
-      heading4: "The Sentiment Trades",
-      paragraphs: [
-        "Sentiment-based FX positions in G10 currencies.",
-        "Generated from eFX’s medium and short term indicators.",
-        "Features time-optimized placements and closings.",
-        "Delivers an average of 10 new trades every week.",
-      ],
-    },
-  },
-  {
-    id: 2,
-    color: "white",
-    text: "lightgreen",
-    image: images3,
-    data: {
-      heading1: "eFX ",
-      heading2: "Alpha",
-      heading3: "est. USD 399*",
-      heading4: "The Systematic Trades",
-      paragraphs: [
-        "Sentiment-based FX positions in G10 currencies.",
-        "Provides quant-based trades for data-driven decision making.",
-        "Built on robust institutional mark to market targets and eFX’s comprehensive ledgers.",
-        "Features system-orchestrated placements and closings.",
-        "Maintains a stable portfolio of 60+ trades.",
-      ],
-    },
-  },
-  {
-    id: 3,
-    color: "white",
-    text: "khaki",
-    image: images4,
-    data: {
-      heading1: "eFX ",
-      heading2: "Apex",
-      heading3: "est. USD 899*",
-      heading4: "The Most Powerful Big-Data Stream",
-      paragraphs: [
-        "Plus, Edge, and Alpha datasets.",
-        "Exclusive trades in selective G10 crosses.",
-        "Allows API access requests for seamless integration into existing systems.",
-        "An average of 100 trades for diversified trading.",
-      ],
-    },
-  },
-];
+import { cardsData } from "constants";
 
 const CardContainer = ({ selectedSectionIndex }) => {
   const sectionRefs = useRef(cardsData.map(() => React.createRef()));
@@ -106,10 +27,75 @@ const CardContainer = ({ selectedSectionIndex }) => {
 
   return (
     <>
+      <style>
+        {`
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .image-section {
+        order: 2;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .image-section img {
+        width: 80% !important;
+        max-width: 300px;
+        height: auto !important;
+      }
+      .detail-section {
+        order: 1;
+        width: 100% !important;
+      }
+      .detail-section h5.heading3 {
+        font-size: 16px !important;
+      }
+      .detail-section h5 {
+        font-size: 18px !important;
+      }
+      .detail-section p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+      .detail-section ul li {
+        font-size: 14px !important;
+      }
+      .detail-section .join-waitlist {
+        font-size: 16px !important;
+      }
+      .detail-section .heading1 {
+        font-size: 18px !important;
+      }
+      .detail-section .heading2 {
+        font-size: 20px !important;
+        font-weight: bold !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .detail-section h5.heading3 {
+        font-size: 14px !important;
+      }
+      .detail-section .heading1 {
+        font-size: 16px !important;
+      }
+      .detail-section .heading2 {
+        font-size: 18px !important;
+        font-weight: bold !important;
+      }
+    }
+  `}
+      </style>
+
       {cardsData.map((card, index) => (
         <div
           key={card.id}
           ref={sectionRefs.current[index]}
+          className="card-container"
           style={{
             width: "100%",
             display: "flex",
@@ -118,14 +104,14 @@ const CardContainer = ({ selectedSectionIndex }) => {
             alignItems: "center",
             height: 500,
             marginBottom: "40px",
-            padding: "20px",
+            // padding: "20px",
           }}
         >
           {/* Detail Section */}
           <div
+            className="detail-section"
             style={{
               width: "50%",
-              padding: "20px",
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
@@ -134,15 +120,20 @@ const CardContainer = ({ selectedSectionIndex }) => {
             }}
           >
             <div style={{ color: "green", position: "relative" }}>
-              <div className="flex justify-between gap-5">
+              <div
+                className="flex justify-between items-center gap-5 md:flex-col md:items-start"
+                style={{}}
+              >
                 <div className="flex">
                   <Text
                     size="xl"
                     as="p"
                     className="mt-[9px] mb-2 !text-white-A700 tracking-[4.80px]"
                   >
-                    <span className="text-black-900">{card.data.heading1}</span>
-                    <span className="text-black-900 font-bold">
+                    <span className="text-black-900 heading1">
+                      {card.data.heading1}
+                    </span>
+                    <span className="text-black-900 font-bold heading2">
                       {card.data.heading2}
                     </span>
                   </Text>
@@ -150,7 +141,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
                 <div className="flex py-[13px]">
                   <Heading
                     as="h5"
-                    className="!text-black-900 tracking-[4.00px]"
+                    className="heading3 !text-black-900 tracking-[4.00px]"
                   >
                     {card.data.heading3}
                   </Heading>
@@ -188,7 +179,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
                 <Heading
                   size="lg"
                   as="h6"
-                  className="!text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
+                  className="join-waitlist !text-gray-800 tracking-[3.20px] uppercase cursor-pointer"
                   onClick={() => {
                     Navigate("/JoinWeightList");
                   }}
@@ -201,6 +192,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
 
           {/* Image Section */}
           <div
+            className="image-section"
             style={{
               width: "50%",
               height: "100%",
@@ -220,4 +212,5 @@ const CardContainer = ({ selectedSectionIndex }) => {
     </>
   );
 };
+
 export default CardContainer;
