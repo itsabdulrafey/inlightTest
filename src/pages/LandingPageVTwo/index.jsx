@@ -139,7 +139,7 @@ export default function LandingPageVTwoPage() {
         />
         <div className="flex flex-col self-stretch gap-[100px] md:gap-[75px]">
           <div className="flex flex-col gap-5">
-            <div className="h-[634px] w-full md:h-auto mx-auto md:p-5 relative w-[100%]">
+            <div className="h-[634px] w-full md:h-auto mx-auto relative w-[100%]">
               <Img
                 src="images/heroImage.svg"
                 alt="shutterstock"
