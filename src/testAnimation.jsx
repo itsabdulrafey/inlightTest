@@ -87,7 +87,7 @@ const CardContainer = ({ selectedSectionIndex }) => {
             flexDirection: index % 2 === 0 ? "row" : "row-reverse",
             justifyContent: "space-between",
             alignItems: "center",
-            height: 500,
+            height: 400,
             marginBottom: "40px",
             // padding: "20px",
           }}

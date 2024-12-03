@@ -242,7 +242,7 @@ export default function LandingPageVTwoPage() {
                       Navigate("/JoinWeightList");
                     }}
                   >
-                    JOIN WAITLIST
+                    JOIN THE WAITLIST
                   </Button>
                 </div>
               </div>
@@ -251,8 +251,10 @@ export default function LandingPageVTwoPage() {
               {/* Commented Code */}
               <div
                 ref={animateDivRef}
-                style={{ height: hideSurroundingDivs ? "100vh" : "auto" }}
-                className="flex flex-col items-start gap-[73px] p-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
+                style={{
+                  height: hideSurroundingDivs ? "100vh" : "auto",
+                }}
+                className="flex flex-col items-start gap-[73px] px-9 md:gap-[54px] sm:gap-9 sm:p-5 bg-white-A700"
               >
                 <div
                   style={{
@@ -274,90 +276,13 @@ export default function LandingPageVTwoPage() {
                 </div>
 
                 <div
-                  style={{ display: "flex", flexDirection: "column" }}
-                  className="flex md:flex-col self-stretch items-center w-full mb-[102px] gap-[11px] mx-auto max-w-[1600px]"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                  className="flex md:flex-col self-stretch items-center w-full  gap-[11px] mx-auto max-w-[1600px]"
                 >
-                  {/* <div
-                    style={{
-                      marginLeft: "200px",
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      width: "100%",
-                    }}
-                  >
-                    <Tabs
-                      value={value}
-                      onChange={handleChange}
-                      aria-label="navigation tabs"
-                      sx={{
-                        "& .MuiTabs-indicator": { backgroundColor: "green" },
-                        "& .Mui-selected": { color: "green" },
-                      }}
-                    >
-                      <Tab
-                        sx={{ marginRight: "80px" }}
-                        label={
-                          <Typography
-                            sx={{
-                              fontWeight: "bold",
-                              letterSpacing: "2px",
-                              color: value === 0 ? "green" : "inherit",
-                              textTransform: "none",
-                            }}
-                          >
-                            eFX Plus HD
-                          </Typography>
-                        }
-                      />
-                      <Tab
-                        sx={{ marginRight: "80px" }}
-                        label={
-                          <Typography
-                            sx={{
-                              fontWeight: "bold",
-                              letterSpacing: "2px",
-                              color: value === 1 ? "green" : "inherit",
-                              textTransform: "none",
-                            }}
-                          >
-                            eFX Edge
-                          </Typography>
-                        }
-                      />
-                      <Tab
-                        sx={{ marginRight: "80px" }}
-                        label={
-                          <Typography
-                            sx={{
-                              fontWeight: "bold",
-                              letterSpacing: "2px",
-                              color: value === 2 ? "green" : "inherit",
-                              textTransform: "none",
-                            }}
-                          >
-                            eFX Alpha
-                          </Typography>
-                        }
-                      />
-                      <Tab
-                        sx={{ marginRight: "80px" }}
-                        label={
-                          <Typography
-                            sx={{
-                              fontWeight: "bold",
-                              letterSpacing: "2px",
-                              color: value === 3 ? "green" : "inherit",
-                              textTransform: "none",
-                            }}
-                          >
-                            eFX Apex
-                          </Typography>
-                        }
-                      />
-                    </Tabs>
-                  </div> */}
-                  <div style={{ width: "100%", marginTop: 70 }}>
+                  <div style={{ width: "100%" }}>
                     <CardContainer selectedSectionIndex={cardState} />
                   </div>
                 </div>
